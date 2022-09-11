@@ -1,0 +1,1782 @@
+
+%% bare_adv.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See: 
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the advanced use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE Computer
+%% Society journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+\documentclass[10pt,journal,compsoc]{IEEEtran}
+
+\ifCLASSOPTIONcompsoc
+  % The IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+
+\ifCLASSINFOpdf
+
+\else
+
+\fi
+
+\newcommand\MYhyperrefoptions{bookmarks=true,bookmarksnumbered=true,
+pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
+colorlinks=true,linkcolor={black},citecolor={black},urlcolor={black},
+pdftitle={Bare Demo of IEEEtran.cls for Computer Society Journals},%<!CHANGE!
+pdfsubject={Typesetting},%<!CHANGE!
+pdfauthor={Michael D. Shell},%<!CHANGE!
+pdfkeywords={Computer Society, IEEEtran, journal, LaTeX, paper,
+             template}}%<^!CHANGE!
+
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{booktabs}
+\usepackage{comment}
+%\usepackage{subfigure}
+% For \sout
+%\usepackage[normalem]{ulem}
+\usepackage{multirow}
+
+\usepackage{booktabs}
+\usepackage{array, caption, threeparttable}
+\usepackage{caption}
+%\captionsetup[table]{
+  %labelsep=newline,
+  %singlelinecheck=false,
+%}
+
+\usepackage{algorithm}
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{mathtools}
+
+\usepackage{todonotes}
+\usepackage{gensymb}
+
+\usepackage[pagebackref=flase,breaklinks=true,letterpaper=false,colorlinks,bookmarks=false]{hyperref}
+%\usepackage{hyperref}
+%\hypersetup{hidelinks}
+
+\begin{document}
+
+
+
+\title{Deep Learning for Face Anti-Spoofing: A Survey}
+
+\author{Zitong Yu,~\IEEEmembership{Student Member,~IEEE}, Yunxiao Qin, Xiaobai Li,~\IEEEmembership{Member,~IEEE}, Chenxu Zhao, \\
+Zhen Lei,~\IEEEmembership{Senior Member,~IEEE} and Guoying Zhao,~\IEEEmembership{Senior Member,~IEEE}% <-this % stops a space
+
+%~\IEEEmembership{Senior Member,~IEEE}% <-this % stops a space
+
+\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem Z. Yu, X. Li and G. Zhao are with Center for Machine Vision and Signal Analysis, University of Oulu, Oulu 90014, Finland. 
+
+
+E-mail: \{zitong.yu, xiaobai.li, guoying.zhao\}@oulu.fi.
+
+
+\IEEEcompsocthanksitem Y. Qin is with Communication University of China, Beijing 100024, China, and also with Northwestern Polytechnical University, Xi'an 710072, China.
+E-mail: qyxqyx@mail.nwpu.edu.cn.
+
+\IEEEcompsocthanksitem C. Zhao is with MiningLamp Technology, Beijing 100000, China. 
+
+E-mail: zhaochenxu@mininglamp.com.
+
+\IEEEcompsocthanksitem Z. Lei is with National Laboratory of Pattern Recognition, Institute of Automation, Chinese Academy of Sciences, Beijing 100190, China.
+
+E-mail: zlei@nlpr.ia.ac.cn.
+
+}% <-this % stops a space
+\thanks{Manuscript received June 26, 2021. (Corresponding author: Guoying Zhao)}}
+
+
+
+% The paper headers
+%\markboth{IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE}%
+\markboth{IEEE Transactions on ,~Vol.~*, No.~*, **}%
+{Shell \MakeLowercase{\textit{et al.}}: Bare Advanced Demo of IEEEtran.cls for IEEE Computer Society Journals}
+
+
+
+
+\IEEEtitleabstractindextext{%
+\begin{abstract}
+
+
+Face anti-spoofing (FAS) has lately attracted increasing attention due to its vital role in securing face recognition systems from presentation attacks (PAs). As more and more realistic PAs with novel types spring up, traditional FAS methods based on handcrafted features become unreliable due to their limited representation capacity. With the emergence of large-scale academic datasets in the recent decade, deep learning based FAS achieves remarkable performance and dominates this area. However, existing reviews in this field mainly focus on the handcrafted features, which are outdated and uninspiring for the progress of FAS community. In this paper, to stimulate future research, we present the first comprehensive review of recent advances in deep learning based FAS. It covers several novel and insightful components: 1) besides supervision with binary label (e.g., ‘0’ for bonafide vs. ‘1’ for PAs), we also investigate recent methods with pixel-wise supervision (e.g., pseudo depth map); 2) in addition to traditional intra-dataset evaluation, we collect and analyze the latest methods specially designed for domain generalization and open-set FAS; and 3) besides commercial RGB camera, we summarize the deep learning applications under multi-modal (e.g., depth and infrared) or specialized (e.g., light field and flash) sensors. We conclude this survey by emphasizing current open issues and highlighting potential prospects. 
+
+%To the best of our knowledge, it is also the first deep learning based FAS survey containing multimodal methodology and datasets. 
+
+% Abstract no more than 200 words
+
+
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+face anti-spoofing, presentation attack, deep learning, pixel-wise supervision, multi-modal, domain generalization.
+\end{IEEEkeywords}}
+
+
+% make the title area
+\maketitle
+
+
+
+\IEEEdisplaynontitleabstractindextext
+% \IEEEdisplaynontitleabstractindextext has no effect when using
+% compsoc under a non-conference mode.
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+\ifCLASSOPTIONcompsoc
+\IEEEraisesectionheading{\section{Introduction}\label{sec:introduction}}
+\else
+\section{Introduction}
+\label{sec:introduction}
+\fi
+
+
+
+
+\IEEEPARstart{D}{ue} to its convenience and remarkable accuracy, face recognition technology~\cite{guo2020learning} has applied in a few interactive intelligent applications such as checking-in and mobile payment. However, existing face recognition systems are vulnerable to presentation attacks (PAs) ranging from print, replay, makeup, 3D-mask, etc. Therefore, both academia and industry have paid extensive attention to developing face anti-spoofing (FAS) technology for securing the face recognition system. As illustrated in Fig.~\ref{fig:Figure1}, face anti-spoofing (namely `face presentation attack detection' or `face liveness detection') is an active research topic in computer vision and has received an increasing number of publications in recent years.
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Figures/Fig1.png}
+  \caption{ 
+  The increasing research interest in the FAS field, obtained through Google scholar search with key-words: allintitle: “face anti-spoofing”, “face presentation attack detection”, and “face liveness detection”.
+  }
+\label{fig:Figure1}
+\end{figure}
+
+
+In the early stage, plenty of traditional handcrafted feature~\cite{pan2007eye,li2016generalized,Pereira2012LBP,Komulainen2014Context,Patel2016Secure} based methods have proposed for presentation attack detection (PAD). Most traditional algorithms are designed based on human liveness cues and handcrafted features, which need rich task-aware prior knowledge for design. In term of the methods based on the liveness cues, eye-blinking~\cite{pan2007eye,jee2006liveness,li2008eye}, face and head movement~\cite{wang2009face,bao2009liveness} (e.g., nodding and smiling), gaze tracking~\cite{bigun2004assuring,ali2012liveness} and remote physiological signals (e.g., rPPG~\cite{li2016generalized,Liu2018Learning,lin2019face,yu2019remote1}) are explored for dynamic discrimination. However, these physiological liveness cues are usually captured from long-term interactive face videos, which is inconvenient for practical deployment. Furthermore, the liveness cues are easily mimicked by video attacks, making them less reliable. On the other hand, classical handcrafted descriptors (e.g., LBP~\cite{boulkenafet2015face,Pereira2012LBP}, 
+SIFT~\cite{Patel2016Secure}, SURF~\cite{boulkenafet2016face2}, HOG~\cite{Komulainen2014Context} and DoG~\cite{tan2010face}) are designed for extracting effective spoofing patterns from various color spaces (RGB, HSV, and YCbCr). It can be seen from Table~\ref{tab:surveys} that the FAS surveys before 2018 mainly focus on this category. 
+
+%Although such handcrafted features could be cascaded with a trained classifier (e.g., SVM~\cite{suykens1999least}) efficiently, they still suffer from limited representation capacity and are vulnerable under unseen scenarios and unknown PAs.  
+
+
+
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\begin{table*}[t]
+\centering
+\caption{A summary of existing surveys in FAS. Most of them focus on handcrafted feature based methods under single RGB modality, and investigate limited number of public datasets as well as evaluation protocols. `DL' and `M\&H' is short for `deep learning' and `modality \& hardware', respectively. `VIS', `NIR', `SWIR',`LF', and `Polarized' denotes using commercial visible RGB, near infrared, short-wave infrared, light field, and four-directional polarized camera, respectively.} \label{tab:surveys}
+\resizebox{1.0\textwidth}{!} {\begin{tabular}{c c c c c c} 
+ \toprule[1pt]
+ Title \& Reference & Year & DL & M\&H & Datasets & Protocol \\
+ %\hline
+ \midrule
+ 2D Face Liveness Detection: an Overview~\cite{kahm20122d} & 2014 & No & VIS  & 2 & Intra-dataset intra-type\\
+
+ \midrule
+ \tabincell{c}{Face Biometrics under Spoofing Attacks: Vulnerabilities, Countermeasures, \\Open Issues and Research Directions}~\cite{hadid2014face} & 2014 & No & VIS  & 4 & Intra-dataset intra-type \\
+
+ \midrule
+ Biometric Anti-spoofing Methods: A Survey in Face Recognition~\cite{galbally2014biometric} & 2015 & No & VIS  & 6 & Intra-dataset intra-type\\
+ 
+ %\midrule
+% Face Anti-spoofing Methods~\cite{parveen2015face} & 2015 & No & Visible  & 8 & Intra-dataset intra-type\\
+ 
+ 
+   \midrule
+A Comparative Study on Face Spoofing Attacks~\cite{kumar2017comparative} & 2017 & No & VIS  & 9 & Intra-dataset intra-type\\ 
+ 
+  \midrule
+ Face Spoofing and Counter-Spoofing: A Survey of State-of-the-art Algorithms~\cite{kisku2017face} & 2017 & No & VIS  & 6 & \tabincell{c}{Intra-dataset intra-type,\\Cross-dataset intra-type}\\ 
+ 
+  \midrule
+ \tabincell{c}{Presentation Attack Detection Methods for Face Recognition Systems: \\A Comprehensive Survey}~\cite{ramachandra2017presentation} & 2017 & No & VIS  & 11 & Intra-dataset intra-type\\ 
+
+  \midrule
+ How Far Did We Get in Face Spoofing Detection?~\cite{souza2018far} & 2018 & \tabincell{c}{Yes\\(Few, $\textless$10)} & VIS  & 9 & \tabincell{c}{Intra-dataset intra-type,\\Cross-dataset intra-type}\\
+
+  \midrule
+ Insight on Face Liveness Detection: A Systematic Literature Review~\cite{raheem2019insight} & 2019 & No & VIS  & 14 & Intra-dataset intra-type\\
+
+  \midrule
+ The Rise of Data-driven Models in Presentation Attack Detection~\cite{pereira2020rise} & 2019 & \tabincell{c}{Yes\\(Few, $\textless$10)} & VIS  & 7 & \tabincell{c}{Intra-dataset intra-type,\\Cross-dataset intra-type}\\ 
+
+  \midrule
+ A Survey on 3D Mask Presentation Attack Detection and Countermeasures~\cite{jia2020survey} & 2020 & \tabincell{c}{Yes\\(Few, $\textless$10)} & VIS  & 10 & Intra-dataset intra-type\\
+
+  \midrule
+ \tabincell{c}{Deep Convolutional Neural Networks for Face and Iris Presentation Attack \\Detection: Survey and Case Study}~\cite{el2020deep} & 2020 & \tabincell{c}{Yes\\(Few, $\textless$30)} & VIS  & 8 & \tabincell{c}{Intra-dataset intra-type,\\Cross-dataset intra-type}\\ 
+
+
+ \midrule
+ \tabincell{c}{A Survey On Anti-Spoofing Methods For Face Recognition with\\ RGB Cameras of Generic Consumer Devices}~\cite{ming2020survey} & 2020 & \tabincell{c}{Yes\\(Few, $\textless$50)} & VIS  & 12 & \tabincell{c}{Intra-dataset intra-type,\\Cross-dataset intra-type}\\ 
+
+
+  \midrule
+ \textbf{Deep Learning for Face Anti-spoofing: A Survey (Ours)} & 2021 & \tabincell{c}{Yes\\(Full, $\textgreater$100)} & \tabincell{c}{VIS, Flash,\\NIR, Thermal, \\Depth, SWIR, \\LF, Polarized}  & 35 & \tabincell{c}{Intra-dataset intra-type,\\Cross-dataset intra-type,\\Intra-dataset cross-type,\\Cross-dataset cross-type}\\ 
+
+ %\hline
+ \bottomrule[1pt]
+ \end{tabular}}
+\end{table*}
+
+
+Subsequently, a few hybrid (handcrafted+deep learning)~\cite{song2019discriminative,asim2017cnn,rehman2020enhancing,khammari2019robust} and end-to-end deep learning based methods~\cite{yu2020searching,yu2020face,Liu2018Learning,yang2019face,Atoum2018Face,yu2020multi,zhang2020casia} are proposed for both static and dynamic face PAD. Most works\cite{yang2014learn,Li2017An,Patel2016Cross,george2019deep,jourabloo2018face,jia20203d,li2020compactnet} treat FAS as a binary classification problem (e.g., `0' for live while `1' for spoofing faces) thus supervised by a simple binary cross-entropy loss. However, convolutional neural networks (CNNs) with binary loss might discover arbitrary cues that can separate the two classes (e.g., screen bezel) but not the faithful spoofing patterns. Recently, pixel-wise supervision~\cite{Atoum2018Face,Liu2018Learning,yu2020face,kim2019basn,george2019deep,yu2020fas2} attracts more attention as it provides more fine-grained context-aware supervision signals, which is beneficial for deep models learning intrinsic spoofing cues. On one hand, pseudo depth labels~\cite{Atoum2018Face,Liu2018Learning}, reflection maps~\cite{yu2020face,kim2019basn}, binary mask label~\cite{george2019deep,liu2019deep,sun2020face} and 3D point cloud maps~\cite{li3dpc} are typical pixel-wise auxiliary supervisions, which describe the local live/spoof cues in pixel/patch level. On the other hand, besides physical-guided auxiliary signals, a few generative deep FAS methods model the intrinsic spoofing patterns via relaxed pixel-wise reconstruction constraints~\cite{jourabloo2018face,feng2020learning,liu2020physics,qin2021meta}. As shown in Table~\ref{tab:surveys}, the latest FAS surveys from 2018 to 2020 investigate limited numbers ($\textless$50) of deep learning based methods, which hardly provide comprehensive elaborations for the community researchers. Note that most data-driven methods introduced in previous surveys are supervised by traditional binary loss, and there is still a blank for summarizing the arisen pixel-wise supervision methods. 
+
+
+%Despite with gained performance, existing pixel-wise supervisions still have the representation gaps between local context and global semantics, and are easily influenced by the local disturbance. 
+
+
+Meanwhile, the emergence of large-scale public FAS datasets with rich attack types and recorded sensors also boosts greatly the research community. First, the datasets with vast samples and subjects have been released. For instance, CelebA-Spoof~\cite{zhang2020celeba}, recorded from 10177 subjects, contains 156384 and 469153 face images for bonafide and PAs, respectively. Second, besides the common PA types (e.g., print and replay attacks), some up-to-date datasets contain richer challenging PA types (e.g., SiW-M~\cite{liu2019deep} and WMCA~\cite{george2019biometric} with more than 10 PA types). However, we can find from Table~\ref{tab:surveys} that existing surveys only investigate a handful of ($\textless$15) old and small-scale FAS datasets, which cannot provide fair benchmarks for deep learning based methods. Third, in terms of modality and hardware for recording, besides commercial visible RGB camera, numerous multimodal and specialized sensors benefit the FAS task. For example, CASIA-SURF~\cite{zhang2020casia} and WMCA~\cite{george2019biometric} shows the effectiveness of PAD via fusing RGB/depth/NIR information while dedicated systems with multispectral SWIR~\cite{steiner2016reliable} and four-directional polarized~\cite{tian2020face} cameras benefit significantly for spoofing material perception. However, previous surveys mostly focus on single RGB modality using a commercial visible camera, and neglect the deep learning applications on the multimodal and specialized systems for high-security scenarios.
+
+
+
+
+
+From the perspective of evaluation protocols, traditional `intra-dataset intra-type' and `cross-dataset intra-type' protocols are widely investigated in previous FAS surveys (see Table~\ref{tab:surveys}). As FAS is actually an open-set problem in practice, the uncertain gaps (e.g., environments and attack types) between training and testing conditions should be considered. However, no existing reviews consider the issues about unseen domain generalization~\cite{shao2019multi,shao2019regularized,wang2020cross,jia2020single} and unknown PAD~\cite{arashloo2017anomaly,liu2019deep,qin2019learning,qin2020one}. Most reviewed FAS methods design or train the FAS model on predefined scenarios and PAs. Thus, the trained models easily overfit on several specific domains and attack types, and are vulnerable to unseen domains and unknown attacks. To bridge the gaps between academic research and real-world applications, in this paper, we fully investigate deep learning based methods under four FAS protocols, including challenging domain generalization and open-set PAD situations. 
+Compared with existing literatures, the major contributions of this work can be summarized as follows: 
+
+
+
+\begin{figure*}
+\centering
+\includegraphics[scale=0.4]{Figures/pipeline.pdf}
+  \caption{ 
+  Typical face spoofing attacks and face anti-spoofing pipeline. (a) FAS could be integrated with face recognition systems with paralled or serial scheme for reliable face ID matching. (b) Visualization of several classical face spoofing attack types~\cite{heusch2020deep} in terms of impersonation/obfuscation, 2D/3D, and whole/partial evidences.
+  }
+\label{fig:pipeline}
+\end{figure*}
+
+
+
+
+\begin{itemize}
+    
+    \item To the best of our knowledge, this is the first survey paper to comprehensively cover ($\textgreater$100) deep learning methods for both single- and multi-modal FAS with generalized protocols. Compared with previous surveys only considering the methods with binary loss supervision, we also elaborate on those with auxiliary/generative pixel-wise supervision. 
+    
+    \item  As opposed to existing reviews~\cite{pereira2020rise,jia2020survey,el2020deep} with only limited numbers ($\textless$15) of small-scale datasts, we show detailed comparisons among past-to-present 35 public datasets including various kinds of PAs as well as advanced recording sensors.
+    
+   \item  This paper covers the most recent and advanced progress of deep learning on four practical FAS protocols (i.e., intra-dataset intra-type, cross-dataset intra-type, intra-dataset cross-type, and cross-dataset cross-type testings). Therefore, it provides the readers with state-of-the-art methods with different application scenarios (e.g., unseen domain generalization and unknown attack detection).
+   
+   \item  Comprehensive comparisons of existing deep FAS methods with insightful taxonomy are provided in Tables~\ref{tab:handcrafted},~\ref{tab:binaryloss},~\ref{tab:auxiliary},~\ref{tab:domain}, and~\ref{tab:multimodal}, with brief summaries and insightful discussions being presented.
+ 
+\end{itemize}
+
+
+The structure of this paper is as follows. Section~\ref{sec:background} introduces the research background, including presentation attacks, datasets, evaluation metrics, and protocols for the FAS task. Section~\ref{sec:RGB} reviews the methods for visible RGB based FAS according to two kinds of supervision signals (i.e., binary loss and pixel-wise loss) as well as generalized learning for unseen domains and unknown attacks. Section~\ref{sec:multimodal} gives a comparison about the recording sensors as well as modalities, and then presents the methods for specific recorded inputs. Section~\ref{sec:discussion} discusses the current issues of deep FAS, and indicates the future directions. Finally, conclusions are given in Section~\ref{sec:conclusion}. Researchers can track an up-to-date list at \href{https://github.com/ZitongYu/DeepFAS}{https://github.com/ZitongYu/DeepFAS}.
+
+
+\vspace{-1.0em}
+\section{background} \label{sec:background}
+%In this section, we will review existing FAS methods with pixel-wise supervision including depth map, binary mask and so on. The relevant summary is shown in Table~\ref{tab:review}.
+
+In this section, we will introduce the common face spoofing attacks first, and then investigate the existing FAS datasets as well as their evaluation metrics and protocols.  
+
+
+\vspace{-1.0em}
+\subsection{Face Spoofing Attacks}
+Attacks on automatic face recognition (AFR) system usually divide into two categories: digital manipulation~\cite{tolosana2020deepfakes,goswami2019detecting} and physical presentation attacks~\cite{liu2021cross}. The former one fools the face system via imperceptibly visual manipulation in the digital virtual domain, while the latter usually misleads the real-world AFR systems via presenting face upon physical mediums in front of the imaging sensors. In this paper, we focus on the detection of physical face presentation attacks, whose pipeline is illustrated in Fig.~\ref{fig:pipeline}(a). It can be seen that there are two kinds of schemes~\cite{hernandez2019introduction} for integrating FAS with AFR systems: 1) \textit{parallel} fusion~\cite{de2013can} with the predicted scores from FAS and AFR systems. The combined new final score is used to determine if the sample comes from a genuine user or not; and 2) \textit{serial} scheme~\cite{li2018face} for early face PAs detection and spoof rejection, thus avoiding the spoof face accessing the subsequent face recognition phase. 
+
+\begin{figure*}
+\centering
+\includegraphics[scale=0.38]{Figures/dataset.png}
+  \caption{ 
+  Visualization of the bonafide and spoofing samples from the HiFiMask dataset~\cite{liu2021contrastive} (a) with various cameras under different lighting conditions~\cite{liu2021contrastive}; and the WMCA dataset~\cite{george2019biometric} (b) with multiple modalities such as visible RGB, depth, infrared, and thermal.
+  }
+\label{fig:dataset}
+\end{figure*}
+
+
+
+In Fig.~\ref{fig:pipeline}(b), some representative spoofing attack types are illustrated. According to the attackers' intention, face PAs~\cite{marcel2019handbook} can be divided into two typical cases: 1)  \textit{impersonation}, which entails the use of spoof to be recognized as someone else via copying a genuine user’s facial attributes to special mediums such as photo, electronic screen, and 3D mask; and 2) \textit{obfuscation}, which entails
+the use to hide or remove the attacker’s own identity using various methods such as glasses, makeup, wig, and disguised face.
+
+Based on the geometry property, PAs are broadly classified into \textit{2D} and \textit{3D} attacks. 2D PAs~\cite{ramachandra2017presentation} are carried out by presenting facial attributes using photo or video to the sensor. Flat/wrapped printed photos, eye/mouth-cut photos, and digital replay of videos are common 2D attack variants. With the maturity of 3D printing technology, face 3D mask~\cite{jia2020survey} has become a new type of PA to threaten AFR systems. Compared with traditional 2D PAs, face masks are more realistic in terms of color, texture, and
+geometry structure. 3D masks are made of different materials, e.g., hard/rigid masks can be made from paper, resin, plaster, or plastic while flexible soft masks are usually composed of silicon or latex. 
+
+In consideration of the facial region covering, PAs can be also separated to \textit{whole} or \textit{partial} attacks. As shown in Fig.~\ref{fig:pipeline}(b), compared with common PAs (e.g., print photo, video replay, and 3D mask) covering the whole face region, a few partial attacks only placed upon specific facial regions (e.g., part-cut print photo, funny eyeglass worn in the eyes region and partial tattoo on the cheek region), which are more obscure and challenging to detect.
+
+
+
+
+\begin{table*}
+\centering
+\caption{A summary of \textbf{public available datasets} for face anti-spoofing. The upper part of the table lists the datasets recorded via \textit{commercial RGB camera} while the half bottom investigates the datasets with \textit{multiple modalities or specialized sensors}. In the column `\#Live/Spoof', `I' and `V' denotes `images' and `videos', respectively. `\#Sub.' is short for Subjects.} \label{tab:dataset}
+\resizebox{1.0\textwidth}{!} {\begin{tabular}{c c c c c c c} 
+ \toprule[1pt]
+ Dataset \& Reference & Year & \#Live/Spoof & \#Sub. & M\&H & Setup & Attack Types \\
+ %\hline
+ \midrule
+ NUAA~\cite{tan2010face} & 2010 & 5105/7509(I) & 15  & VIS & N/R & Print(flat, wrapped)\\
+
+ \midrule
+ YALE\_Recaptured~\cite{peixoto2011face} & 2011 & 640/1920(I) & 10  & VIS & 50cm-distance from 3 LCD minitors & Print(flat)\\
+
+ \midrule
+ CASIA-MFSD
+~\cite{Zhang2012A} & 2012 & 150/450(V) & 50 & VIS & 7 scenarios and 3 image quality & Print(flat, wrapped, cut), Replay(tablet)\\
+
+ \midrule
+REPLAY-ATTACK
+~\cite{ReplayAttack} & 2012 & 200/1000(V) & 50 & VIS &  Lighting and holding  & Print(flat), Replay(tablet, phone)\\
+
+
+ \midrule
+Kose and Dugelay
+~\cite{kose2013shape} & 2013 & 200/198(I) & 20 & VIS &  N/R  & Mask(hard resin)\\
+
+
+
+ \midrule
+MSU-MFSD
+~\cite{wen2015face} & 2014 & 70/210(V) & 35 & VIS &  Indoor scenario; 2 types of cameras & Print(flat), Replay(tablet, phone)\\
+
+
+
+ \midrule
+UVAD
+~\cite{pinto2015using} & 2015 & 808/16268(V) & 404 & VIS &  \tabincell{c}{Different lighting, background \\and places in two sections}  & Replay(monitor)\\
+
+ \midrule
+REPLAY-Mobile
+~\cite{costa2016replay} & 2016 & 390/640(V) & 40 & VIS &  5 lighting conditions & Print(flat), Replay(monitor)\\
+
+ 
+
+
+ \midrule
+HKBU-MARs V2
+~\cite{liu20163d} & 2016 & 504/504(V) & 12 & VIS &  \tabincell{c}{ 7 cameras from stationary and mobile \\devices and 6 lighting settings} & \tabincell{c}{Mask(hard resin) from \\ Thatsmyface and REAL-f}\\
+
+
+
+ \midrule
+MSU USSA
+~\cite{Patel2016Secure} & 2016 & 1140/9120(I) & 1140 & VIS &  Uncontrolled; 2 types of cameras & Print(flat), Replay(laptop, tablet, phone)\\
+
+ \midrule
+SMAD
+~\cite{manjani2017detecting} & 2017 & 65/65(V) & - & VIS &  Color images from online resources & Mask(silicone)\\
+
+
+
+ \midrule
+OULU-NPU
+~\cite{Boulkenafet2017OULU} & 2017 &  720/2880(V)  & 55 & VIS &  Lighting \& background in 3 sections  & Print(flat), Replay(phone)\\
+
+
+ \midrule
+Rose-Youtu
+~\cite{li2018unsupervised} & 2018 &  500/2850(V) & 20 & VIS &  \tabincell{c}{5 front-facing phone camera; \\5 different illumination conditions}  & \tabincell{c}{Print(flat), Replay(monitor, laptop), \\Mask(paper, crop-paper)}\\
+
+
+
+ \midrule
+SiW
+~\cite{Liu2018Learning} & 2018 &  1320/3300(V)  & 165 & VIS &  \tabincell{c}{4 sessions with variations of distance, \\pose, illumination and expression}  & \tabincell{c}{Print(flat, wrapped), \\Replay(phone, tablet, monitor)}\\
+
+
+
+ \midrule
+WFFD
+~\cite{jia20203d} & 2019 & \tabincell{c}{2300/2300(I)\\140/145(V)} & 745 & VIS &  \tabincell{c}{Collected online; super-realistic; \\ removed low-quality faces}  & Waxworks(wax)\\
+
+ \midrule
+SiW-M
+~\cite{liu2019deep} & 2019 & 660/968(V) & 493 &  VIS &  \tabincell{c}{Indoor environment with pose, \\lighting and expression variations}  & \tabincell{c}{Print(flat), Replay, Mask(hard resin, \\plastic, silicone, paper, Mannequin),\\ Makeup(cosmetics, impersonation, \\Obfuscation), Partial(glasses, cut paper)}\\
+
+
+ \midrule
+Swax
+~\cite{vareto2020swax} & 2020 &  \tabincell{c}{Total 1812(I)\\110(V) } & 55 & VIS &   \tabincell{c}{Collected online; captured \\under uncontrolled scenarios} & Waxworks(wax)\\
+
+
+ \midrule
+CelebA-Spoof
+~\cite{zhang2020celeba} & 2020 &  \tabincell{c}{156384/\\469153(I)} & 10177 & VIS &   \tabincell{c}{4 illumination conditions; \\indoor \& outdoor; rich annotations} & \tabincell{c}{Print(flat, wrapped), Replay(monitor, \\tablet, phone), Mask(paper)}\\
+
+
+
+ \midrule
+\tabincell{c}{RECOD-\\Mtablet}
+~\cite{almeida2020detecting} & 2020 &  450/1800(V) & 45 & VIS &   \tabincell{c}{Outdoor environment and\\ low-light \& dynamic sessions} & Print(flat), Replay(monitor)\\
+
+ \midrule
+\tabincell{c}{CASIA-SURF\\3DMask}
+~\cite{yu2020fas2} & 2020 &  288/864(V) & 48 & VIS &   \tabincell{c}{High-quality identity-preserved; \\ 3 decorations and 6 environments} & Mask(mannequin with 3D print)\\
+
+
+ \midrule
+\tabincell{c}{HiFiMask}
+~\cite{liu2021contrastive} & 2021 &  13650/40950(V) & 75 & VIS &   \tabincell{c}{three mask decorations; 7 recording\\ devices; 6 lighting conditions\\ (periodic/random); 6 scenes} & Mask(transparent, plaster, resin)\\
+
+%  multimodal or specialized hardware
+ \midrule[1pt]
+% \bottomrule[1pt]
+ \midrule[1pt]
+ 
+3DMAD
+~\cite{erdogmus2014spoofing} & 2013 & 170/85(V) & 17 & VIS, Depth &  3 sessions (2 weeks
+interval)  & Mask(paper, hard resin)\\
+
+ \midrule
+GUC-LiFFAD
+~\cite{raghavendra2015presentation} & 2015 & 1798/3028(V) & 80 & Light field &  \tabincell{c}{Distance of 1.5$\sim$2 m in \\constrained conditions}  & \tabincell{c}{Print(Inkjet paper, Laserjet paper),\\ Replay(tablet)}\\
+
+\midrule
+3DFS-DB
+~\cite{galbally2016three} & 2016 & 260/260(V) & 26 & VIS, Depth &  Head movement with rich angles & Mask(plastic)\\
+
+ \midrule
+\tabincell{c}{BRSU \\ Skin/Face/Spoof}
+~\cite{steiner2016reliable} & 2016 & 102/404(I) & 137 & VIS, SWIR &  \tabincell{c}{ multispectral SWIR with 4 wavebands \\935nm, 1060nm, 1300nm and 1550nm} & Mask(silicon, plastic, resin, latex)\\
+
+ \midrule
+Msspoof
+~\cite{chingovska2016face} & 2016 & 1470/3024(I) & 21 & VIS, NIR &  7 environment conditions & Black\&white Print(flat)\\
+
+
+ \midrule
+MLFP
+~\cite{agarwal2017face} & 2017 & 150/1200(V) & 10 & \tabincell{c}{VIS, NIR, \\Thermal} &  \tabincell{c}{Indoor and outdoor with fixed\\ and random backgrounds} & Mask(latex, paper)\\
+
+ \midrule
+ERPA
+~\cite{bhattacharjee2017you} & 2017 & Total 86(V) & 5 & \tabincell{c}{VIS, Depth, \\NIR, Thermal} &  \tabincell{c}{Subject positioned close (0.3$\sim$0.5m)\\ to the 2 types of cameras} & \tabincell{c}{Print(flat), Replay(monitor), \\ Mask(resin, silicone)}\\
+
+
+ \midrule
+LF-SAD
+~\cite{liu2019light} & 2018 &  328/596(I)  & 50 & Light field &  \tabincell{c}{Indoor fix background, captured\\ by Lytro ILLUM camera}  & Print(flat, wrapped), Replay(monitor)\\
+
+
+ \midrule
+CSMAD
+~\cite{bhattacharjee2018spoofing} & 2018 &  104/159(V+I)  & 14 & \tabincell{c}{VIS, Depth, \\NIR, Thermal} &  4 lighting conditions  & Mask(custom silicone)\\
+
+ \midrule
+3DMA
+~\cite{xiao20193dma} & 2019 & 536/384(V) & 67 & VIS, NIR &  \tabincell{c}{48 masks with different ID; 2 illumi-\\ nation \& 4 capturing distances}  & Mask(plastics)\\
+
+
+ \midrule
+CASIA-SURF
+~\cite{casiasurf} & 2019 &  \tabincell{c}{3000/\\18000(V)} & 1000 &  \tabincell{c}{VIS, Depth,\\ NIR} &  \tabincell{c}{Background removed; Randomly \\cut  eyes, nose or mouth areas}  & Print(flat, wrapped, cut)\\
+
+
+ \midrule
+WMCA
+~\cite{george2019biometric} & 2019 & 347/1332(V) & 72 &  \tabincell{c}{VIS, Depth,\\ NIR, Thermal}  &  \tabincell{c}{6 sessions with different \\backgrounds and illumination; \\pulse data for bonafide recordings}  & \tabincell{c}{Print(flat), Replay(tablet),\\ Partial(glasses), Mask(plastic, \\silicone, and paper, Mannequin)}\\
+
+
+ \midrule
+CeFA
+~\cite{li2020casia} & 2020 &   \tabincell{c}{6300/\\27900(V)} & 1607 & \tabincell{c}{VIS, Depth,\\NIR} &   \tabincell{c}{3 ethnicities; outdoor \& indoor;\\ decoration with wig and glasses} & \tabincell{c}{Print(flat, wrapped), Replay, \\Mask(3D print, silica gel)}\\
+
+
+ \midrule
+HQ-WMCA
+~\cite{heusch2020deep} & 2020 &  555/2349(V) & 51 & \tabincell{c}{VIS, Depth, \\NIR, SWIR,\\Thermal} &   \tabincell{c}{Indoor; 14 `modalities', including \\4
+NIR and 7 SWIR wavelengths; \\masks and mannequins were \\heated up to reach body temperature} & \tabincell{c}{Laser or inkjet  Print(flat), \\Replay(tablet, phone), Mask(plastic, \\silicon, paper, mannequin), Makeup,\\ Partial(glasses, wigs, tatoo)}\\
+
+
+
+ \bottomrule[1pt]
+ \end{tabular}}
+\end{table*}
+
+
+
+
+\begin{figure*}
+\centering
+\includegraphics[scale=0.28]{Figures/protocols.pdf}
+\vspace{-1.0em}
+  \caption{ 
+  The performance of deep FAS approaches on mainstream four evaluation protocols. The lower ACER, HTER and EER, the better performance. (a) Intra-dataset intra-type testing on the Protocol-4 of OULU-NPU. (b) Cross-dataset intra-type testing on CASIA-MFSD when training on single Replay-Attack dataset (see green columns) or multiple datasets including OULU-NPU, MSU-MFSD, and Replay-Attack (see purple columns). (c) Intra-dataset cross-type testing on SiW-M with leave-one-type-out setting. (d) Cross-dataset cross-type testing on 3D mask FAS datasets including HKBU-MARs~\cite{liu20163d} and CASIA-SURF 3DMask when training on OULU-NPU and SiW datasets with only 2D attacks. 
+  }
+\label{fig:protocols}
+\end{figure*}
+
+
+
+
+
+\subsection{Datasets for Face Anti-Spoofing}
+
+Large-scale and diverse datasets are pivotal for deep learning based methods during both training and evaluating phases. We summarize prevailing public FAS datasets in Table~\ref{tab:dataset} in terms of data amount, subject numbers, modality/sensor, environmental setup, and attack types. We also visualize some samples under different environmental conditions and modalities in Fig.~\ref{fig:dataset}(a) and (b), respectively. 
+
+
+
+
+
+It can be seen from Table~\ref{tab:dataset} that most datasets~\cite{tan2010face,peixoto2011face,Zhang2012A,ReplayAttack,kose2013shape,wen2015face,pinto2015using} contain only a few attack types (e.g., print and replay attacks) under simple recording conditions (e.g., indoor scene) from the early stage (i.e., year 2010-2015), which have limited variations in samples for generalized FAS training and evaluation. Subsequently, there are three main trends for dataset progress: 1) \textit{large scale data amount}. Recently, CelebA-Spoof~\cite{zhang2020celeba} and HiFiMask~\cite{liu2021contrastive} datasets are released, and they contain more than 600000 images and 50000 videos, respectively, where most of them are with PAs; 2) \textit{diverse data distribution}. Besides common print and replay attacks recorded in controllable indoor scenario, more and more novel attack types as well as complex recording conditions are considered in recent FAS datasets. For example, there are 13 fine-grained attack types in SiW-M~\cite{liu2019deep} while HiFiMask~\cite{liu2021contrastive} consists of 3D masks attacks with three kinds of materials (transparent, plaster, resin) recorded under six lighting conditions and six indoor/outdoor scenes; and 3) \textit{multiple modalities and specialized sensors}. Apart from traditional visible RGB camera, some recent datasets also consider various modalities (e.g., NIR~\cite{heusch2020deep,li2020casia,casiasurf,george2019biometric}, Depth~\cite{heusch2020deep,li2020casia,casiasurf,george2019biometric}, Thermal~\cite{heusch2020deep,george2019biometric}, and SWIR~\cite{heusch2020deep}) and other specialized sensors (e.g., Light field camera~\cite{raghavendra2015presentation,liu2019light}). All these advanced factors facilitate the area of FAS in both academic research and industrial deployment.   
+
+
+
+
+\vspace{-0.8em}
+
+\subsection{Evaluation Metrics}
+
+As FAS systems usually focus on the concept of bonafide and PA acceptance and rejection, two basic metrics False Rejection Rate (FRR) and False Acceptance Rate (FAR)~\cite{galbally2012high} are widely used. The ratio of incorrectly accepted spoofing attacks defines FAR, whereas FRR stands for the ratio of incorrectly rejected live accesses~\cite{chingovska2014biometrics}. FAS follows ISO/IEC DIS 30107- 3:2017~\cite{iso2017information} standards to evaluate the performance of the FAS systems under different scenarios. The most commonly used metrics in both intra- and cross-testing scenarios is Half Total Error Rate (\textit{HTER})~\cite{chingovska2014biometrics}, Equal Error Rate (\textit{EER})~\cite{ramachandra2017presentation}, and Area Under the Curve (\textit{AUC}). HTER is found out by calculating the average of FRR (ratio of incorrectly rejected bonafide score) and FAR (ratio of incorrectly accepted PA). EER is a specific value of HTER at which FAR and FRR have equal values. AUC represents the degree of separability between bonafide and spoofings. 
+
+Recently, Attack Presentation Classification Error Rate (\textit{APCER}), Bonafide Presentation Classification Error Rate (\textit{BPCER}) and Average Classification Error Rate (\textit{ACER}) suggested in ISO standard~\cite{iso2017information} are also used for intra-dataset testings~\cite{Boulkenafet2017OULU,Liu2018Learning}. BPCER and APCER measure bonafide and attack classification error rates, respectively. ACER is calculated as the mean of BPCER and APCER, evaluating the reliability of intra-dataset performance. 
+
+
+
+
+\begin{figure*}
+\centering
+\includegraphics[scale=0.43]{Figures/topology.pdf}
+  \caption{ 
+  Topology of the deep learning based FAS methods.
+  }
+\label{fig:topology}
+\end{figure*}
+
+
+\begin{figure*}
+\centering
+\includegraphics[scale=0.46]{Figures/milestone.pdf}
+  \caption{ 
+  Chronological overview of the milestone deep learning based FAS methods using commercial RGB camera.
+  }
+\label{fig:milestone}
+\end{figure*}
+
+
+
+\subsection{Evaluation Protocols}
+\label{sec:protocols}
+
+
+
+To evaluate the discrimination and generalization capacities of the deep FAS models, various protocols have been established. We summarize the development of deep FAS approaches on four representative protocols in Fig.~\ref{fig:protocols}.
+
+%Seven databases OULU-NPU~\cite{Boulkenafet2017OULU}, CASIA-MFSD~\cite{Zhang2012A}, Replay-Attack~\cite{ReplayAttack}, MSU-MFSD~\cite{wen2015face}, SiW-M~\cite{liu2019deep}, HKBU-MARs~\cite{liu20163d} and the proposed 3DMask are used in the four FAS testing protocols. The first two protocols is used to evaluate the model robustness under domain shifts while the last two protocols measures the model generalization ability to unseen attack types (especially the last protocol is with both serious domain shifts and unseen attack types).
+
+\vspace{0.3em}
+
+\noindent\textbf{Intra-Dataset Intra-Type Protocol.}\quad 
+Intra-dataset intra-type protocol has been widely used in most FAS datasets to evaluate the model's discrimination ability for spoofing detection under scenarios with slight domain shift. As the training and testing data are from the same datasets, they share similar domain distribution in terms of the recording environment, subject behavior, etc. (see Fig.~\ref{fig:dataset}(a) for examples). The most classical intra-dataset intra-type testing is the Protocol-4 of OULU-NPU dataset~\cite{Boulkenafet2017OULU}, and the performance comparison of recent deep FAS methods on this protocol is shown in Fig.~\ref{fig:protocols}(a). Due to the strong discriminative feature representation ability via deep learning, many methods (e.g., CDCN++~\cite{yu2020searching}, FAS-SGTD~\cite{wang2020deep}, Disentangled~\cite{zhang2020face}, FAS-DR(MT)~\cite{qin2021meta}, DC-CDN~\cite{yu2021dual}, STDN~\cite{liu2020disentangling} and NAS-FAS~\cite{yu2020fas2}) have reached satisfied performance ($\textless$5\% ACER) under small domain shifts about external environment, attack mediums and recording camera variation.
+
+\vspace{0.3em}
+
+\noindent\textbf{Cross-Dataset Intra-Type Protocol.}\quad 
+This protocol focuses on cross-dataset level domain generalization ability measurement, which usually trains models on one or several datasets (source domains) and then tests on unseen datasets (shifted target domain). We summarize recent deep FAS approaches on two favorite cross-dataset testings~\cite{yu2020searching,shao2019multi} in Fig.~\ref{fig:protocols}(b). It can be seen from green columns that, when trained on Replay-Attack and tested on CASIA-MFSD, most deep models perform poorly ($\textgreater$20\% HTER) due to the serious lighting and camera resolution variations. In contrast, when trained on multiple source datasets (i.e., OULU-NPU, MSU-MFSD, and Replay-Attack), domain generalization based methods achieve acceptable performance (especially SSDG~\cite{jia2020single} with 10.4\% HTER). In real-world cross-testing cases, small amount of target domain data are easily obtained, which can also be utilized for domain adaptation~\cite{jia2021unified} to mitigate domain shifts further. 
+
+\vspace{0.3em}
+
+\noindent\textbf{Intra-Dataset Cross-Type Protocol.}\quad  The protocol adopts `leave one attack type out' to validate the model's generalization for unknown attack types, i.e., one kind of attack type only appears in the testing stage. Considering the rich (13 kinds) attack types, SiW-M~\cite{liu2019deep} is investigated in this protocol, and the corresponding results are illustrated in Fig.~\ref{fig:protocols}(c). Most of the deep models achieve around 10\% EER and with large standard deviations among all attack types, which indicates the huge challenges in this protocol. Benefited from the large-scale pretraining, ViTranZFAS~\cite{liu2019deep} achieves surprising 6.7\% EER, implying the promising usage of transfer learning for unknown attack type detection. 
+
+\vspace{0.4em}
+
+\noindent\textbf{Cross-Dataset Cross-Type Protocol.}\quad Although the three protocols mentioned above mimic most factors in real-world applications, they do not consider the most challenging case, i.e., cross-dataset cross-type testing.~\cite{yu2020fas2} proposes a 'Cross-Dataset Cross-Type Protocol' to measure the FAS model's generalization on both unseen domain and unknown attack types.
+In this protocol, OULU-NPU and SiW (with 2D attacks) are mixed for training, while HKBU-MARs and 3DMask (with 3D attacks) are used for testing. It can be seen from Fig.~\ref{fig:protocols}(d) that recent deep models (DTN~\cite{liu2019deep} and NAS-FAS~\cite{yu2020fas2}) hold good generalization for lab-controlled low-fidelity 3D mask detection on HKBU-MARs but performance on detecting unrestricted high-fidelity masks on 3DMask is still unsatisfying.
+
+
+Besides these four mainstream evaluation protocols, more new trends about practical protocol settings (e.g., semi-/un-supervised, real-world open-set, and dynamic multimodality) will be discussed in Section~\ref{sec:discussion}. 
+
+
+
+\section{Deep FAS with Commercial RGB Camera} \label{sec:RGB}
+As commercial RGB camera is widely used in many real-world applicational scenarios (e.g., access control system and mobile device unlocking), in this section, we will review existing deep learning based FAS methods using commercial RGB camera in terms of three main categories: 1) hybrid learning methods combining both handcrafted and deep learning features; 2) common end-to-end supervised deep learning based methods; and 3) generalized deep learning methods to both unseen domain and unknown attack types. The summarized topology is shown in the upper branch (blue part) of Fig.~\ref{fig:topology}. Several
+milestone deep FAS methods are illustrated in Fig.~\ref{fig:milestone}. 
+
+
+
+\subsection{Hybrid Method}
+Although deep learning and CNNs have achieved great success in many computer vision tasks (e.g., image classification~\cite{He2015Deep,huang2017densely}, semantic segmentation~\cite{long2015fully}, and object detection~\cite{ren2016faster}), they suffer from the overfitting problem for the FAS task due to the limited amount and diversity of the training data. As handcrafted features (e.g., LBP~\cite{ahonen2006face}, HOG~\cite{dalal2005histograms} descriptors, image quality~\cite{galbally2014face}, optical flow motion~\cite{brox2010large}, and rPPG clues~\cite{niu2020video}) have been proven to be discriminative to distinguish bonafide from PAs, some recent \textit{hybrid} works combine handcrafted features with deep features for FAS. Typical properties of these hybrid methods are summarized in Table~\ref{tab:handcrafted}.
+
+
+
+\begin{table*}
+\centering
+\caption{Summary of the \textbf{hybrid (handcrafted+deep learning)} FAS methods with \textbf{binary cross-entropy supervision}. `S/D', `CE', `OF', `OFM', `NN', `HOG', `LBP' are short for `Static/Dynamic', `cross-entropy', `optical flow', `optical flow magnitude', `nearest neighbor', `histogram of oriented gradients~\cite{dalal2005histograms}' and `local binary pattern~\cite{ojala2002multiresolution}', respectively.} \label{tab:handcrafted}
+\resizebox{1.0\textwidth}{!} {\begin{tabular}{l c c c c c c} 
+ \toprule[1pt]
+ Method & Year & Backbone & Loss & Input & S/D & Description \\
+ %\hline
+ 
+
+   \midrule
+DPCNN~\cite{Li2017An} & 2016 & VGG-Face & Trained with SVM & RGB & S &  deep partial features with Blocks PCA  \\  
+
+   \midrule
+Multi-cues+NN~\cite{feng2016integration} & 2016 & MLP & Binary CE loss & \tabincell{c}{RGB+OFM} & D & fused features from image quality cues and motion cues  \\  
+ 
+
+
+   \midrule
+CNN LBP-TOP~\cite{asim2017cnn} & 2017 & 5-layer CNN & \tabincell{c}{Binary CE loss\\SVM} & RGB & D & \tabincell{c}{cascading LBP-TOP with CNN to extract \\discriminative spatio-temporal features}  \\  
+
+   \midrule
+DF-MSLBP~\cite{cai2019learning} & 2018 & Deep forest & Binary CE loss & HSV+YCbCr & S & multi-scale LBP based Tree-Ensembled features  \\  
+
+
+   \midrule
+SPMT+SSD~\cite{song2019discriminative} & 2018 & VGG16 & \tabincell{c}{Binary CE loss\\SVM\\bbox regression} & \tabincell{c}{RGB\\Landmarks} & S & \tabincell{c}{hand-crafted texture\&depth features cascaded \\with fast deep face spoofing detector}  \\  
+
+
+
+   \midrule
+CHIF~\cite{agarwal2019chif} & 2019 & VGG-Face & Trained with SVM & RGB & S & \tabincell{c}{convoluted histogram image features for fine-\\grained mask texture representation}  \\  
+
+   \midrule
+DeepLBP~\cite{li2019face} & 2019 & VGG-Face & \tabincell{c}{Binary CE loss\\SVM} & \tabincell{c}{RGB,HSV,\\YCbCr} & S & \tabincell{c}{extracted the handcrafted features from the\\ convolutional responses of the fine-tuned CNN model}  \\  
+
+
+
+   \midrule
+\tabincell{c}{CNN+LBP\\+WLD}~\cite{khammari2019robust} & 2019 & CaffeNet & Binary CE loss & RGB & S & \tabincell{c}{combined CNN features with LBP/WLD for preserving \\both semantic feature and local information}  \\  
+
+   \midrule
+Intrinsic~\cite{li20203d} & 2019 & 1D-CNN & Trained with SVM & Reflection & D & deep temporal cues from reflection intensity histogram  \\  
+
+   \midrule
+FARCNN~\cite{chen2019cascade} & 2019 & \tabincell{c}{Multi-scale \\attentional CNN}  & \tabincell{c}{Regression loss\\Crystal loss\\ Center loss} & RGB & S & \tabincell{c}{cascade detector features with \\improved Retinex based LBP}  \\  
+
+   \midrule
+CNN-LSP~\cite{li2019replayed} & 2019 & 1D-CNN & Trained with SVM & RGB & D &  \tabincell{c}{joint learned temporal features with attentional \\spatial regions and channels from magnified videos}  \\  
+
+   \midrule
+DT-Mask~\cite{shao2018joint} & 2019 & VGG16  & \tabincell{c}{Binary CE loss\\Channel\&Spatial-\\ discriminability} & RGB+OF & D & \tabincell{c}{joint learned discriminative features with \\attentional spatial regions and channels}  \\  
+
+   \midrule
+VGG+LBP~\cite{das2019new} & 2019 & VGG16 & Binary CE loss & RGB & S &  \tabincell{c}{combining deep CNN features, and LBP features\\ from brightness and chrominance channels}  \\  
+
+   \midrule
+CNN+OVLBP~\cite{sharifi2019score} & 2019 & VGG16 & \tabincell{c}{Binary CE loss\\NN classifier} & RGB & S &  \tabincell{c}{hybrid decisions using majority vote of CNN, over-\\lapped histograms of LBP and their fused vector}  \\  
+
+   \midrule
+HOG-Pert.~\cite{rehman2019perturbing} & 2019 & Multi-scale CNN & Binary CE loss & \tabincell{c}{RGB+HOG} & S & hybrid convolutional features and HOG features \\  
+
+
+   \midrule
+LBP-Pert.~\cite{rehman2020enhancing} & 2020 & Multi-scale CNN & Binary CE loss & \tabincell{c}{RGB+LBP} & S & discriminative features enhanced by LBP perturbation \\ 
+
+   \midrule
+TransRPPG~\cite{yu2021transrppg} & 2021 & Vision Transformer & Binary CE loss & \tabincell{c}{rPPG map} & D & intrinsic liveness features via fully attentional transformer \\ 
+
+
+ %\hline
+ \bottomrule[1pt]
+ \end{tabular}}
+\end{table*}
+
+
+
+
+
+
+
+
+
+
+Some FAS approaches firstly extract handcrafted features from face inputs, and then employ CNNs for semantic feature representation (see Fig.~\ref{fig:hybrid}(a) for paradigm). Feng et al.~\cite{feng2016integration} propose to extract shearlet-based image quality features and dense optical flow-based motion features, and these multi-cues are integrated via a multi-layer perceptron (MLP). Cai and Chen~\cite{cai2019learning} consider the color-based multi-scale LBP features for local texture description, which are further sent to cascading random forests~\cite{breiman2001random} for deep feature representation. Similarly, Khammari extracts LBP and Weber local descriptor (WLD)~\cite{chen2009wld} encoded CNN features, which are combined together to ensure the preservation of the local intensity and edge orientation information. Li et al.~\cite{li20203d} extract intensity difference distribution histograms from reflectance images, and then 1D CNN is utilized for capturing illumination changes. Yu et al.~\cite{yu2021transrppg} construct spatio-temporal rPPG map from face video, and use fully attentional vision transformer to capture the periodic heartbeat liveness features for the live faces.  
+
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.47]{Figures/hybrid.pdf}
+  \caption{ 
+   Hybrid frameworks for FAS. (a) Deep features from handcrafted features. (b) Handcrafted features from deep features. (c) Fused handcrafted and deep features.
+  }
+\label{fig:hybrid}
+\end{figure}
+
+
+Several other hybrid FAS methods extract handcrafted features from deep convolutional features, which follow the hybrid framework in Fig.~\ref{fig:hybrid}(b). Li et al.~\cite{Li2017An} extract the deep part features from the convolutional responses of the finetuned VGG-face model, and then block principal component analysis (PCA)~\cite{wold1987principal} is used for dimension reduction before binary classification. Li et al.~\cite{li2019face} and Agarwalet al.~\cite{agarwal2019chif} extract the color LBP descriptors from the convolutional
+feature maps, and then SVM is used for live/spoof classification. Besides capturing static clues from a single image, Asim et al.~\cite{asim2017cnn} and Shao et al.~\cite{shao2018joint} extract deep dynamic texture features using LBP-TOP~\cite{zhao2007dynamic} and optical flow from the sequential convolutional features, respectively.
+
+As illustrated in Fig.~\ref{fig:hybrid}(c), another favorite hybrid framework is to fuse handcrafted and deep convolutional features for more generic representation. Li et al.~\cite{li2019replayed} extract intensity variation features via 1D CNN, and width of motion blur using similar local pattern (LSP)~\cite{li2019replayed} from motion magnified face video, which are then late fused before an SVM classifier. Sharifi~\cite{sharifi2019score} propose to detect the spoofing attacks via fusing the predicted scores from the handcrafted overlapped histograms of local binary patterns (OVLBP)~\cite{guo2010completed} and deep VGG16. Chen et al.~\cite{chen2019cascade} and Song et al.~\cite{song2019discriminative} propose a two-stage framework, which firstly trains a deep face detector (Single Shot Detector (SSD)~\cite{liu2016ssd} and Faster R-CNN~\cite{ren2016faster}, respectively) for spoofing pre-detection, and then cascade with handcrafted features for final prediction. Rehmana et al.~\cite{rehman2019perturbing,rehman2020enhancing} propose to use HOG and LBP maps to perturb low-level convolutional features for discriminative representation enhancement.    
+
+
+
+
+
+\begin{table*}
+\centering
+\caption{Summary of the representative \textbf{common deep learning} based FAS methods with \textbf{binary cross-entropy supervision}. `S/D' and `CE' are short for `Static/Dynamic' and `cross-entropy', respectively. `Reflect.', `OF', and `RP' denote the generated reflection map, optical flow, and rank pooling, respectively.} \label{tab:binaryloss}
+\resizebox{1.0\textwidth}{!} {\begin{tabular}{l c c c c c c} 
+ \toprule[1pt]
+ Method & Year & Backbone & Loss & Input & S/D & Description \\
+ %\hline
+ 
+
+   \midrule
+CNN1~\cite{yang2014learn} & 2014 & 8-layer CNN & Trained with SVM & RGB & S & deep features from different spatial scales  \\ 
+ 
+ 
+ 
+   \midrule
+LSTM-CNN~\cite{Xu2016Learning} & 2015 & CNN+LSTM  & Binary CE loss & RGB & D & long-range local and dense features from sequence \\ 
+  
+
+   \midrule
+SpoofNet~\cite{menotti2015deep} & 2015 & 2-layer CNN  & Binary CE loss & RGB & S & deep representation with architecture optimization \\ 
+
+   \midrule
+HybridCNN~\cite{li2017face} & 2017 & VGG-Face  & Trained with SVM & RGB & S & hybrid CNN for both global face and facial patches \\ 
+
+
+   \midrule
+CNN2~\cite{nagpal2019performance} & 2017 & VGG11 & Binary CE loss & RGB & S & model trained with continuous data-randomization  \\ 
+
+
+   \midrule
+Ultra-Deep~\cite{tu2017ultra} & 2017 & ResNet50+LSTM & Binary CE loss & RGB & D & ultra-deep features with rich long-range temporal context \\ 
+
+    \midrule
+FASNet~\cite{lucena2017transfer} & 2017 & VGG16  & Binary CE loss & RGB & S & transfer learned features based on a pre-trained CNN \\ 
+ 
+
+   \midrule
+CNN3~\cite{rehman2017deep} & 2018 & Inception, ResNet & Binary CE loss & RGB & S & transferred deep feature  \\ 
+ 
+ 
+  \midrule
+ MILHP~\cite{lin2018live} & 2018 & ResNet+STN  & Multiple Instances CE loss & RGB & D & underlying subtle motion features\\ 
+
+
+   \midrule
+LSCNN~\cite{de2018learning} & 2018 & 9 PatchNets & Binary CE loss & RGB & S & global feature via aggregating 9 deep local features \\ 
+
+
+
+   \midrule
+LiveNet~\cite{rehman2018livenet} & 2018 & VGG11 & Binary CE loss & RGB & S & model trained with continuous data-randomization  \\ 
+
+  
+
+   \midrule
+MS-FANS~\cite{luo2018face} & 2018 & AlexNet+LSTM & Binary CE loss & RGB & S & multi-scale deep feature with rich spatial context \\ 
+
+
+   \midrule
+DeepColorFAS~\cite{larbi2018deepcolorfasd} & 2018 & 5-layer CNN  & Binary CE loss & \tabincell{c}{RGB,\\HSV,\\YCbCr} & S &  \tabincell{c}{investigates the effect of multi-channel space colors\\ on CNN architectures and proposes a fusion based\\ voting method for FAS} \\ 
+
+
+   \midrule
+Siamese~\cite{hao2019face} & 2019 & AlexNet & Contrastive loss & RGB & S & deep features guided by client identity information  \\ 
+
+   \midrule
+FSBuster~\cite{bresan2019facespoof} & 2019 & ResNet50 & Trained with SVM & RGB & S & fused deep features from Intrinsic Image Properties  \\ 
+
+ 
+
+
+   \midrule
+FuseDNG~\cite{rehman2019face} & 2019 & 7-layer CNN  & \tabincell{c}{Binary CE loss\\Reconstruction loss} & RGB & S & \tabincell{c}{adaptive fusion of deep features learned from\\ real-world face and deep autoencoder generated face }  \\ 
+ 
+ \midrule
+ STASN~\cite{yang2019face} & 2019 & ResNet50+LSTM & Binary CE loss & RGB & D & deep spatio-temporal feature from local salient regions\\
+
+ \midrule
+TSCNN~\cite{chen2019attention} & 2019 & ResNet18  & Binary CE loss & \tabincell{c}{RGB\\MSR} & S & \tabincell{c}{ attentional illumination-invariant features\\ with discriminative high-frequency information}\\
+
+
+   \midrule
+FAS-UCM~\cite{laurensi2019style} & 2019 & \tabincell{c}{MobileNetV2\\VGG19}  & \tabincell{c}{Binary CE loss\\Style loss} & RGB & S & \tabincell{c}{deep features trained from generated \\style transferred images}  \\ 
+
+
+   \midrule
+ SLRNN~\cite{muhammad2019face} & 2019 & ResNet50+LSTM  & Binary CE loss & RGB & D & augmented temporal features via sparse filtering\\ 
+
+   \midrule
+GFA-CNN~\cite{tu2020learning} & 2019 & VGG16  & Binary CE loss & RGB & S & generalizable features via multitask and metric learning  \\ 
+
+   \midrule
+3DSynthesis~\cite{8987415} & 2019 & ResNet15  & Binary CE loss & RGB & S & trained on synthesized virtual data of print attacks \\   
+
+  
+  
+ \midrule
+ CompactNet~\cite{li2020compactnet} & 2020 & VGG19  & Points-to-Center triplet loss & RGB & S & deep features on the learned color-liked compact space\\ 
+
+ \midrule
+ SSR-FCN~\cite{deb2020look} & 2020 & FCN with 6 layers  & Binary CE loss & RGB & S & local discriminative features from Self-Regional Supervision\\
+
+ 
+  \midrule
+FasTCo~\cite{xu2020improving} & 2020 & \tabincell{c}{ResNet50\\MobileNetV2}  & \tabincell{c}{Multi-class CE loss\\Temporal Consistency loss\\Class Consistency loss} & RGB & D & \tabincell{c}{ temporal consistent features as well as \\temporal smooothed predictions}\\
+
+    \midrule
+ DRL-FAS~\cite{cai2020drl} & 2020 & ResNet18+GRU & Binary CE loss & RGB & S & fused local(sub-patches) \& global(entire face) features\\ 
+ 
+   \midrule
+SfSNet~\cite{pinto2020leveraging} & 2020 & 6-layer CNN  & Binary CE loss & \tabincell{c}{Albedo,\\ Depth,\\ Reflect.} & S & \tabincell{c}{ intrinsic features from shape-from-shading generated\\ pseduo albedo, depth, and reflectance maps}\\
+ 
+   \midrule
+LivenesSlight~\cite{zuo2020face} & 2020 & 6-layer CNN  & Binary CE loss & RGB & S & lightweight model and takes less training time\\ 
+ 
+   \midrule
+\tabincell{c}{Motion-\\Enhancement}~\cite{ge2020face} & 2020 & VGGface+LSTM  & Binary CE loss & RGB & D & \tabincell{c}{deep temporal dynamics features with eulerian motion\\
+magnification and temporal attention mechanism}  \\  
+ 
+   \midrule
+CFSA-FAS~\cite{chen2020face} & 2020 & ResNet18  & Binary CE loss & RGB & S & \tabincell{c}{fuse high and low frequency information with cross-\\frequency spatial and self-channel attention modules}  \\   
+ 
+  
+ 
+   \midrule
+MC-FBC~\cite{jia20203d} & 2020 & \tabincell{c}{VGG16\\ResNet50}  & Binary CE loss & RGB & S & \tabincell{c}{fine-grained features via factorizing bilinear\\ coding of multiple color channels}  \\   
+ 
+
+   \midrule
+SimpleNet~\cite{parkin2020creating} & 2020 & \tabincell{c}{Multi-stream \\5-layer CNN}  & Binary CE loss & \tabincell{c}{RGB, \\OF, RP} & D & \tabincell{c}{using intermediate representations from RankPooling\\ and optical flow to increase model's robustness}  \\   
+
+
+   \midrule
+PatchCNN~\cite{almeida2020detecting} & 2020 & SqueezeNet v1.1  & \tabincell{c}{Binary CE loss\\Triplet loss} & RGB & S & \tabincell{c}{trained with multi-resolution patches and \\a multi-objective loss function}  \\ 
+
+   \midrule
+\tabincell{c}{FreqSpatial-\\TempNet}~\cite{huang2020deep} & 2020 & ResNet18  & Binary CE loss & \tabincell{c}{RGB,\\HSV,\\Spectral} & D & \tabincell{c}{discriminative fused features of  frequent, \\spatial and temporal information}  \\ 
+
+
+   \midrule
+ViTranZFAS~\cite{george2020effectiveness} & 2020 & \tabincell{c}{Vision\\ Transformer}  & Binary CE loss & RGB & S & \tabincell{c}{transfer learning from the pre-trained \\vision transformer model }  \\  
+
+   \midrule
+CIFL~\cite{chen2021camera} & 2021 & \tabincell{c}{ResNet18}  & \tabincell{c}{Binary focal loss\\camear type loss} & RGB & S & \tabincell{c}{camera-invariant spoofing features in the high-\\frequency domain and enhanced image }  \\ 
+
+ %\hline
+ \bottomrule[1pt]
+ \end{tabular}}
+\end{table*}
+
+
+
+
+
+\subsection{Common Deep Learning Method}
+Benefited from the development of the advanced CNN architectures~\cite{huang2017densely,ronneberger2015u} and regularization~\cite{ioffe2015batch,srivastava2014dropout} techniques as well as the recent released large-scale FAS datasets~\cite{Boulkenafet2017OULU,zhang2020celeba,liu2021contrastive}, end-to-end deep learning based methods attract more and more attention, and dominate the field of FAS. Different from the hybrid methods which integrate parts of handcrafted features without learnable parameters, \textit{Common} deep learning based methods directly learn the mapping functions from face inputs to spoof detection. Common deep learning frameworks usually include: 1) direct supervision with binary cross-entropy loss (see Fig.~\ref{fig:pixelwise}(a)); and 2) pixel-wise supervision with auxiliary tasks (see Fig.~\ref{fig:pixelwise}(b)) or generative models (see Fig.~\ref{fig:pixelwise}(c)).    
+
+
+\subsubsection{Direct Supervision with Binary Cross Entropy Loss}
+As FAS can be intuitively treated as a binary (bonafide vs. PA) classification task, numerous end-to-end deep learning methods are directly supervised with binary cross-entropy (CE) loss as well as other extended losses (e.g., triplet loss~\cite{hermans2017defense}), which are summarized in Table~\ref{tab:binaryloss}. 
+
+On one side, researchers have proposed various network architectures supervised by binary CE loss for FAS. Yang et al.~\cite{yang2014learn} propose the first end-to-end deep FAS method using 8-layer shallow CNN for feature representation. Subsequently, pretraining the FAS models on ImageNet is widely used to alleviate overfitting issues. Lucena et al.~\cite{lucena2017transfer} and Chen et al.~\cite{chen2019attention} finetune the pretrained VGG16 and ResNet18 models for FAS. Deb and Jain~\cite{deb2020look} propose to use a fully convolutional network (FCN) to learn local discriminative cues from a face image in a self-supervised manner. A few works~\cite{heusch2020deep,laurensi2019style} also consider lightweight mobile-level networks ( e.g., MobileNetV2~\cite{sandler2018mobilenetv2}) for efficient FAS. Besides CNNs, George and Marcel~\cite{george2020effectiveness} utilize pretrained vision transformer for end-to-end FAS. According to the dynamic discrepancy between bonafide and PAs, several works~\cite{Xu2016Learning,muhammad2019face,yang2019face,ge2020face} cascade frame-level CNN features with Long Short Term Memory (LSTM)~\cite{hochreiter1997long} for temporal clues aggregation.  
+
+On the other side, there are a few works modifying binary CE loss to provide more discriminative supervision signals. Instead of binary constraints, Xu et al.~\cite{xu2020improving} rephrase FAS as a fine-grained classification problem, and labels of video types (e.g., print and replay) are used for multi-class supervision. Hao~\cite{hao2019face} and Almeida et al.~\cite{almeida2020detecting} introduce contrastive loss and triplet loss in FAS for enhancing the discrimination of the deep embedding features, respectively. Li et al.~\cite{xu2020improving} propose a points-to-center triplet loss to learn a compact space with small intra-class distance, large inter-class distance, and a safe interval between bonafide and PAs. Chen et al.~\cite{chen2021camera} adopt binary focal loss to guide the model to discriminate hard examples well and increase the distance between live/spoof samples.
+
+\subsubsection{Pixel-wise Supervision}
+
+Deep models directly supervised by binary loss might easily learn unfaithful patterns (e.g., screen bezel). In contrast, pixel-wise supervision can provide more fine-grained and contextual task-related clues for better intrinsic feature learning. On one hand, based on the physical clues and discriminative design philosophy, auxiliary supervision signals such as pseudo depth labels~\cite{Atoum2018Face,Liu2018Learning}, binary mask label~\cite{george2019deep,liu2019deep,sun2020face} and reflection maps~\cite{yu2020face,kim2019basn} are developed for local live/spoof clues description. On the other hand, generative models with explicit pixel-wise supervision (e.g., original face input reconstruction~\cite{mohammadi2020improving,liu2020physics}) are recently utilized for generic spoof pattern estimation. We summarize the representative pixel-wise supervision methods in Table~\ref{tab:auxiliary}. 
+
+
+
+
+
+
+\vspace{0.4em}
+\noindent\textbf{Pixel-wise supervision with Auxiliary Task.}\quad
+According to the human prior knowledge of FAS, most PAs (e.g., plain printed paper and electronic screen) merely have no genuine facial depth information, which could be utilized as discriminative supervision signals. As a result, some recent works~\cite{Atoum2018Face,peng2020ts,yu2020searching,wang2020deep} adopt pixel-wise \textit{pseudo depth} labels to guide the deep models, enforcing them predict the genuine depth for live samples while zero maps for the spoof ones. Atoum et al.~\cite{Atoum2018Face} first leverage pseudo depth labels to guide the multi-scale FCN (namely `DepthNet' for simplicity). Thus, the well-trained DepthNet is able to predict holistic depth maps as decision evidence. Based on the generated pseudo depth labels, Wang et al.~\cite{wang2020deep} design a contrastive depth loss (CDL) for exploiting fine-grained local depth cues, which also has been applied in training the central difference convolutional networks (CDCN)~\cite{yu2020searching,yu2020fas2,yu2021dual}. Similarly, Peng et al.~\cite{peng2020ts} fuse the depth supervised stream with another color (RGB, HSV, YCbCr) stream to obtain more robust representations. 
+
+
+
+
+
+Synthesis of 3D shape labels for every training sample is costly and not accurate enough, which also lacks the reasonability for the PAs with real depth (e.g., 3D mask and Mannequin). In contrast, binary mask label~\cite{liu2019deep,george2019deep,hossaindeeppixbis,yu2020auto2,ma2020novel,liu2020disentangling,sun2020face2} is easier to be generated and more generalizable to all PAs. Specifically, binary supervision would be provided for the deep embedding features in each spatial position. In other words, through the binary mask label, we can find whether PAs occur in the corresponding patches, which is attack-type-agnostic and spatially interpretable. George and Marcel~\cite{george2019deep} are the first to introduce deep pixel-wise binary supervision to predict the intermediate confidence map for the cascaded final binary classification. Similarly, Liu et al.~\cite{liu2019deep} constrain the leaf nodes with both binary classification and pixel-wise mask regression. Hossaind et al.~\cite{hossaindeeppixbis} propose to add an attention module for feature refinement before calculating the deep pixel-wise binary loss. Yu et al.~\cite{yu2020auto2} search lightweight FAS architectures with pixel-wise binary supervision. Liu et al.~\cite{liu2020disentangling} utilize Early Spoof Regressor with pixel-wise binary supervision to enhance discriminativeness of the generator. Ma et al.~\cite{ma2020novel} propose a multi-regional CNN with the local binary classification loss to local patches. 
+
+%Yu et al.~\cite{yu2020multi} utilize pixel-wise binary label to supervise the multi-modal CDCN and win the first place in the ChaLearn multi-modal FAS challenge in CVPR2020~\cite{liu2020cross}.
+
+%With the help of spatially positional knowledge, binary mask label not only boosts the models' discrimination, but also benefits neural architecture search. As the types of PAs could be defined as fine-grained multiple classes, it is also worth exploring whether extending binary maps to multi-class maps is beneficial for supervising the PAs detector.     
+
+
+
+
+\begin{table*}[!h]
+\centering
+\caption{Summary of the representative \textbf{common deep learning} based FAS methods with \textbf{pixel-wise supervision}. Most methods (in the upper part) are supervised with \textit{auxiliary} tasks while the methods in the last eight rows are based on the \textit{generative} models. `S/D' is short for Static/Dynamic. `NAS' denotes neural searched architecture. `TSM' and `FPN' denote temporal shift module and feature pyramid network, respectively. `Info-VAE' means information maximizing variational autoencoder. Note that some methods also consider classification loss (e.g., binary cross entropy loss, triplet loss, and adversarial loss), which are not listed in the `Supervision' column.} \label{tab:auxiliary}
+\resizebox{1.0\textwidth}{!} {\begin{tabular}{l c c c c c c} 
+ \toprule[1pt]
+ Method & Year & Supervision & Backbone & Input & S/D & Description \\
+ %\hline
+ \midrule
+ Depth\&Patch~\cite{Atoum2018Face} & 2017 & Depth & \tabincell{c}{PatchNet\\DepthNet} & \tabincell{c}{YCbCr\\HSV} & S & \tabincell{c}{ local patch features and holistic\\ depth maps extracted by two-stream CNNs}\\
+
+ \midrule
+ Auxiliary~\cite{Liu2018Learning} & 2018 & \tabincell{c}{Depth\\rPPG spectrum} & DepthNet & \tabincell{c}{RGB\\HSV} & D & \tabincell{c}{local temporal features learned from CNN-RNN model \\with pixel-wise depth and sequence-wise rPPG supervision}\\
+ 
+
+
+  \midrule
+ BASN~\cite{kim2019basn} & 2019 & \tabincell{c}{Depth\\Reflection} & \tabincell{c}{DepthNet\\Enrichment} & \tabincell{c}{RGB\\HSV} & S & \tabincell{c}{generalizable features via bipartite auxiliary supervision}\\
+
+
+
+
+  \midrule
+DTN~\cite{liu2019deep} & 2019 & BinaryMask & Tree Network  & \tabincell{c}{RGB\\HSV} & S & \tabincell{c}{partition the spoof samples into semantic \\sub-groups in an unsupervised fashion}\\
+
+
+
+  \midrule
+ PixBiS~\cite{george2019deep} & 2019 & BinaryMask & DenseNet161  & RGB & S & \tabincell{c}{deep pixel-wise binary supervision without trivial depth synthesis}\\
+
+
+ \midrule
+ A-PixBiS~\cite{hossaindeeppixbis} & 2020 & BinaryMask & DenseNet161  & RGB & S & \tabincell{c}{incorporate a variant of binary cross entropy that  enforces\\ a margin in angular space for attentive pixel wise supervision}\\
+
+
+ \midrule
+Auto-FAS~\cite{yu2020auto2} & 2020 & BinaryMask  & NAS  & RGB & S & \tabincell{c}{well-suitable lightweight networks searched for mobile-level FAS}\\
+
+
+
+
+ \midrule
+MRCNN~\cite{ma2020novel} & 2020 &  BinaryMask  & Shallow CNN  & RGB & S & \tabincell{c}{introducing local losses to patches, and constraints the \\ entire face region to avoid over-emphasizing certain local areas}\\
+
+
+
+ \midrule
+FCN-LSA~\cite{sun2020face2} & 2020 &  BinaryMask  & DepthNet  & RGB & S & high frequent spoof cues from  lossless size adaptation module\\
+
+
+ \midrule
+CDCN~\cite{yu2020searching} & 2020 &  Depth  & DepthNet  & RGB & S & \tabincell{c}{intrinsic detailed patterns via aggregating both intensity and\\ gradient information from stacked central difference convolutions. }\\
+
+% \midrule
+%MM-CDCN~\cite{yu2020multi} & 2020 &  BinaryMask  & DepthNet  &  \tabincell{c}{RGB\\NIR\\Depth} & S & \tabincell{c}{ multimodal features from central difference convolutional networks }\\
+
+
+
+\midrule
+FAS-SGTD~\cite{wang2020deep} & 2020 &  Depth  &  \tabincell{c}{DepthNet\\STPM}  & RGB & D & \tabincell{c}{detailed discriminative dynamics cues from stacked Residual \\Spatial Gradient Block and Spatio-Temporal Propagation Module}\\
+
+ \midrule
+TS-FEN~\cite{peng2020ts} & 2020 &  Depth   & \tabincell{c}{ResNet34\\FCN}  & \tabincell{c}{RGB\\YCbCr\\HSV} & S & \tabincell{c}{discriminative fused features from \\depth-stream and chroma-stream networks}\\
+
+
+ \midrule
+SAPLC~\cite{sun2020face} & 2020 &  TernaryMap   & DepthNet  & \tabincell{c}{RGB\\HSV} & S & \tabincell{c}{accurate image-level decision via spatial aggregation of \\pixel-level local classifiers even with insufficient training samples}\\
+
+
+ \midrule
+BCN~\cite{yu2020face} & 2020 &  \tabincell{c}{BinaryMask\\Depth\\Reflection}   & DepthNet  & RGB & S & \tabincell{c}{intrinsic material-based patterns captured via \\aggregating
+multi-level bilateral macro- and micro- information}\\
+
+
+ \midrule
+Disentangled~\cite{zhang2020face} & 2020 &  \tabincell{c}{Depth\\TextureMap}   & DepthNet  & RGB & S & \tabincell{c}{liveness and content features via disentangled representation learning}\\
+
+
+ \midrule
+AENet~\cite{zhang2020celeba} & 2020 &  \tabincell{c}{Depth\\Reflection}   & ResNet18  & RGB & S & \tabincell{c}{rich semantic features using Auxiliary Information,\\ Embedding Network with multi-task learning framework}\\
+
+
+
+
+ \midrule
+3DPC-Net~\cite{li3dpc} & 2020 &  3D Point Cloud   & ResNet18  & RGB & S & discriminative features via fine-grained 3D Point Cloud supervision\\
+
+ \midrule
+PS~\cite{yu2021revisiting} & 2020 &  \tabincell{c}{BinaryMask\\Depth}   & \tabincell{c}{ResNet50\\CDCN}  & RGB & S & \tabincell{c}{ pyramid supervision guides models to learn both local\\ details and global semantics from multi-scale spatial context} \\
+
+ \midrule
+NAS-FAS~\cite{yu2020fas2} & 2020 &  \tabincell{c}{BinaryMask\\Depth}   & NAS  & RGB & D & \tabincell{c}{leveraging cross-domain/type knowledge and static-dynamic\\ representation for central difference network search} \\
+
+
+ \midrule
+DAM~\cite{zheng2021attention} & 2021 &  \tabincell{c}{Depth}   & \tabincell{c}{VGG16\\ TSM}  & RGB & D & \tabincell{c}{attentional fused depth and multi-scale temporal clues using a \\two-stream network as well as a self-supervised symmetry loss} \\
+
+ \midrule
+Bi-FPNFAS~\cite{roy2021bi} & 2021 &  \tabincell{c}{Fourier spectra}   & \tabincell{c}{EfficientNetB0\\FPN}  & RGB & S & \tabincell{c}{multiscale bidirectional propagated features with\\ self-generated frequency spectra supervision} \\
+
+ \midrule
+DC-CDN~\cite{yu2021dual} & 2021 &  \tabincell{c}{Depth}   & CDCN  & RGB & S & \tabincell{c}{efficient feature learning on dual-cross central difference\\ network with Cross Feature Interaction Modules} \\
+
+
+
+
+
+ \midrule[1pt]
+  \midrule[1pt]
+ De-Spoof~\cite{jourabloo2018face} & 2018 & \tabincell{c}{Depth\\BinaryMask\\FourierMap} & \tabincell{c}{DSNet\\DepthNet} & \tabincell{c}{RGB\\HSV} & S & \tabincell{c}{inversely decomposing a spoof face
+into a spoof\\ noise and a live face, and estimating subtle\\ spoof noise with proper supervisions}\\
+
+ \midrule
+Reconstruction~\cite{chen2019towards} & 2019 &  \tabincell{c}{RGB Input (live)\\ZeroMap (spoof)}   & U-Net  & RGB & S & multi-level semantic features from autoencoder\\
+
+ \midrule
+LGSC~\cite{feng2020learning} & 2020 &  ZeroMap (live)   & \tabincell{c}{U-Net\\ResNet18}  & RGB & S & \tabincell{c}{discriminative live-spoof differences learned within a residual-\\learning framework with the perspective of anomaly detection }\\
+
+
+ \midrule
+\tabincell{c}{TAE}~\cite{mohammadi2020improving} & 2020  & \tabincell{c}{Binary CE loss\\Reconstruction loss} & \tabincell{c}{Info-VAE+\\DenseNet161 } & RGB & S &  \tabincell{c}{self-pretrained autoencoder in large-scale face recognition\\ datasets to obtain the reconstruction-error images for FAS}  \\
+
+ \midrule
+STDN~\cite{liu2020disentangling} & 2020 &  \tabincell{c}{BinaryMask\\RGB Input (live)}   & \tabincell{c}{U-Net\\PatchGAN}  & RGB & S & \tabincell{c}{disentangled spoof trace via adversarial learning and\\ hierarchical combination of patterns at multiple scales}\\
+
+ \midrule
+GOGen~\cite{stehouwer2020noise} & 2020 &  RGB input   & \tabincell{c}{DepthNet}  & \tabincell{c}{RGB+one-\\hot vector} & S &  \tabincell{c}{GAN-based architecture to synthesize and identify the\\ spoof noise patterns from medium/sensor combinations}\\
+
+ \midrule
+PhySTD~\cite{liu2020physics} & 2021 &  \tabincell{c}{Depth\\RGB Input (live)}   & \tabincell{c}{U-Net\\PatchGAN}  & \tabincell{c}{Frequency\\ Trace} & S & \tabincell{c}{disentangling spoof faces into the spoof traces and\\ live counterparts guided by physical properties} \\
+
+ \midrule
+MT-FAS~\cite{qin2021meta} & 2021 &  \tabincell{c}{ZeroMap (live)\\LearnableMap (Spoof)}   & DepthNet  & RGB & S & \tabincell{c}{ train a meta-teacher to generate optimal pixel-wise\\ signals for supervising the spoofing detector} \\
+
+ %\hline
+ \bottomrule[1pt]
+ \end{tabular}}
+\end{table*}
+
+
+
+
+
+ 
+\begin{figure}
+\centering
+\includegraphics[scale=0.47]{Figures/pixelwise.pdf}
+  \caption{ 
+   Typical end-to-end deep learning frameworks for FAS. (a) Direct supervision with binary cross entropy loss. (b) Pixel-wise supervision with auxiliary tasks. (c) Pixel-wise supervision with generative model for implicit spoof pattern representation.
+  }
+\label{fig:pixelwise}
+\end{figure}
+
+
+ Besides the mainstream depth map and binary mask labels, there are several informative auxiliary supervisions (e.g., pseudo reflection map~\cite{kim2019basn,yu2020face,zhang2020celeba}, 3D point cloud map~\cite{li3dpc}, ternary map~\cite{sun2020face}, and Fourier spectra~\cite{roy2021bi}). According to the discrepancy of facial material-related albedo between the live skin and spoof mediums, Kim et al.~\cite{kim2019basn} propose to supervise deep models with both depth and reflection labels. Moreover, Yu et al.~\cite{yu2020face} train the bilateral convolutional networks with multiple pixel-wise supervisions (binary mask, reflection map, and depth map) simultaneously. Similarly, Zhang et al.~\cite{zhang2020celeba} adopt pseudo reflection and depth labels to guide the networks to learn rich semantic features. Unlike binary mask labels considering all spatial positions, Sun et al.~\cite{sun2020face} remove the face-unrelated parts and leave the entire face regions as a refined binary mask called `ternary map', which eliminates the noise outside the face. In order to reduce the redundancy from the dense depth map, Li et al.~\cite{li3dpc} use a sparse 3D point cloud map to supervise the lightweight models efficiently. In addition, deep models with other auxiliary supervisions from Fourier map~\cite{jourabloo2018face,roy2021bi}, and LBP texture map~\cite{zhang2020face}, also show their excellent representation capability.  
+
+
+\vspace{0.4em}
+\noindent\textbf{Pixel-wise Supervision with Generative Model.}\quad   Despite the fine-grained supervision signal in the auxiliary task, it is still hard to understand whether the deep black-box models represent intrinsic FAS features. Recently, one hot trend is to mine the visual spoof patterns existing in the spoof samples, aiming to provide a more intuitive interpretation of the sample’s spoofness. We summarize such kind of generative models with pixel-wise supervision in the lower part of Table~\ref{tab:auxiliary}. Jourabloo et al.~\cite{jourabloo2018face} are the first to rephrase FAS as a spoof noise modeling problem, and use an encoder-decoder architecture to estimate the underlying spoof patterns with meaningful pixel-wise supervisions (e.g.,  zero-map for the noise map of live faces). Chen et al.~\cite{chen2019towards} propose to use U-Net based autoencoder to reconstruct the original images for the live samples while zero maps for the spoof ones. Feng et al.~\cite{feng2020learning} propose a joint framework consisting of a spoof cue generator and an auxiliary classifier. The generator minimizes the spoof cues of live samples while imposes no explicit constraint on those of spoof samples. Mohammadi et al.~\cite{mohammadi2020improving} pretrain the autoencoder to reconstruct
+faces using large-scale face recognition datasets, and then use the reconstruction-error images computed from the output of this autoencoder for spoofing detection. Liu et al.~\cite{liu2020disentangling,liu2020physics} adopt an adversarial learning framework to disentangle spoof faces into the spoof traces and the live counterparts. The spoof trace generator disentangles several spoof trace elements such as additive components (e.g., moire pattern) and inpainting components (e.g., spoof covering regions). Stehouwer et al.~\cite{stehouwer2020noise} utilize GAN-based architecture to generate spoof samples with diverse combinations of recording sensors and presentation instruments, and then a CNN is cascaded for sensor and medium identification.   
+
+
+
+Besides direct spoof pattern generation, Qin et al.~\cite{qin2021meta} propose to automatically generate pixel-wise labels via a meta-teacher framework, which is able to provide better-suited supervision for the student FAS models to learn sufficient and intrinsic spoofing cues. However, only the learnable spoof supervision is generated in~\cite{qin2021meta}. Therefore, how to generate the optimal pixel-wise signals automatically for both live and spoof samples is still worth exploring.
+
+
+
+
+
+
+
+\subsection{Generalized Deep Learning Method}
+
+
+
+
+
+
+
+
+
+Common end-to-end deep learning based FAS methods might generalize poorly on unseen dominant conditions (e.g., illumination, facial appearance, and camera quality) and unknown attack types (e.g., emerging high fidelity mask made of new materials). Thus, these methods are unreliable to be applied in practical applications with strong security needs. In light of this, more and more researchers focus on enhancing the generalization capacity of the deep FAS models. On one hand, domain adaptation and generalization techniques are leveraged for robust live/spoof classification under unlimited domain variations. On the other hand, zero/few-shot learning as well as anomaly detection frameworks are applied for unknown face PA types detection. Representative generalized deep FAS methods on unseen domains and unknown attack types are summarized in Tables~\ref{tab:domain} and~\ref{tab:type}, respectively.  
+
+
+
+
+
+\subsubsection{Generalization to Unseen Domain}
+
+
+
+
+
+As shown in Fig.~\ref{fig:domain}, serious domain shifts exist among source domains and target domain, which easily leads to poor performance on biased target dataset (e.g., MSU-MFSD) when training deep models directly on sources datasets (e.g., OULU-NPU, CASIA-MFSD, and Replay-Attack). \textit{Domain adaptation} technique leverages the knowledge from target domain to bridge the gap between source and target domains. In contrast, \textit{domain generalization} helps learn the generalized feature representation from multiple source domains directly without any access to target data, which is more practical for real-world deployment. In consideration of the legal and privacy issues that training data are usually not directly shared between data owners (domains), \textit{federate learning} framework is introduced in learning generalized FAS models while preserving data privacy.
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{Figures/domain.pdf}
+  \caption{ 
+   Framework comparison among domain adaptation (DA), domain generalization (DG), and federate learning (FL). (a) The DA methods
+need the (unlabeled) target domain data to learn the model while (b) DG methods learn generalized model without knowledge from the target domain. (c) FL treats each source domain as a private data center, and learns the generalized model in public server via aggregating the models from local data centers.
+  }
+\label{fig:domain}
+\end{figure}
+
+
+
+
+\vspace{0.4em}
+\noindent\textbf{Domain Adaptation.}\quad    Domain adaptation technique alleviates the discrepancy between source and target domains. In most methods, the distribution of source and target features are matched in a learned feature space. If the features have similar distributions, a classifier trained on features of the source samples can also be used to classify the target live/spoof samples. Li et al.~\cite{li2018unsupervised} propose unsupervised domain adaptation to learn a mapping function to align the PCA~\cite{wold1987principal} embedded eigenspaces between source and target domain data via minimizing their Maximum Mean Discrepancy (MMD)~\cite{gretton2012kernel}. Similarly, Tu et al.~\cite{tu2019deep} adopt the kernel-based MMD as a domain loss term for measuring the distribution distance of source and target domains. In ~\cite{wang2019improving,wang2020unsupervised}, UDA-Net is proposed with unsupervised adversarial domain adaptation in order to optimize the source and target domain encoders jointly, and obtain a common feature space shared by both domains. Different from the previous works only adapting the final classifier layer, authors of~\cite{zhou2019face} consider multi-layer adaptation on both the representation layer and the classifier layer. Mohammadi et al.~\cite{mohammadi2020domain} propose to prune the filters with high feature divergence that do not generalize well from one dataset to another, thus the performance of the network on the target dataset can be improved. Li et al.~\cite{li2020face2} propose to distill the deep model for the application-specific domain from the well-trained teacher network, which is regularized with feature MMD and paired sample similarity embedding from both domains. Quan et al.~\cite{quan2021progressive} propose a semi-supervised learning FAS method using only a few labeled training data for pretraining, and progressively adopt the reliable unlabeled data during training to enrich the variety of training data and reduce the domain gap. Jia et al.~\cite{jia2021unified} propose a unified unsupervised and semi-supervised domain adaptation network with domain-invariant feature space via marginal and conditional distribution alignment across the source and target domains.
+
+
+Although domain adaptation benefits to minimize the distribution discrepancy between the source and the target domain by utilizing unlabeled target data, in many real-world FAS scenarios, it is difficult and expensive to collect a lot of unlabeled target data (especially the spoofing attacks) for training.
+
+
+
+
+
+\begin{table*}
+\centering
+\caption{Summary of the representative \textbf{generalized deep learning} FAS methods to \textbf{unseen domain (domain adaptation, domain generalization, and federate learning)}. `MMD' is short for `Maximum Mean Discrepancy'.} \label{tab:domain}
+\resizebox{1.0\textwidth}{!} {\begin{tabular}{l| c c c c c c} 
+ \toprule[1pt]
+ & Method & Year & Backbone & Loss  & S/D & Description \\
+ 
+\midrule
+
+& \tabincell{c}{OR-DA}~\cite{li2018unsupervised} & 2018 & \tabincell{c}{AlexNet} & \tabincell{c}{Binary CE loss\\MMD loss} & S &  \tabincell{c}{learned classifier for target domain, and embedding space\\ with similar distribution for source and target domains}  \\ 
+
+ 
+
+\cmidrule{2-7}
+& \tabincell{c}{DTCNN}~\cite{tu2019deep} & 2019 & \tabincell{c}{AlexNet} & \tabincell{c}{Binary CE loss\\MMD loss} & S &  \tabincell{c}{domain invariant features using a few\\ labeled samples
+from the target domain}  \\ 
+
+\cmidrule{2-7}
+ & \tabincell{c}{Adversarial}~\cite{wang2019improving} & 2019 & \tabincell{c}{ResNet18} & \tabincell{c}{Triplet loss\\Adversarial loss} & S &  \tabincell{c}{learn a shared embedding space by both source and\\ target domain models via adversarial domain adaptation }  \\ 
+
+\cmidrule{2-7}
+ & \tabincell{c}{ML-MMD}~\cite{zhou2019face} & 2019 & \tabincell{c}{Multi-scale\\ FCN} & \tabincell{c}{CE loss\\MMD loss} & S &  \tabincell{c}{adapt in both representation and classifier\\ layers to bridge for the domain discrepancy}  \\ 
+
+\cmidrule{2-7}
+& \tabincell{c}{OCA-FAS}~\cite{qin2020one} & 2020 & \tabincell{c}{DepthNet} & \tabincell{c}{Binary CE loss\\Pixel-wise binary loss} & \tabincell{c}{S} &  \tabincell{c}{train a meta-learner with loss function search on\\ one-class adaptation FAS tasks with only live samples}  \\ 
+
+\cmidrule{2-7}
+\tabincell{c}{Domain\\Adaptation}
+& \tabincell{c}{DR-UDA}~\cite{wang2020unsupervised} & 2020 & \tabincell{c}{ResNet18} & \tabincell{c}{Center\&Triplet loss\\Adversarial loss\\Disentangled loss} & S &  \tabincell{c}{disentangles the features
+irrelevant to specific\\ domains, and learn a shared embedding\\ space by both source and target domains}  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{DGP}~\cite{mohammadi2020domain} & 2020 & \tabincell{c}{DenseNet161} & \tabincell{c}{Feature divergence measure \\BinaryMask} & S & \tabincell{c}{prune the filters specific to the source dataset\\ for performance improvement on target dataset}  \\ 
+
+
+
+\cmidrule{2-7}
+& \tabincell{c}{Distillation}~\cite{li2020face2} & 2020 & \tabincell{c}{AlexNet} & \tabincell{c}{Binary CE loss\\MMD loss\\Paired Similarity} & S &  \tabincell{c}{spoofing-specific information captured by distilled\\ deep network on the application-specific domain}  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{S-CNN\\+PL+TC}~\cite{quan2021progressive} & 2021 & \tabincell{c}{ResNet18} & \tabincell{c}{CE Loss in labeled \\ and unlabeled sets} & D &  \tabincell{c}{semi-supervised learning framework with only a few\\ labeled training data, and progressively adopt the\\ unlabeled data with reliable pseudo labels.  }  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{USDAN}~\cite{jia2021unified} & 2021 & \tabincell{c}{ResNet18} & \tabincell{c}{Adaptive binary CE loss\\Entropy loss\\Adversarial loss} & S &  \tabincell{c}{design different distribution alignment operations to\\ enhance generalization for un- \& semi-supervised\\ domain adaptation to address cross-scenario problem}  \\ 
+
+
+\midrule[1pt]
+& \tabincell{c}{MADDG}~\cite{shao2019multi} & 2019 & \tabincell{c}{DepthNet} & \tabincell{c}{Binary CE \& Depth loss\\Multi-adversarial loss\\Dual-force Triplet loss} & S &  \tabincell{c}{leverage the large variability present in FR datasets\\ to induce invariance to factors that cause domain-shift}  \\ 
+
+
+
+
+\cmidrule{2-7}
+& \tabincell{c}{PAD-GAN}~\cite{wang2020cross} & 2020 & \tabincell{c}{ResNet18} & \tabincell{c}{Binary CE \& GAN loss\\Reconstruction loss} & S &  \tabincell{c}{disentangled and domain-independent features rather\\ than subject discriminative and domain related features}  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{DASN}~\cite{kim2020suppressing} & 2020 & \tabincell{c}{ResNet18} & \tabincell{c}{Binary CE \& Spoof-\\irrelevant factor loss} & S &  \tabincell{c}{adopt doubly adversarial learning to suppress the\\ spoof-irrelevant
+factors, and intensify spoof factors.}  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{SSDG}~\cite{jia2020single} & 2020 & \tabincell{c}{ResNet18} & \tabincell{c}{Binary CE loss\\Single-Side adversarial loss\\Asymmetric Triplet loss} & S &  \tabincell{c}{learn a generalized space where the feature distribution\\ of real faces is compact while that of fake ones is disper-\\sed among domains but compact within each domain}  \\ 
+
+\cmidrule{2-7}
+\tabincell{c}{Domain\\ Generalization}
+& \tabincell{c}{RF-Meta}~\cite{shao2019regularized} & 2020 & \tabincell{c}{DepthNet} & \tabincell{c}{Binary CE loss\\Depth loss} & S &  \tabincell{c}{meta-learned generalized features across multiple\\ source domains with auxiliary regularization}  \\ 
+
+\cmidrule{2-7}
+& \tabincell{c}{CCDD}~\cite{saha2020domain} & 2020 & \tabincell{c}{ResNet50\\+LSTM} & \tabincell{c}{Binary CE loss\\Class-conditional loss} & D &  \tabincell{c}{learn discriminative but domain-robust features with\\ class-conditional domain discriminator module and GRL}  \\ 
+
+
+ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{SDA}~\cite{wang2021self} & 2021 & \tabincell{c}{DepthNet} & \tabincell{c}{Binary CE \& Depth loss\\Reconstruction loss\\Orthogonality regularization} & S &  \tabincell{c}{use meta-learning based adaptor learning for better\\ adaptor initialization, and an unsupervised adaptor\\ loss for appropriate adaptor optimization}  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{D$^{2}$AM}~\cite{chen2021generalized} & 2021 & \tabincell{c}{DepthNet} & \tabincell{c}{Binary CE loss\\ Depth loss\\MMD loss} & S &  \tabincell{c}{iteratively divide mixture domains via discriminative\\ domain representation and train generalizable models\\ with meta-learning without using domain labels}  \\ 
+
+
+\midrule[1pt]
+
+
+\tabincell{c}{Federate\\Learning} & \tabincell{c}{FedGFAS}~\cite{shao2020federated} & 2021 & \tabincell{c}{DepthNet} & \tabincell{c}{Binary CE \& Depth loss\\Reconstruction loss\\Orthogonality regularization} & S & \tabincell{c}{learn a global and generalized model in a data\\ server by iteratively aggregating the local\\ model updated from all data centers}  \\ 
+
+ %\hline
+ \bottomrule[1pt]
+ \end{tabular}}
+\end{table*}
+
+
+
+
+\vspace{0.4em}
+\noindent\textbf{Domain Generalization.}\quad   
+Domain generalization assumes that there exists a generalized feature space underlying the seen multiple source domains and the unseen but related target domain, on which the learned model from the seen source domains can generalize well to the unseen target domain. Shao et al.~\cite{shao2019multi} propose to learn a generalized feature space shared by multiple source domains via a multi-adversarial discriminative domain generalization framework under a dual-force triplet-mining constraint and an auxiliary facial depth supervision. Wang et al.~\cite{wang2020cross} propose to disentangle generalized FAS features from subject discriminative and domain-dependent features. Similarly, in~\cite{kim2020suppressing}, generalization ability to unseen domains is proven to be improved by learning to effectively suppress spoof-irrelevant factors (e.g., camera sensors and illuminations). In consideration of the large distribution discrepancies among spoof faces of different domains, Jia et al.~\cite{jia2020single} propose to learn a generalized feature space, where the feature distribution of the real faces is compact while that of the fake ones is dispersed among domains but compact within each domain. Shao et al.~\cite{shao2019regularized} propose to regularize the model by finding generalized learning directions in the fine-grained meta-learning process with rich domain knowledge (e.g., auxiliary depth). Authors of~\cite{wang2021self} extend the meta-learning based domain generalization methods with a domain adaptor to leverage the unlabeled target domain data at inference. Without using domain labels, Chen et al.~\cite{chen2021generalized} propose to train a generalized FAS model using the domain dynamic adjustment meta-learning, which iteratively divides mixture domains via discriminative domain representation.
+
+
+Overall, domain generalization for FAS is a new hot spot in recent two years, and some potential and exciting trends such as combining domain generalization with adaptation~\cite{wang2021self}, and learning without domain labels~\cite{chen2021generalized} are investigated. However, there still lacks of the works lifting the veil about discrimination and generalization capacities. In other words, domain generalization benefits FAS models to perform well in unseen domain, but it is still unknown whether it deteriorates the discrimination capability for spoofing detection under the seen scenarios.
+
+
+
+
+\vspace{0.4em}
+\noindent\textbf{Federate Learning.}\quad   A generalized FAS model can be obtained when trained with face images from different distributions and different types of PAs. In reality, training face data are not directly shared between data owners due to legal and privacy issues. To tackle this challenge, federate learning~\cite{mcmahan2017communication}, a distributed and privacy-preserving machine learning technique, is introduced in FAS to simultaneously take advantage of rich live/spoof information available at different data owners while maintaining data privacy. To be specific, each data center/owner locally trains its own FAS model. Then a server learns a global FAS model by iteratively aggregating model updates from all data centers without accessing original private data in each of them. Finally, the converged global FAS model would be utilized for inference. To enhance the generalization ability of the sever model, in~\cite{shao2020federated}, a federated domain disentanglement strategy is introduced, which treats each data center as one domain and decomposes the FAS model into domain-invariant and domain-specific parts in each data center.
+
+The purpose of federated learning is to solve the privacy problem of \textit{data} sets. However, it neglects the privacy issues in the \textit{model} level for FAS because the training of the global model needs multiple teams to share their own local models, which might harm the commercial competition. 
+
+
+
+
+
+
+\begin{table*}
+\centering
+\caption{Summary of the \textbf{generalized deep learning} FAS methods to \textbf{unknown attack types (zero/few-shot learning and anomaly detection)}. `OCSVM', `MD', `GMM', and `OCCL' are short for `One-Class Support Vector Machine', `Mahalanobis-distance', `Gaussian Mixture Model', and `One-Class Contrastive Loss', respectively.} \label{tab:type}
+\resizebox{1.0\textwidth}{!} {\begin{tabular}{l| c c c c c c} 
+ \toprule[1pt]
+ & Method & Year & Backbone & Loss  & Input & Description \\
+ 
+\midrule
+
+& \tabincell{c}{DTN}~\cite{liu2019deep} & 2019 & \tabincell{c}{Deep Tree\\Network} & \tabincell{c}{Binary CE loss\\Pixel-wise binary loss\\Unsupervised Tree loss} & \tabincell{c}{RGB\\HSV} &  \tabincell{c}{adaptively routing the attacks to the most similar\\ spoof cluster, and makes the binary decision}  \\ 
+
+\cmidrule{2-7}
+\tabincell{c}{Zero/Few-\\Shot}
+& \tabincell{c}{AIM-FAS}~\cite{qin2019learning} & 2020 & \tabincell{c}{DepthNet} & \tabincell{c}{Depth loss\\Contrastive Depth loss} & RGB &  \tabincell{c}{adaptive inner-updated meta features generalized \\ to unseen spoof types from predefined PAs}  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{CM-PAD}~\cite{perez2020learning} & 2021 & \tabincell{c}{DepthNet\\ResNet} & \tabincell{c}{Binary CE loss\\Depth loss\\Gradient alignment} & RGB &  \tabincell{c}{continual meta-learning PAD solution that\\ can be trained on unseen attack scenarios\\ catastrophic seen attack
+forgetting }  \\ 
+
+
+
+\midrule[1pt]
+& \tabincell{c}{AE+LBP}~\cite{xiong2018unknown} & 2018 & \tabincell{c}{AutoEncoder} & \tabincell{c}{Reconstruction loss} & RGB &  \tabincell{c}{embedding features (cascaded with LBP) from outlier\\ detection based neural network autoencoder}  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{Anomaly}~\cite{perez2019deep} & 2019 & \tabincell{c}{ResNet50} & \tabincell{c}{Triplet focal loss\\Metric-Softmax loss} & \tabincell{c}{RGB} &  \tabincell{c}{deep anomaly detection via introducing a\\ few-shot posteriori probability estimation}  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{Anomaly2}~\cite{fatemifar2019spoofing} & 2019 & \tabincell{c}{GoogLeNet\\ResNet50} & \tabincell{c}{MD} & \tabincell{c}{RGB} &  \tabincell{c}{subject specific anomaly detector is trained on\\ genuine accesses only using one-class classifiers }  \\ 
+
+\cmidrule{2-7}
+& \tabincell{c}{Hypersphere}~\cite{li2020unseen} & 2020 & \tabincell{c}{ResNet18} & \tabincell{c}{Hypersphere loss} & \tabincell{c}{RGB\\HSV} &  \tabincell{c}{deep anomaly detection supervised by hypersphere\\ loss, and detects PAs directly on learned feature space}  \\ 
+
+%\cmidrule{2-7}
+
+
+\cmidrule{2-7}
+\tabincell{c}{Anomaly-\\Detection}& \tabincell{c}{Ensemble-\\Anomaly}~\cite{fatemifar2020stacking} & 2020 & \tabincell{c}{GoogLeNet\\ResNet50} & \tabincell{c}{GMM \\ (not end-to-end)} & \tabincell{c}{RGB\\ patches} &  \tabincell{c}{ensemble of one-class classifiers from different\\ facial regions, CNNs, and anomaly detectors}  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{MCCNN}~\cite{george2020learning} & 2020 & \tabincell{c}{LightCNN} & \tabincell{c}{Binary CE loss\\Contrastive loss} & \tabincell{c}{Grayscale,\\ IR, Depth,\\ Thermal } &  \tabincell{c}{learn a compact embedding for bonafide while\\ being far from the representation of PAs via\\ OCCL, and cascaded with a one-class GMM}  \\ 
+
+
+\cmidrule{2-7}
+& \tabincell{c}{End2End-\\Anomaly}~\cite{baweja2020anomaly} & 2020 & \tabincell{c}{VGG-Face} & \tabincell{c}{Binary CE loss\\Pairwise confusion} & \tabincell{c}{RGB} &  \tabincell{c}{both classifier and representations are learned\\ end-to-end with pseudo negative class}  \\ 
+
+
+
+\cmidrule{2-7}
+& \tabincell{c}{ClientAnomaly}~\cite{fatemifar2020client} & 2020 & \tabincell{c}{ResNet50\\GoogLeNet\\VGG16} & \tabincell{c}{OCSVM\\GMM\\MD} & \tabincell{c}{RGB} &  \tabincell{c}{client-specific knowledge are leveraged for\\ anomaly-based spoofing detectors as well as\\ determination thresholds}  \\ 
+
+
+
+ %\hline
+ \bottomrule[1pt]
+ \end{tabular}}
+\end{table*}
+
+
+\subsubsection{Generalization to Unknown Attack Types}
+
+Besides domain shift issues, FAS models are vulnerable to emerging novel PAs in real-world practical applications. Most previous deep learning methods formulate FAS as a close-set problem to detect various pre-defined PAs, which need large-scale training data to cover as many attacks as possible. However, the trained model can easily overfit several common attacks (e.g., print and replay) and is still vulnerable to unknown attack types (e.g., mask and makeup). Recently, many researches focus on developing generalized FAS models for unknown spoofing attack detection. On one side, \textit{zero/few-shot learning} is employed for improving novel spoofing detection with very few or even none samples of target attack types. On the other side, FAS can also be treated as a \textit{one-class classification} task where the bonafide samples are clustered compactly, and \textit{anomaly detection} is used for detecting the out-of-distribution PA samples.
+
+\vspace{0.4em}
+\noindent\textbf{Zero/Few-Shot Learning.}\quad   
+One straightforward way for novel attack detection is to finetune the FAS model with sufficient samples of the new attacks. However, collecting labeled data for every new attack is expensive and time-consuming since the spoofing keeps evolving. To overcome this challenge, several works~\cite{liu2019deep,qin2019learning,perez2020learning} propose to treat FAS as an open set zero- and few-shot learning problem. \textit{Zero-shot learning} aims to learn generalized and discriminative features from the predefined PAs for unknown novel PA detection. \textit{Few-shot learning} aims to quickly adapt the FAS model to new attacks by learning from both the predefined PAs and the collected very few samples of the new attack. 
+
+
+Liu et al.~\cite{liu2019deep} design a Deep Tree Network (DTN) to learn the semantic attributes of pre-defined attacks and partition the spoof samples into semantic sub-groups in an unsupervised fashion. The DTN adaptively routes the known or unknown PAs to the most similar spoof cluster, and makes the binary decision. Qin et al.~\cite{qin2019learning} unify the zero- and few-shot FAS tasks together by fusion training a meta-learner with an adaptive inner-update learning rate strategy. Training meta-learner on both zero- and few-shot tasks simultaneously enhances the discrimination and generalization capacities of FAS models from pre-defined PAs and few instances of the new PAs. However, directly using few-shot meta learning on novel attacks easily suffers from catastrophic forgetting about the pre-defined PAs. To tackle this issue, Perez-Cabo et al.~\cite{perez2020learning} propose a continual few-shot learning paradigm, which incrementally extends the acquired knowledge from the continuous stream of data, and detects new PAs using a small number of training samples via a meta-learning solution. 
+
+
+Although few-shot learning benefits the FAS models for unknown attack detection, the performance drops obviously when the data of the target attack types are unavailable for adaptation (i.e., zero-shot case). We observe that the failed detection usually occurs in the challenging attack types (e.g., transparent mask, funny eye, and makeup), which share similar appearance distribution with the bonafide. 
+
+
+\vspace{0.4em}
+\noindent\textbf{Anomaly Detection.}\quad   
+Anomaly detection for FAS assumes that the live samples are in a normal class as they share more similar and compact feature representation while features from the spoof samples have large distribution discrepancies in the anomalous sample space due to the high variance of attack types and materials. Based on the assumption, anomaly detection usually firstly trains a reliable one-class classifier to cluster the live samples accurately. Then any samples (e.g., unknown attacks) outside the margin of the live sample cluster would be detected as the attacks.
+
+
+Arashloo et al.~\cite{arashloo2017anomaly} are the first to introduce anomaly detection for FAS. They evaluate 20 different one-class and two-class systems on cross-type testing protocols, and demonstrate that the anomaly-based methods are not inferior compared to the binary classification approaches. Nikisins et al.~\cite{nikisins2018effectiveness} propose to extract Image Quality Measures (IMQ) features, and then a Gaussian Mixture Model (GMM) is used as the one-class classifier to predict the probability distribution of live samples. Xiong and AbdAlmageed~\cite{xiong2018unknown} propose one-class SVM and autoencoder based outliers
+detection algorithms with LBP feature extractor for open-set unknown PA detection. Fatemifar et al.~\cite{fatemifar2019spoofing,fatemifar2020stacking,fatemifar2020client} propose training one-class client-specific classifiers using deep CNN representations, and a distinct threshold is set for each client based on subject-specific score distributions for inferential decision making. Baweja et al.~\cite{baweja2020anomaly} present an end-to-end anomaly detection approach to train the one-class classifier and feature representations together with both original bonafide and pseudo negative classes.
+
+
+
+Instead of using only the live samples, some works also train the generalized anomaly detection systems with both live and spoof samples via metric learning. P{\'e}rez-Cabo et al.~\cite{perez2019deep} propose to regularize the FAS model by a triplet focal loss to learn discriminative feature representation, and then introduce a few-shot posteriori probability estimation for unknown attack detection. Li et al.~\cite{li2020unseen} propose to supervise deep FAS models with a novel hypersphere loss function to keep the intra-class compactness for live samples while the inter-class separation between live and spoof samples. The unknown attacks could be directly detected on learned feature space with no need of additional classifiers. George and Marcel~\cite{george2020learning} design a One Class Contrastive Loss (OCCL) to force the network to learn a compact embedding for bonafide class while being far from the representation
+of attacks. Then a one-class GMM is cascaded for novel attack types detection.
+
+Despite satisfying generalization capacity for unknown attack detection, anomaly detection based FAS methods would suffer from discrimination degradation compared with conventional live/spoof classification in the real-world open-set scenarios (i.e., both known and unknown attacks). 
+
+
+
+\section{Deep FAS with Advanced Sensor} \label{sec:multimodal}
+
+Commercial RGB camera-based FAS would be an excellent tradeoff solution in terms of security and hardware cost in daily face recognition applications (e.g., mobile unlock and area access control). However, some high-security scenarios (face payment and vault entrance guard) require very low false acceptance errors. Recently, advanced sensors with various modalities are developed to facilitate the ultra-secure FAS. Merits and demerits of various sensors and hardware modules for FAS in terms of environmental conditions (lighting and distance) and attack types (print, replay, and 3D mask) are listed in Table~\ref{tab:sensorstemp}. 
+
+Compared with monocular visible RGB camera (VIS), stereo cameras (VIS-Stereo)~\cite{rehman2020slnet} benefits the 3D geometry information reconstruction for 2D spoofing detection. When assembling with dynamic flash light on the presentation face, VIS-Flash~\cite{liu2019AuroraGuard} is able to capture intrinsic reflection-based material clues to detect all three attack types. 
+
+Besides visible RGB modality, depth and NIR modalities are also widely used in practical FAS deployment with acceptable costs. Two kinds of depth sensors including Time of Flight (TOF)~\cite{wu2019review} and 3D Structured Light (SL)~\cite{connell2013fake} have been embedded in mainstream mobile phone platforms (e.g., Iphone, Sumsung, OPPO, and Huawei). They provide the accurate 3D depth distribution of the captured face for 2D spoofing detection. Compared with SL, TOF is more robust to environmental conditions such as lighting and distance. In contrast, NIR~\cite{sun2016context} modality is a complementary spectrum (900 to 1800nm) besides VIS, which effectively exploits reflection differences between live and spoof faces but is with poor imaging quality in long distance. In addition, the VIS-NIR integration hardware module is with a high performance-price ratio for many access control systems. 
+
+
+Meanwhile, several niche but effective sensors are introduced in FAS. Shortwave infrared (SWIR)~\cite{heusch2020deep} with the wavelengths of 940nm and 1450nm bands discriminates live skin material from non-skin pixels in face images via measuring water absorption, which is reliable for generic spoofing attacks detection. A thermal camera~\cite{seo2019face} is an alternative sensor for efficient FAS via face temperature estimation. However, it performs poorly when subjects wear transparent masks. Expensive Light Field camera~\cite{liu2019light} and four-directional Polarization sensor~\cite{tian2020face} are explored for FAS according to their excellent representation for facial depth and reflection/refraction light, respectively.   
+
+
+
+
+
+\begin{table}[t]
+\centering
+\caption{Comparison with sensor/hardware for FAS under 2 environments (lighting condition and distance) and 3 attack types (print, replay and 3D mask). `TOF', `SL', `C', 'M', 'E', `P', 'G', 'VG' are short for `Time of Flight', `
+Structured Light', `Cheap', `Medium', `Expensive', `Poor', `Good', `Very Good', respectively.}
+
+\vspace{-0.5em}
+
+\resizebox{0.49\textwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|c|}
+
+
+\hline
+\multirow{2}{*}{\textbf{Sensor}} & \multirow{2}{*}{\textbf{Cost}} &\multicolumn{2}{c|}{\textbf{Environment}} &\multicolumn{3}{c|}{\textbf{Attack Type}}\\
+\cline{3-7} 
+& & \tabincell{c}{Lighting} &\tabincell{c}{Distance} &\tabincell{c}{Print} &\tabincell{c}{Replay}&\tabincell{c}{Mask}\\
+
+
+%Sensor & Cost & Lighting & Distance & Print & Replay & Mask \\
+\hline
+
+VIS & C & M & M & M & M & M \\
+VIS-Stereo & M & M & M & VG & VG & M \\
+VIS-Flash & C & M & M & G & G & M \\
+Depth(TOF) & M & M & G & VG & VG & P \\
+Depth(SL) & C & P & P & VG & VG & P \\
+NIR & C & G & P & G & VG & M \\
+VIS-NIR & M & G & M & G & VG & G \\
+SWIR & E & G & M & VG & VG & G \\
+Thermal & E & G & M & G & VG & M \\
+Light Field & E & P & M & VG & VG & M \\
+Polarization & E & G & M & VG & VG & G \\
+
+
+\hline
+
+\end{tabular}
+}%\resizebox{\textwidth}{!}{
+\label{tab:sensorstemp}
+\vspace{-0.5em}
+\end{table}
+
+
+
+
+\begin{table*}
+\centering
+\caption{Summary of the representative \textbf{deep learning} FAS methods with \textbf{specialized sensor/hardware inputs}. `S/D', `SD', `AD', `FM', `APD', `LFC', 'DP' and `DOLP' are short for `Static/Dynamic', `Square Disparity', `Absolute Disparity', `Feature Multiplication', `Approximate Disparity', `Light Field Camera', `Dual Pixel' and `Degree of Linear Polarization', respectively.} \label{tab:sensors}
+\resizebox{1.0\textwidth}{!} {\begin{tabular}{l c c c c c c} 
+ \toprule[1pt]
+ Method & Year & Backbone & Loss & Input & S/D & Description \\
+ %\hline
+
+
+
+   \midrule
+\tabincell{c}{Thermal-\\FaceCNN}~\cite{seo2019face} & 2019 & \tabincell{c}{AlexNet} & Regression loss & \tabincell{c}{ Thermal infrared\\ face image} & S &  \tabincell{c}{temperature related features based on the fact that\\ real face temperature is 36$\sim$37 degrees on average}  \\ 
+
+%   \midrule
+%\tabincell{c}{DualNet}~\cite{Li2017An} & 2020 & \tabincell{c}{Siamese-\\Network} & Binary CE loss & \tabincell{c}{Stereo (left\&right)\\ face images} & S &  \tabincell{c}{learn the difference of left-right\\ image pairs in the latent space}  \\ 
+
+   \midrule
+\tabincell{c}{SLNet}~\cite{rehman2020slnet} & 2019 & \tabincell{c}{17-layer CNN} & Binary CE loss & \tabincell{c}{Stereo (left\&right)\\ face images} & S &  \tabincell{c}{disparities between deep features are\\ learned using SD, AD, FM, and APD operations}  \\ 
+
+
+   \midrule
+\tabincell{c}{Aurora\\Guard}~\cite{liu2019AuroraGuard} & 2019 & U-Net & \tabincell{c}{Binary CE loss\\Depth regression\\Light Regression} & \tabincell{c}{Casted face with dynamic \\changing light specified by\\ random light CAPTCHA} & D &  \tabincell{c}{based on the normal cues extracted from\\ the light reflection, multi-tasck CNN recovers\\ both subjects' depth maps and light CAPTCHA }  \\  
+
+
+   \midrule
+LFC~\cite{liu2019light} & 2019 & AlexNet & Binary CE loss & \tabincell{c}{Ray difference/microlens\\ images from LFC} & S &  \tabincell{c}{meaningful features extracted from single-shot\\ LFC images with rich depth information of objects}  \\  
+
+   \midrule
+PAAS~\cite{tian2020face} & 2020 & MobileNetV2 & \tabincell{c}{Contrastive loss\\SVM} & \tabincell{c}{Four-directional polarized\\ face image} & S &  \tabincell{c}{learned discriminative and robust features from DOLP\\ as polarization reveals the intrinsic attributes}  \\  
+
+   \midrule
+\tabincell{c}{Face-\\Revelio}~\cite{farrukh2020facerevelio} & 2020 & \tabincell{c}{Siamese-\\AlexNet} & L1 distance & \tabincell{c}{Four flash lights displayed\\ on four quarters of a screen} & D &  \tabincell{c}{ varying illumination enables the recovery\\ of the face surface normals via photometric
+stereo}  \\  
+
+
+   \midrule
+\tabincell{c}{SpecDiff}~\cite{ebihara2019specular} & 2020 & \tabincell{c}{ResNet4} & Binary CE loss &  \tabincell{c}{Concatenated face images\\ w/ and w/o flash} & S &  \tabincell{c}{a novel descriptor based on specular and diffuse\\ reflections, with a flash-based deep FAS baseline}  \\ 
+
+
+   \midrule
+\tabincell{c}{MC-\\PixBiS}~\cite{heusch2020deep} & 2020 & \tabincell{c}{DenseNet161} & Binary mask loss &  SWIR images differences & S &  \tabincell{c}{discriminative features for Impersonation attacks as \\water is very absorbing in some SWIR wavelengths}  \\ 
+
+
+   \midrule
+\tabincell{c}{Thermal-\\ization}~\cite{kowalski2020study} & 2020 & \tabincell{c}{YOLO V3+\\ GoogLeNet} & Binary CE loss & \tabincell{c}{ Thermal infrared\\ face image} & S &  \tabincell{c}{learned specific physical features \\from Thermal infrared imaging of PAs}  \\ 
+
+   \midrule
+\tabincell{c}{DP Bin-\\-Cls-Net}~\cite{wu2020single} & 2021 & \tabincell{c}{Shallow U-Net\\ + Xception} & \tabincell{c}{Transformation consistency\\Relative disparity loss\\ Binary CE loss} & \tabincell{c}{ DP image pair} & S &  \tabincell{c}{reconstructed depth based on the DP pair with\\ self-supervised loss for planar attack detection}  \\ 
+
+ %\hline
+ \bottomrule[1pt]
+ \end{tabular}}
+\end{table*}
+
+
+
+
+\begin{table*}
+\centering
+\caption{Summary of the \textbf{multi-modal deep learning} FAS methods. `MFEM', `SPM', `LFV' and `MLP' are short for `Modal Feature Erasing Module', `Selective Modal Pipeline', `Limited Frame Vote' and `Multilayer Perceptron', respectively.} \label{tab:multimodal}
+\resizebox{1.0\textwidth}{!} {\begin{tabular}{l c c c c c c} 
+ \toprule[1pt]
+ Method & Year & Backbone & Loss & Input & Fusion    & Description \\
+ %\hline
+ 
+
+
+   \midrule
+FaceBagNet~\cite{shen2019facebagnet} & 2019 & \tabincell{c}{Multi-stream\\CNN} & Binary CE loss & \tabincell{c}{RGB, Depth, NIR\\ face patches} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{spoof-specific features from patch CNN, and\\ MFEM to prevent overfitting and better fusion}  \\  
+
+   \midrule
+FeatherNets~\cite{zhang2019feathernets} & 2019 & \tabincell{c}{Ensemble-\\FeatherNet} & Binary CE loss & \tabincell{c}{Depth,
+NIR} & \tabincell{c}{Decision-\\level} &  \tabincell{c}{single compact FeatherNet trained by depth image,\\ then fused with “ensemble + cascade” structure}  \\  
+
+   \midrule
+Attention~\cite{wang2019multi} & 2019 & ResNet18 & \tabincell{c}{Binary CE loss\\Center loss} & \tabincell{c}{RGB, Depth, NIR} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{using channel and spatial attention
+module\\ to refine the multimodal features}  \\  
+
+   \midrule
+mmfCNN~\cite{kuang2019multi} & 2019 & ResNet34  & \tabincell{c}{Binary CE loss\\Binary Center Loss} & \tabincell{c}{RGB, NIR, Depth,\\ HSV, YCbCr} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{fuses multi-level features among modalities in\\ a unified framework with weight-adaptation}  \\ 
+
+
+   \midrule
+MM-FAS~\cite{parkin2019recognizing} & 2019 & ResNet18/50  & \tabincell{c}{Binary CE loss} & \tabincell{c}{RGB, NIR, Depth} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{leverages multimodal data and aggregates intra-
+\\channel features at multiple network layers}  \\ 
+
+
+   \midrule
+AEs+MLP~\cite{nikisins2019domain} & 2019 & \tabincell{c}{Autoencoder\\MLP}  & \tabincell{c}{Binary CE loss\\Reconstruction loss} & \tabincell{c}{Grayscale-Depth-\\Infrared composition} & \tabincell{c}{Input-\\level} &  \tabincell{c}{trasfer learning within facial patches from the\\ facial RGB appearance to multi-channel modalities }  \\  
+
+
+   \midrule
+SD-Net~\cite{zhang2020casia} & 2019 & ResNet18  & \tabincell{c}{Binary CE loss} & \tabincell{c}{RGB, NIR,\\ Depth} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{multimodal fusion via feature re-weighting to\\ select more informative channels for modalities}  \\  
+
+   \midrule
+Dual-modal~\cite{li2019dual} & 2019 & MoblienetV3  & \tabincell{c}{Binary CE loss} & \tabincell{c}{RGB, IR} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{light-weight networks to extract and merge\\ embedding features from NIR-VIS image pairs}  \\ 
+
+
+   \midrule
+\tabincell{c}{Parallel-CNN}~\cite{li2020face} & 2020 & \tabincell{c}{Attentional-\\CNN} & Binary CE loss & \tabincell{c}{Depth, NIR} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{fused deep depth and IR features from paralleled\\ attentional CNN with spatial pyramid pooling}  \\  
+
+   \midrule
+\tabincell{c}{Multi-Channel\\ Detector}~\cite{george2020can} & 2020 & \tabincell{c}{RetinaNet\\(FPN+ResNet18)} & \tabincell{c}{Landmark regression\\Focal loss} & \tabincell{c}{Grayscale-Depth-\\Infrared composition} & \tabincell{c}{Input-\\level} &  \tabincell{c}{learned joint face detection-based and PAD-based\\ representation from fused 3 channel images}  \\ 
+
+
+   \midrule
+PSMM-Net~\cite{li2020casia} & 2020 & ResNet18  & \tabincell{c}{Binary CE loss\\ for each stream} & \tabincell{c}{RGB, Depth, NIR} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{static-dynamic fusion mechanism with part-\\ially shared fusion strategy is proposed}  \\ 
+
+   \midrule
+PipeNet~\cite{yang2020pipenet} & 2020 & SENet154 & \tabincell{c}{Binary CE loss} & \tabincell{c}{RGB, Depth, NIR\\
+ face patches} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{SMP takes full advantage of multi-modal data.\\ LFV ensures stable video-level prediction}  \\  
+
+   \midrule
+MM-CDCN~\cite{yu2020multi} & 2020 & CDCN  & \tabincell{c}{Pixel-wise binary\\ loss, Contrastive\\ depth loss} & \tabincell{c}{RGB, Depth, NIR} & \tabincell{c}{Feature\&\\Decision\\level} &  \tabincell{c}{capture central-difference-based intrinsic\\ spoofing patterns among three modalities}  \\ 
+
+
+
+   \midrule
+HGCNN~\cite{te2020exploring} & 2020 & \tabincell{c}{Hypergraph-
+\\CNN + MLP}  & \tabincell{c}{Binary CE loss} & \tabincell{c}{RGB, Depth} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{auxiliary depth fused with texture in the feature\\ domain from hypergraph convolution}  \\ 
+
+
+   \midrule
+MCT-GAN~\cite{jiang2020face} & 2020 & \tabincell{c}{CycleGAN
+\\ResNet50}  & \tabincell{c}{GAN loss\\Binary CE loss} & \tabincell{c}{RGB, NIR} & \tabincell{c}{Input-\\level} &  \tabincell{c}{generate NIR counterpart for VIS inputs\\ via GAN, and learn fusing features}  \\ 
+
+   \midrule
+D-M-Net~\cite{liu2021data} & 2021 & \tabincell{c}{ResNeXt }  & \tabincell{c}{Binary CE loss} & \tabincell{c}{Multi-preprocessed\\ Depth,  RGB-NIR\\ composition} & \tabincell{c}{Input\&\\Feature-\\level} &  \tabincell{c}{two-stage cascade architecture to fuse depth features\\ with multi-scale RGB-NIR composite features}  \\ 
+
+
+   \midrule
+CMFL~\cite{george2021cross} & 2021 & \tabincell{c}{DenseNet161 }  & \tabincell{c}{Cross modal focal loss\\Binary CE loss} & \tabincell{c}{RGB, Depth} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{modulate the loss contribution and  comple-\\mentary information from the two modalities}  \\ 
+
+
+   \midrule
+MA-Net~\cite{liu2021face} & 2021 & \tabincell{c}{CycleGAN\\ResNet18 }  & \tabincell{c}{GAN loss\\Binary CE loss} & \tabincell{c}{RGB, NIR} & \tabincell{c}{Feature-\\level} &  \tabincell{c}{translate the visible inputs into NIR \\images, and then extract VIS-NIR features}  \\ 
+
+%\tabincell{c}{translate the visible inputs into NIR images, \\and then extract VIS-NIR features from both generated\\ NIR and original visible images}  \\
+
+
+ %\hline
+ \bottomrule[1pt]
+ \end{tabular}}
+\end{table*}
+
+
+
+\vspace{-0.5em}
+
+\subsection{Uni-Modal Deep Learning upon Specialized Sensor}
+Based on the specialized sensor/hardware for distinct imaging, researchers have developed sensor-aware deep learning methods for efficient FAS, which are summarized in Table~\ref{tab:sensors}. Seo and Chung~\cite{seo2019face} propose a lightweight Thermal Face-CNN to estimate the facial temperature from the thermal image, and detect the spoofing with abnormal temperature (e.g., out of scope from 36 to 37 degrees). They find that the thermal image is more suitable than the RGB image for replay attack detection. Rehman et al.~\cite{rehman2020slnet} introducing a disparity layer within CNN to extract the dynamic disparity-maps for Stereo based FAS, which improves the performance and robustness of CNN to unknown types of face PA. In contrast, Wu et al.~\cite{wu2020single} propose a simple and robust FAS method using dual pixel (DP) sensor images, which achieves better FAS performance compared with a stereo-based scheme. Specifically, a FCN is adopted for depth map generation from DP image pair, and then a Xception network is adopted for live/spoof classification. Liu et al.~\cite{liu2019light} propose to extract the ray difference and microlens images from a single-shot light field camera, and then a shallow CNN is used for face PAD. Due to the rich 3D information in light field imaging, the method is potential to classify fine-grained spoofing types. Tian et al.~\cite{tian2020face} propose a real-time FAS method using an on-chip integrated polarization imaging sensor, which takes the DOLP images to a lightweight MobileNetV2 for generalized face PAD. In~\cite{heusch2020deep}, with only carefully selected SWIR image differences as input, Multi-Channel CNN is able to almost perfectly detect all impersonation attacks while ensuring low bonafide classification errors.
+
+
+Apart from using specialized hardware such as infrared dot projectors and dedicated cameras, some deep FAS methods are developed based on visible cameras with extra environmental flash. In~\cite{liu2019AuroraGuard} and ~\cite{farrukh2020facerevelio}, dynamic flash from the smartphone screen is utilized to illuminate a user’s face from multiple directions, which enables the recovery of the face surface normals via photometric stereo. Such dynamic normal cues are then fed into CNN to predict facial depth and light CAPTCHA for PA detection. Similarly, Ebihara et al.~\cite{ebihara2019specular} design a novel descriptor to represent the specular and diffuse reflections leveraging the difference cues with and without flash, which outperforms the end-to-end ResNet with concatenated flash inputs. 
+
+
+\vspace{-0.8em}
+
+\subsection{Multi-Modal Deep Learning}
+With the development of hardware manufacture and integration technology, multi-modal FAS systems with acceptable costs are increasedly used in real-world applications. Meanwhile, multi-modal deep learning based methods become hot and active in the FAS research community. Representative multi-modal fusion and cross-modal translation approaches for FAS are collected in Table~\ref{tab:multimodal}.
+
+\vspace{0.4em}
+
+\noindent\textbf{Multi-Modal Fusion.}\quad Mainstream multi-modal FAS methods focus on feature-level fusion strategy. 
+Zhang et al.~\cite{zhang2020casia} propose the SD-Net using a feature re-weighting mechanism to select the informative channel features among RGB, depth, and NIR modalities. Based on SD-Net, authors from~\cite{parkin2019recognizing} and~\cite{kuang2019multi} introduce a multi-modal multi-layer fusion branch to enhance the contextual clues among modalities further. Besides channel re-weighting among modalities, Wang et al.~\cite{wang2019multi} propose a spatial and channel attention module for each modality branch before feature fusion to enhance the discrimination of individual modality features. Shen et al.~\cite{shen2019facebagnet} adopt patch-level inputs for CNN to extract spoof-specific discriminative features, and design a Modal Feature Erasing operation on the multi-modal features to prevent overfitting and better fusion. Liu et al.~\cite{li2020casia} propose a static-dynamic fusion mechanism applied in each modality, and a partially shared fusion strategy to learn complementary features among modalities. George and Marcel~\cite{george2021cross} present a cross-modal focal loss to modulate the loss contribution of each modality, which is beneficial to learn complementary information among modalities while reducing the impact of overfitting.
+
+
+
+Instead of the above-mentioned approaches using feature-level fusion, there are few works that consider input-level and decision-level fusions. In~\cite{nikisins2019domain}  and~\cite{george2020can}, the composite image is fused from gray-scale, depth, and NIR modalities by stacking the normalized images, and then fed to deep PA detectors. Liu et al.~\cite{liu2021data} construct a two-stage cascade framework to represent depth- and albedo-based features from multi-preprocessed depth inputs (i.e., normalization, scale embedding, and orientation embedding) and composite VIS-NIR inputs (i.e., stack, summation, and difference), respectively. Yu et al.~\cite{yu2020multi} propose to fuse the predicted binary scores of individual models from RGB, depth, and NIR modalities, which outperforms the input- and feature-levels fusion on CeFA~\cite{li2020casia} dataset. Zhang et al.~\cite{zhang2019feathernets} design a decision-level fusion strategy with ensemble and cascade. At first, scores from several well-trained depth models are aggregated, and then cascade with the score from the IR model for final live/spoof classification.     
+
+\vspace{0.4em}
+
+\noindent\textbf{Cross-Modal Translation.}\quad
+Multi-modal FAS system needs additional sensors for imaging face inputs with different modalities. However, in some conventional scenarios, only partial modalities (e.g., RGB) can be available. To tackle this modality missing issues at the inference stage, a few works adopt the cross-modal translation technique to generate the missing modal data for multi-modal FAS. Jiang et al.~\cite{jiang2020face} first propose a novel multiple categories (live/spoof, genuine/synthetic) image translation cycle-GAN which generates corresponding NIR images for RGB face images, and then learn fusing features from stacked inputs of the RGB and generated NIR images for FAS. Liu et al.~\cite{liu2021face} follow the similar cross-modal translation framework with novel subspace-based modality regularization to generate high-fidelity target NIR modality from source RGB input. Mallat and Dugelay~\cite{mallatindirect2021} propose a visible-to-thermal conversion scheme to synthesize thermal attacks from RGB face images using a cascaded refinement network. One main concern is that the domain shifts and unknown attacks might significantly influence the generated modality's quality.
+
+
+Despite a rising trend since 2019, the progress of multi-modal FAS is still slow compared with RGB based methods. Meanwhile, some advanced sensors (e.g., SWIR, light field, and polarization) are expensive and non-portable for real-world deployment. More efficient FAS-dedicated sensors as well as multi-modal approaches should be explored.  
+
+
+\vspace{-0.8em}
+
+\section{Discussion and Future Directions} \label{sec:discussion}
+
+Thanks to the recent advances in deep learning, FAS has achieved rapid improvement over the past few years. Here we discuss the limitation of the current development, and summarize some potential research directions.
+
+ %for deep learning based FAS
+
+
+\vspace{-0.8em}
+\subsection{Architecture, Supervision and Interpretability}
+As can be seen from Sections~\ref{sec:RGB} and~\ref{sec:multimodal}, most of the researchers choose the off-the-shelf network architectures as well as handcrafted supervision signals for deep FAS, which might be sub-optimal and hard to leverage the large-scale training data adequately. Although several recent works have applied AutoML in FAS for searching well-suited architecture~\cite{yu2020searching,yu2020fas2}, loss function~\cite{qin2020one}, and auxiliary supervision~\cite{qin2021meta}, they focus on uni-modality and single-frame configuration while neglecting the temporal or multi-modal situation. Hence, one promising direction is to automatically search and find the best-suited temporal architectures especially for multi-modal usage. In this way, more reasonable fusion strategies would be discovered among modalities instead of coarse handcrafted design. In addition, rich temporal context should be considered in dynamic supervision design instead of static binary or pixel-wise supervision.  
+
+On the other hand, to design \textit{efficient} network architecture is vital for real-time FAS in mobile devices. Over the past year, most research focuses on tackling the accuracy and generalization issues in FAS while only a few works consider lightweight~\cite{yu2020auto2} or distilled~\cite{li2020face2} CNNs for efficient deployment. Besides CNN with strong inductive bias, researchers should also rethink the usage of some flexible architectures (e.g., vision transformer~\cite{yu2021transrppg,george2020effectiveness}) in terms of efficiency and computational cost. 
+
+
+Recently, great efforts have been achieved on \textit{interpretable} FAS~\cite{sequeiraexploratory}. Some methods try to localize the spoof regions according to the feature activation using visual interpretability tools (e.g., Grad-CAM~\cite{selvaraju2017grad}) or soft-gating strategy~\cite{deb2020look}. In addition, auxiliary supervised~\cite{Liu2018Learning,yu2020face} and generative~\cite{jourabloo2018face,liu2020physics} FAS models devote to estimating the underlying spoof maps. All these trials help understand and localize the spoof patterns, and convince the FAS decision. However, due to the lack of precious pixel-level spoof annotation, the estimated spoof maps are still coarse and easily influenced by unfaithful clues (e.g., hands). More advanced feature visualization manners and fine-grained pixel-wise spoof segmentation should be developed for interpretable FAS.  
+
+
+\vspace{-0.8em}
+\subsection{Representation Learning}
+Learning discriminative and intrinsic feature representation is the key to reliable FAS. A handful of previous researches have proven the effectiveness of transfer learning~\cite{lucena2017transfer,parkin2019recognizing} and disentangled learning~\cite{zhang2020face,liu2020physics} for FAS. The former leverages the pre-trained semantic features from other large-scale datasets to alleviate the overfitting issue, while the latter aims to disentangle the intrinsic spoofing clues from the noisy representation. Moreover, to rephrase FAS as a fine-grained recognition problem to learn type-discriminative representation is worth exploring, which is inspired by the fact that humans could detect spoofing via recognizing the specific attack types.  
+
+Researchers should also get hung up on fully exploiting the live/spoof training data with or without labels for representation enhancement. On one side, self-supervised on large-scale combined datasets might reduce the risk of overfitting, and actively mine the intrinsic knowledge (e.g., high similarity among intra face patches). On the other side, in real-world scenarios, daily unlabeled face data are collected from various face recognition terminals continuously, which could be utilized for semi-supervised learning~\cite{quan2021progressive}. One challenge is how to make full use of the unlabeled imbalanced (i.e., live $\gg$ spoof) data, avoiding unexpected performance drop. In addition, suitable data augmentation strategies~\cite{yu2021dual} for FAS are rarely investigated. Adversarial learning might be a good choice for adaptive data augmentation in more diverse domains.        
+
+
+
+
+
+
+\vspace{-0.8em}
+\subsection{Real-World Open-Set FAS}
+As discussed in Section~\ref{sec:protocols}, traditional FAS evaluation protocols usually consider intra-domain~\cite{Boulkenafet2017OULU}, cross-domain~\cite{shao2019multi}, and cross-type~\cite{liu2019deep} testings within one or several small-scale datasets. The state-of-the-art methods in such protocols cannot guarantee consistently good performance in practical scenarios because 1) the data amount (especially testing set) is relatively small thus the high performance is not very convincing; and 2) the protocols focus on a single factor (e.g., seen/unseen domains or known/unknown attack types), which cannot satisfy the need of complex real-world scenarios. Recently, more practical protocols such as GrandTest~\cite{perez2020learning} and open-set~\cite{liu2021contrastive,liu2020physics} are proposed. GrandTest contains large-scale mixed-domain data, while open-set testing considers models' discrimination and generalization capacities on both known and unknown attack types. However, real-world open-set situations with simultaneous domains and attack types are still neglected. More comprehensive protocols (e.g., domain- and type-aware open-set) should be explored for fair and practical evaluation to bridge the gap between academia and industry.  
+
+
+As for the multi-modal protocols, training data with multiple modalities are assumed available, and two testing settings are widely used: 1) with corresponding multiple modalities~\cite{liu2020cross}; and 2) only single modality~\cite{george2021cross,liu2021face} (usually RGB). However, there are various kinds of modality combinations (e.g., RGB-NIR, RGB-D, NIR-D, and RGB-D-NIR) in real-world deployment according to different user terminal devices. Therefore, it is pretty costly and inefficient to train individual models for each multi-modal combination. Although pseudo modalities could be generated via cross-modality translation~\cite{jiang2020face,liu2021face}, their fidelity and stability are still weaker compared with modalities from real-world sensors. To design a dynamic multi-modal framework to propagate the learned multi-modal knowledge to various modality combinations might be a possible direction for unlimited multi-modal deployment. 
+
+
+
+\vspace{-0.9em}
+\subsection{Generic and Unified PA Detection}
+Understanding the intrinsic property of face PAD with other related tasks (e.g., generic PAD, and digital face attack detection) is important for explainable FAS. On one hand, `generic' assumes that both face and other object presentation attacks might have independent content but share intrinsic spoofing patterns~\cite{stehouwer2020noise}. For instance, replay attacks about different objects (e.g., a face and a football) are made of the same glass material~\cite{yu2020face}, and with abnormal reflection clues. Thus, generic PAD and material recognition datasets could be introduced in face PAD for common live/spoof feature representation in a multi-task learning fashion. 
+
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.48]{Figures/adv.pdf}
+\vspace{-0.6em}
+  \caption{ 
+   Illustration of the physical adversarial faces generated by Adv-glasses~\cite{sharif2019general}, Adv-hat~\cite{komkov2021advhat}, Adv-makeup~\cite{yin2021adv}, and Adv-sticker~\cite{guo2021meaningful}.
+  }
+  \vspace{-0.9em}
+\label{fig:adv}
+\end{figure}
+
+
+Apart from common PAs, two kinds of physical adversarial attacks (AFR-aware and FAS-aware) should be considered for generic PAD. As illustrated in Fig.~\ref{fig:adv}, physical  eyeglass~\cite{sharif2019general} and hat~\cite{komkov2021advhat} achieved from adversarial generators, or
+special stickers~\cite{guo2021meaningful} containing feature patterns proved to be effective against deep learning based AFR systems can be printed out and wore by attackers to spoof such systems. Moreover, imperceptible makeup~\cite{yin2021adv} nearby the eye regions have been verified for attacking commercial AFR systems. Besides AFR-aware adversarial attacks, adversarial print/replay attacks~\cite{zhang2019attacking} with perturbation before physical broadcast are developed to fool the FAS system. Therefore, it is expected and necessary to establish large-scale FAS datasets with diverse physical adversarial attacks as well as annotated attack localization labels. 
+
+
+
+
+
+On the other hand, besides physical face presentation attacks, there are many vicious digital manipulation attacks (e.g., Deepfake~\cite{ciftci2020fakecatcher}) on face videos. Despite different generation manner and visual quality, parts of these attacks might still have coherent properties. In~\cite{deb2021unified}, a unified digital and physical face attack detection framework is proposed to learn joint representations for coherent attacks. However, there are serious imbalanced numbers among digital and physical attack types due to data collection costs. In other words, large-scale digital attacks are easier to generate compared with high-cost presentation attacks. Such imbalanced distribution might harm the digital/physical intrinsic representation during the multi-task learning, which needs to think about in the future. 
+
+
+%In terms of the physical obfuscation attacks (e.g., partial makeup), more complex physical adversarial attacks should be considered. In other words, adversarial print/replay attacks~\cite{zhang2019attacking} with perturbation before physical broadcast, and even special physical adversarial glass~\cite{sharif2019general}/hat~\cite{komkov2021advhat}/makeup~\cite{yin2021adv}/sticker~\cite{guo2021meaningful} would be developed to fool the FAS, and AFR system, respectively. It is also expected to establish the FAS datasets with diverse physical adversarial attacks as well as annotated attack localization labels.
+
+
+
+
+
+
+\section{Conclusion} \label{sec:conclusion}
+This paper has presented a contemporary survey of the deep learning based methods, datasets as well as protocols for face anti-spoofing (FAS). A comprehensive taxonomy of these methods have been presented. Merits and demerits of various methods and sensors for FAS are also covered, with potential research directions being listed.
+
+\vspace{0.5em}
+
+\noindent\textbf{Acknowledgments} \quad This work was supported by the Academy of Finland for project MiGA (grant 316765), ICT 2023 project (grant 328115), Infotech Oulu, the National Key Research and Development Program of China (No. 2020YFC2003901), and the National Natural Science Foundation of China (No. 61876178, 61872367,
+and 61806196).
+
+
+%The authors also wish to acknowledge CSC-IT Center for Science, Finland, for computational resources.
+
+%As well, the authors wish to acknowledge CSC-IT Center for Science, Finland, for computational resources.
+
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+\bibliography{IEEEabrv,reference}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/Zitong.png}}]{Zitong Yu}
+ received the M.S. degree from University of Nantes, France, in 2016, and he is currently a Ph.D. candidate in the Center for Machine Vision and Signal Analysis, University of Oulu, Finland. His research interests include face anti-spoofing, remote physiological measurement and video understanding. He led the team and won the 1st Place in the ChaLearn multi-modal face anti-spoofing attack detection challenge with CVPR 2020.
+\end{IEEEbiography}
+
+
+
+
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/Yunxiao_Qin.pdf}}]{Yunxiao Qin} received the M.S. degree in control theory and control engineering from the School of Marine Science and Technology, Northwestern Polytechnical University, Xi’an, China, in 2015, and he received the Ph.D. degree in control science and engineering from the School of Automation, Northwestern Polytechnical University, Xi’an, China, in 2021. His current research interests include meta-learning, face anti-spoofing, and deep reinforcement learning.
+	\end{IEEEbiography}
+
+
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/xiaobai.jpg}}]{Xiaobai Li}
+received her B.Sc degree in Psychology from Peking University, M.Sc degree in Biophysics from the Chinese Academy of Science, and Ph.D. degree in Computer Science from University of Oulu. She is currently an assistant professor in the Center for Machine Vision and Signal Analysis of University of Oulu. Her research of interests include spontaneous vs. posed facial expression comparison, micro-expression and deceitful behaviors, and heart rate measurement from facial videos. 
+\end{IEEEbiography}
+
+
+
+	
+	
+	\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/zhao.pdf}}]{Chenxu Zhao}
+		received M.S. Degree from Beihang University, Beijing, China, in 2016, and was in the joint programme with National Laboratory of Pattern Recognition (NLPR) Laboratory of Institute of Automation, Chinese Academy of Sciences, from 2014 to 2016.
+		From 2016 to 2017, he worked as research scientist in SenseTime, Beijing, China. 
+		He is currently a research scientist in MiningLamp Technology, Beijing, China. 
+		His major research areas include face anti-spoofing, face recognition and meta-learning.
+	\end{IEEEbiography}
+	%\vspace{-20pt}
+	
+	
+	
+	\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/lei.pdf}}]{Zhen Lei}
+		received the B.S. degree in automation from the University of Science and Technology of China, in 2005, and the Ph.D. degree from the Institute of Automation, Chinese Academy of Sciences, in 2010, where he is currently a Professor. He has published over 200 papers in international journals and conferences. His research interests are in computer vision, pattern recognition, image processing, and face recognition in particular. He served as an Area Chair of the IJCB in 2014, the IEEE FGR in 2015, the IAPR/IEEE ICB in 2015, 2016, 2018, and the IEEE International Conference on Biometrics: Theory, Applications and Systems in 2018.  
+	\end{IEEEbiography}
+	
+	
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/guoying.png}}]{Guoying Zhao}
+  (SM'12) is currently a Professor with the Center for Machine Vision and Signal Analysis, University of Oulu, Finland, where was an Associate Professor from 2014 to 2017. She received the Ph.D. degree in computer science from the Chinese Academy of Sciences, Beijing, China, in 2005. She has authored or co-authored more than 240 papers in journals and conferences. Her papers have currently over 15600 citations in Google Scholar (h-index 57). She is co-program chair for ACM International Conference on Multimodal Interaction (ICMI 2021), was co-publicity chair for FG2018, General chair of 3rd International Conference on Biometric Engineering and Applications (ICBEA 2019), and Late Breaking Results Co-Chairs of 21st ACM International Conference on Multimodal Interaction (ICMI 2019). She was a Co-Chair of many International Workshops at ICCV, CVPR, ECCV, ACCV and BMVC, and has served as area chairs for several conferences and is associate editor for Pattern Recognition, IEEE TCSVT, and Image and Vision Computing Journals. Her current research interests include image and video descriptors, facial-expression and micro-expression recognition, emotional gesture analysis, affective computing, and biometrics. Her research has been reported by Finnish TV programs, newspapers and MIT Technology Review. She is a fellow of IAPR.
+\end{IEEEbiography}
+
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}
+
+
