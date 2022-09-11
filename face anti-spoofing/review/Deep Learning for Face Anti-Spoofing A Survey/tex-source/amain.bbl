@@ -286,6 +286,12 @@ Y.~S. El-Din, M.~N. Moustafa, and H.~Mahdi, ``Deep convolutional neural
   networks for face and iris presentation attack detection: survey and case
   study,'' \emph{IET Biometrics}, 2020.
 
+\bibitem{liu2021contrastive}
+A.~Liu, C.~Zhao, Z.~Yu, J.~Wan, A.~Su, X.~Liu, Z.~Tan, S.~Escalera, J.~Xing,
+  Y.~Liang \emph{et~al.}, ``Contrastive context-aware learning for 3d
+  high-fidelity mask face presentation attack detection,'' \emph{arXiv preprint
+  arXiv:2104.06148}, 2021.
+
 \bibitem{tolosana2020deepfakes}
 R.~Tolosana, R.~Vera-Rodriguez, J.~Fierrez, A.~Morales, and J.~Ortega-Garcia,
   ``Deepfakes and beyond: A survey of face manipulation and fake detection,''
@@ -316,12 +322,6 @@ T.~de~Freitas~Pereira, A.~Anjos, J.~M. De~Martino, and S.~Marcel, ``Can face
 L.~Li, P.~L. Correia, and A.~Hadid, ``Face recognition under spoofing attacks:
   countermeasures and research directions,'' \emph{IET Biometrics}, vol.~7,
   no.~1, pp. 3--14, 2018.
-
-\bibitem{liu2021contrastive}
-A.~Liu, C.~Zhao, Z.~Yu, J.~Wan, A.~Su, X.~Liu, Z.~Tan, S.~Escalera, J.~Xing,
-  Y.~Liang \emph{et~al.}, ``Contrastive context-aware learning for 3d
-  high-fidelity mask face presentation attack detection,'' \emph{arXiv preprint
-  arXiv:2104.06148}, 2021.
 
 \bibitem{marcel2019handbook}
 S.~Marcel, M.~S. Nixon, J.~Fierrez, and N.~Evans, \emph{Handbook of biometric
@@ -492,11 +492,6 @@ X.~Xu, Y.~Xiong, and W.~Xia, ``On improving temporal consistency for online
 \bibitem{wang2022patchnet}
 C.-Y. Wang, Y.-D. Lu, S.-T. Yang, and S.-H. Lai, ``Patchnet: A simple face
   anti-spoofing framework via fine-grained patch recognition,'' in \emph{CVPR},
-  2022.
-
-\bibitem{liu2022feature}
-S.~Liu, S.~Lu, H.~Xu, J.~Yang, S.~Ding, and L.~Ma, ``Feature generation and
-  hypothesis verification for reliable face anti-spoofing,'' in \emph{AAAI},
   2022.
 
 \bibitem{wang2022domain}
@@ -881,6 +876,11 @@ A.~Liu, Z.~Tan, J.~Wan, Y.~Liang, Z.~Lei, G.~Guo, and S.~Z. Li, ``Face
 K.~Mallat and J.-L. Dugelay, ``Indirect synthetic attack on thermal face
   biometric systems via visible-to-thermal spectrum conversion,'' in
   \emph{CVPRW}, 2021.
+
+\bibitem{liu2022feature}
+S.~Liu, S.~Lu, H.~Xu, J.~Yang, S.~Ding, and L.~Ma, ``Feature generation and
+  hypothesis verification for reliable face anti-spoofing,'' in \emph{AAAI},
+  2022.
 
 \bibitem{sequeiraexploratory}
 A.~F. Sequeira, T.~Gon{\c{c}}alves, W.~Silva, J.~R. Pinto, and J.~S. Cardoso,
