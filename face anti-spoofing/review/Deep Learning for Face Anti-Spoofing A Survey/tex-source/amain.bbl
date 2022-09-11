@@ -27,13 +27,12 @@ J.~Guo, X.~Zhu, C.~Zhao, D.~Cao, Z.~Lei, and S.~Z. Li, ``Learning meta face
 
 \bibitem{pan2007eye}
 G.~Pan, L.~Sun, Z.~Wu, and S.~Lao, ``Eyeblink-based anti-spoofing in face
-  recognition from a generic webcamera,'' in \emph{ICCV}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, 2007.
+  recognition from a generic webcamera,'' in \emph{ICCV}, 2007.
 
 \bibitem{li2016generalized}
 X.~Li, J.~Komulainen, G.~Zhao, P.-C. Yuen, and M.~Pietik{\"a}inen,
   ``Generalized face anti-spoofing by detecting pulse from face videos,'' in
-  \emph{ICPR}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2016.
+  \emph{ICPR}, 2016.
 
 \bibitem{Pereira2012LBP}
 T.~de~Freitas~Pereira, A.~Anjos, J.~M. De~Martino, and S.~Marcel, ``Lbp- top
@@ -45,12 +44,12 @@ J.~Komulainen, A.~Hadid, and M.~Pietikainen, ``Context based face
 
 \bibitem{Patel2016Secure}
 K.~Patel, H.~Han, and A.~K. Jain, ``Secure face unlock: Spoof detection on
-  smartphones,'' \emph{TIFS}, vol.~11, no.~10, pp. 2268--2283, 2016.
+  smartphones,'' \emph{TIFS}, 2016.
 
 \bibitem{jee2006liveness}
 H.-K. Jee, S.-U. Jung, and J.-H. Yoo, ``Liveness detection for embedded face
   recognition system,'' \emph{International Journal of Biological and Medical
-  Sciences}, vol.~1, no.~4, pp. 235--238, 2006.
+  Sciences}, 2006.
 
 \bibitem{li2008eye}
 J.-W. Li, ``Eye blink detection based on multiple gabor response waves,'' in
@@ -64,8 +63,7 @@ L.~Wang, X.~Ding, and C.~Fang, ``Face live detection method based on
 
 \bibitem{bao2009liveness}
 W.~Bao, H.~Li, N.~Li, and W.~Jiang, ``A liveness detection method for face
-  recognition based on optical flow field,'' in \emph{ICASSP}.\hskip 1em plus
-  0.5em minus 0.4em\relax IEEE, 2009.
+  recognition based on optical flow field,'' in \emph{ICASSP}, 2009.
 
 \bibitem{bigun2004assuring}
 J.~Bigun, H.~Fronthaler, and K.~Kollreider, ``Assuring liveness in biometric
@@ -105,69 +103,10 @@ X.~Tan, Y.~Li, J.~Liu, and L.~Jiang, ``Face liveness detection from a single
   image with sparse low rank bilinear discriminative model,'' in
   \emph{ECCV}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2010.
 
-\bibitem{kahm20122d}
-O.~K{\"a}hm and N.~Damer, ``2d face liveness detection: An overview,'' in
-  \emph{BIOSIG}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2012.
-
-\bibitem{hadid2014face}
-A.~Hadid, ``Face biometrics under spoofing attacks: Vulnerabilities,
-  countermeasures, open issues, and research directions,'' in \emph{CVPRW},
-  2014.
-
-\bibitem{galbally2014biometric}
-J.~Galbally, S.~Marcel, and J.~Fierrez, ``Biometric antispoofing methods: A
-  survey in face recognition,'' \emph{IEEE Access}, vol.~2, pp. 1530--1552,
-  2014.
-
-\bibitem{kumar2017comparative}
-S.~Kumar, S.~Singh, and J.~Kumar, ``A comparative study on face spoofing
-  attacks,'' in \emph{ICCCA}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2017.
-
-\bibitem{kisku2017face}
-D.~R. Kisku and R.~D. Rakshit, ``Face spoofing and counter-spoofing: A survey
-  of state-of-the-art algorithms,'' \emph{Transactions on Machine Learning and
-  Artificial Intelligence}, vol.~5, no.~2, pp. 31--31, 2017.
-
-\bibitem{ramachandra2017presentation}
-R.~Ramachandra and C.~Busch, ``Presentation attack detection methods for face
-  recognition systems: A comprehensive survey,'' \emph{ACM Computing Surveys
-  (CSUR)}, vol.~50, no.~1, pp. 1--37, 2017.
-
-\bibitem{souza2018far}
-L.~Souza, L.~Oliveira, M.~Pamplona, and J.~Papa, ``How far did we get in face
-  spoofing detection?'' \emph{Engineering Applications of Artificial
-  Intelligence}, vol.~72, pp. 368--381, 2018.
-
-\bibitem{raheem2019insight}
-E.~A. Raheem, S.~M.~S. Ahmad, and W.~A.~W. Adnan, ``Insight on face liveness
-  detection: A systematic literature review,'' \emph{International Journal of
-  Electrical and Computer Engineering}, vol.~9, no.~6, p. 5865, 2019.
-
-\bibitem{pereira2020rise}
-L.~A. Pereira, A.~Pinto, F.~A. Andal{\'o}, A.~M. Ferreira, B.~Lavi,
-  A.~Soriano-Vargas, M.~V. Cirne, and A.~Rocha, ``The rise of data-driven
-  models in presentation attack detection,'' in \emph{Deep Biometrics}.\hskip
-  1em plus 0.5em minus 0.4em\relax Springer, 2020, pp. 289--311.
-
-\bibitem{jia2020survey}
-S.~Jia, G.~Guo, and Z.~Xu, ``A survey on 3d mask presentation attack detection
-  and countermeasures,'' \emph{Pattern Recognition}, vol.~98, p. 107032, 2020.
-
-\bibitem{el2020deep}
-Y.~S. El-Din, M.~N. Moustafa, and H.~Mahdi, ``Deep convolutional neural
-  networks for face and iris presentation attack detection: survey and case
-  study,'' \emph{IET Biometrics}, vol.~9, no.~5, pp. 179--193, 2020.
-
-\bibitem{ming2020survey}
-Z.~Ming, M.~Visani, M.~M. Luqman, and J.-C. Burie, ``A survey on anti-spoofing
-  methods for facial recognition with rgb cameras of generic consumer
-  devices,'' \emph{Journal of Imaging}, vol.~6, no.~12, p. 139, 2020.
-
 \bibitem{song2019discriminative}
 X.~Song, X.~Zhao, L.~Fang, and T.~Lin, ``Discriminative representation
   combinations for accurate face spoofing detection,'' \emph{Pattern
-  Recognition}, vol.~85, pp. 220--231, 2019.
+  Recognition}, 2019.
 
 \bibitem{asim2017cnn}
 M.~Asim, Z.~Ming, and M.~Y. Javed, ``Cnn based spatio-temporal feature
@@ -181,7 +120,7 @@ Y.~A.~U. Rehman, L.-M. Po, and J.~Komulainen, ``Enhancing deep discriminative
 
 \bibitem{khammari2019robust}
 M.~Khammari, ``Robust face anti-spoofing using cnn with lbp and wld,''
-  \emph{IET Image Processing}, vol.~13, no.~11, pp. 1880--1884, 2019.
+  \emph{IET Image Processing}, 2019.
 
 \bibitem{yu2020searching}
 Z.~Yu, C.~Zhao, Z.~Wang, Y.~Qin, Z.~Su, X.~Li, F.~Zhou, and G.~Zhao,
@@ -190,8 +129,7 @@ Z.~Yu, C.~Zhao, Z.~Wang, Y.~Qin, Z.~Su, X.~Li, F.~Zhou, and G.~Zhao,
 
 \bibitem{yu2020face}
 Z.~Yu, X.~Li, X.~Niu, J.~Shi, and G.~Zhao, ``Face anti-spoofing with human
-  material perception,'' in \emph{ECCV}.\hskip 1em plus 0.5em minus 0.4em\relax
-  Springer, 2020.
+  material perception,'' in \emph{ECCV}, 2020.
 
 \bibitem{yang2019face}
 X.~Yang, W.~Luo, L.~Bao, Y.~Gao, D.~Gong, S.~Zheng, Z.~Li, and W.~Liu, ``Face
@@ -256,7 +194,7 @@ Y.~Liu, J.~Stehouwer, A.~Jourabloo, and X.~Liu, ``Deep tree learning for
 \bibitem{sun2020face}
 W.~Sun, Y.~Song, C.~Chen, J.~Huang, and A.~C. Kot, ``Face spoofing detection
   based on local ternary label supervision in fully convolutional networks,''
-  \emph{TIFS}, vol.~15, pp. 3181--3196, 2020.
+  \emph{TIFS}, 2020.
 
 \bibitem{li3dpc}
 X.~Li, J.~Wan, Y.~Jin, A.~Liu, G.~Guo, and S.~Z. Li, ``3dpc-net: 3d point cloud
@@ -283,7 +221,7 @@ Y.~Zhang, Z.~Yin, Y.~Li, G.~Yin, J.~Yan, J.~Shao, and Z.~Liu, ``Celeba-spoof:
 \bibitem{george2019biometric}
 A.~George, Z.~Mostaani, D.~Geissenbuhler, O.~Nikisins, A.~Anjos, and S.~Marcel,
   ``Biometric face presentation attack detection with multi-channel
-  convolutional neural network,'' \emph{TIFS}, vol.~15, pp. 42--55, 2019.
+  convolutional neural network,'' \emph{TIFS}, 2019.
 
 \bibitem{steiner2016reliable}
 H.~Steiner, A.~Kolb, and N.~Jung, ``Reliable face anti-spoofing using
@@ -316,7 +254,7 @@ Y.~Jia, J.~Zhang, S.~Shan, and X.~Chen, ``Single-side domain generalization for
 \bibitem{arashloo2017anomaly}
 S.~R. Arashloo, J.~Kittler, and W.~Christmas, ``An anomaly detection approach
   to face spoofing detection: A new formulation and evaluation protocol,''
-  \emph{IEEE access}, vol.~5, pp. 13\,868--13\,882, 2017.
+  \emph{IEEE access}, 2017.
 
 \bibitem{qin2019learning}
 Y.~Qin, C.~Zhao, X.~Zhu, Z.~Wang, Z.~Yu, T.~Fu, F.~Zhou, J.~Shi, and Z.~Lei,
@@ -331,24 +269,37 @@ Y.~Qin, W.~Zhang, J.~Shi, Z.~Wang, and L.~Yan, ``One-class adaptation face
 \bibitem{heusch2020deep}
 G.~Heusch, A.~George, D.~Geissb{\"u}hler, Z.~Mostaani, and S.~Marcel, ``Deep
   models and shortwave infrared information to detect face presentation
-  attacks,'' \emph{TBIOM}, vol.~2, no.~4, pp. 399--409, 2020.
+  attacks,'' \emph{TBIOM}, 2020.
+
+\bibitem{pereira2020rise}
+L.~A. Pereira, A.~Pinto, F.~A. Andal{\'o}, A.~M. Ferreira, B.~Lavi,
+  A.~Soriano-Vargas, M.~V. Cirne, and A.~Rocha, ``The rise of data-driven
+  models in presentation attack detection,'' in \emph{Deep Biometrics}.\hskip
+  1em plus 0.5em minus 0.4em\relax Springer, 2020, pp. 289--311.
+
+\bibitem{jia2020survey}
+S.~Jia, G.~Guo, and Z.~Xu, ``A survey on 3d mask presentation attack detection
+  and countermeasures,'' \emph{Pattern Recognition}, 2020.
+
+\bibitem{el2020deep}
+Y.~S. El-Din, M.~N. Moustafa, and H.~Mahdi, ``Deep convolutional neural
+  networks for face and iris presentation attack detection: survey and case
+  study,'' \emph{IET Biometrics}, 2020.
 
 \bibitem{tolosana2020deepfakes}
 R.~Tolosana, R.~Vera-Rodriguez, J.~Fierrez, A.~Morales, and J.~Ortega-Garcia,
   ``Deepfakes and beyond: A survey of face manipulation and fake detection,''
-  \emph{Information Fusion}, vol.~64, pp. 131--148, 2020.
+  \emph{Information Fusion}, 2020.
 
 \bibitem{goswami2019detecting}
 G.~Goswami, A.~Agarwal, N.~Ratha, R.~Singh, and M.~Vatsa, ``Detecting and
   mitigating adversarial perturbations for robust face recognition,''
-  \emph{International Journal of Computer Vision}, vol. 127, no.~6, pp.
-  719--742, 2019.
+  \emph{International Journal of Computer Vision}, 2019.
 
 \bibitem{liu2021cross}
 A.~Liu, X.~Li, J.~Wan, Y.~Liang, S.~Escalera, H.~J. Escalante, M.~Madadi,
   Y.~Jin, Z.~Wu, X.~Yu \emph{et~al.}, ``Cross-ethnicity face anti-spoofing
-  recognition challenge: A review,'' \emph{IET Biometrics}, vol.~10, no.~1, pp.
-  24--43, 2021.
+  recognition challenge: A review,'' \emph{IET Biometrics}, 2021.
 
 \bibitem{hernandez2019introduction}
 J.~Hernandez-Ortega, J.~Fierrez, A.~Morales, and J.~Galbally, ``Introduction to
@@ -377,6 +328,11 @@ S.~Marcel, M.~S. Nixon, J.~Fierrez, and N.~Evans, \emph{Handbook of biometric
   anti-spoofing: Presentation attack detection}.\hskip 1em plus 0.5em minus
   0.4em\relax Springer, 2019.
 
+\bibitem{ramachandra2017presentation}
+R.~Ramachandra and C.~Busch, ``Presentation attack detection methods for face
+  recognition systems: A comprehensive survey,'' \emph{ACM Computing Surveys
+  (CSUR)}, vol.~50, no.~1, pp. 1--37, 2017.
+
 \bibitem{peixoto2011face}
 B.~Peixoto, C.~Michelassi, and A.~Rocha, ``Face liveness detection under bad
   illumination conditions,'' in \emph{ICIP}.\hskip 1em plus 0.5em minus
@@ -397,12 +353,11 @@ N.~Kose and J.-L. Dugelay, ``Shape and texture based countermeasure to protect
 
 \bibitem{wen2015face}
 D.~Wen, H.~Han, and A.~K. Jain, ``Face spoof detection with image distortion
-  analysis,'' \emph{TIFS}, vol.~10, no.~4, pp. 746--761, 2015.
+  analysis,'' \emph{TIFS}, 2015.
 
 \bibitem{pinto2015using}
 A.~Pinto, W.~R. Schwartz, H.~Pedrini, and A.~de~Rezende~Rocha, ``Using visual
-  rhythms for detecting video-based facial spoof attacks,'' \emph{TIFS},
-  vol.~10, no.~5, pp. 1025--1038, 2015.
+  rhythms for detecting video-based facial spoof attacks,'' \emph{TIFS}, 2015.
 
 \bibitem{costa2016replay}
 A.~Costa-Pazo, S.~Bhattacharjee, E.~Vazquez-Fernandez, and S.~Marcel, ``The
@@ -417,7 +372,7 @@ S.~Liu, P.~C. Yuen, S.~Zhang, and G.~Zhao, ``3d mask face anti-spoofing with
 \bibitem{manjani2017detecting}
 I.~Manjani, S.~Tariyal, M.~Vatsa, R.~Singh, and A.~Majumdar, ``Detecting
   silicone mask-based presentation attack via deep dictionary learning,''
-  \emph{TIFS}, vol.~12, no.~7, pp. 1713--1723, 2017.
+  \emph{TIFS}, 2017.
 
 \bibitem{Boulkenafet2017OULU}
 Z.~Boulkenafet, J.~Komulainen, L.~Li, X.~Feng, and A.~Hadid, ``Oulu-npu: A
@@ -426,23 +381,21 @@ Z.~Boulkenafet, J.~Komulainen, L.~Li, X.~Feng, and A.~Hadid, ``Oulu-npu: A
 
 \bibitem{li2018unsupervised}
 H.~Li, W.~Li, H.~Cao, S.~Wang, F.~Huang, and A.~C. Kot, ``Unsupervised domain
-  adaptation for face anti-spoofing,'' \emph{TIFS}, vol.~13, no.~7, pp.
-  1794--1809, 2018.
+  adaptation for face anti-spoofing,'' \emph{TIFS}, 2018.
 
 \bibitem{vareto2020swax}
 R.~H. Vareto, A.~M. Saldanha, and W.~R. Schwartz, ``The swax benchmark:
-  Attacking biometric systems with wax figures,'' in \emph{ICASSP}.\hskip 1em
-  plus 0.5em minus 0.4em\relax IEEE, 2020.
+  Attacking biometric systems with wax figures,'' in \emph{ICASSP}, 2020.
 
 \bibitem{almeida2020detecting}
 W.~R. Almeida, F.~A. Andal{\'o}, R.~Padilha, G.~Bertocco, W.~Dias, R.~d.~S.
   Torres, J.~Wainer, and A.~Rocha, ``Detecting face presentation attacks in
   mobile devices with a patch-based cnn and a sensor-aware loss function,''
-  \emph{PloS one}, vol.~15, no.~9, p. e0238058, 2020.
+  \emph{PloS one}, 2020.
 
 \bibitem{erdogmus2014spoofing}
 N.~Erdogmus and S.~Marcel, ``Spoofing face recognition with 3d masks,''
-  \emph{TIFS}, vol.~9, no.~7, pp. 1084--1097, 2014.
+  \emph{TIFS}, 2014.
 
 \bibitem{raghavendra2015presentation}
 R.~Raghavendra, K.~B. Raja, and C.~Busch, ``Presentation attack detection for
@@ -452,7 +405,7 @@ R.~Raghavendra, K.~B. Raja, and C.~Busch, ``Presentation attack detection for
 \bibitem{galbally2016three}
 J.~Galbally and R.~Satta, ``Three-dimensional and two-and-a-half-dimensional
   face recognition spoofing using three-dimensional printed models,'' \emph{IET
-  Biometrics}, vol.~5, no.~2, pp. 83--91, 2016.
+  Biometrics}, 2016.
 
 \bibitem{chingovska2016face}
 I.~Chingovska, N.~Erdogmus, A.~Anjos, and S.~Marcel, ``Face recognition systems
@@ -473,12 +426,11 @@ S.~Bhattacharjee and S.~Marcel, ``What you can't see can help
 \bibitem{liu2019light}
 M.~Liu, H.~Fu, Y.~Wei, Y.~A.~U. Rehman, L.-m. Po, and W.~L. Lo, ``Light
   field-based face liveness detection with convolutional neural networks,''
-  \emph{Journal of Electronic Imaging}, vol.~28, no.~1, p. 013003, 2019.
+  \emph{Journal of Electronic Imaging}, 2019.
 
 \bibitem{bhattacharjee2018spoofing}
 S.~Bhattacharjee, A.~Mohammadi, and S.~Marcel, ``Spoofing deep face recognition
-  with custom silicone masks,'' in \emph{BTAS}.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2018.
+  with custom silicone masks,'' in \emph{BTAS}, 2018.
 
 \bibitem{xiao20193dma}
 J.~Xiao, Y.~Tang, J.~Guo, Y.~Yang, X.~Zhu, Z.~Lei, and S.~Z. Li, ``3dma: A
@@ -495,6 +447,11 @@ A.~Li, Z.~Tan, X.~Li, J.~Wan, S.~Escalera, G.~Guo, and S.~Z. Li, ``Casia-surf
   cefa: A benchmark for multi-modal cross-ethnicity face anti-spoofing,''
   \emph{WACV}, 2021.
 
+\bibitem{rostami2021detection}
+M.~Rostami, L.~Spinoulas, M.~Hussein, J.~Mathai, and W.~Abd-Almageed,
+  ``Detection and continual learning of novel face presentation attacks,'' in
+  \emph{ICCV}, 2021.
+
 \bibitem{galbally2012high}
 J.~Galbally, F.~Alonso-Fernandez, J.~Fierrez, and J.~Ortega-Garcia, ``A high
   performance fingerprint liveness detection method based on quality related
@@ -503,7 +460,7 @@ J.~Galbally, F.~Alonso-Fernandez, J.~Fierrez, and J.~Ortega-Garcia, ``A high
 
 \bibitem{chingovska2014biometrics}
 I.~Chingovska, A.~R. Dos~Anjos, and S.~Marcel, ``Biometrics evaluation under
-  spoofing attacks,'' \emph{IEEE TIFS}, vol.~9, no.~12, pp. 2264--2276, 2014.
+  spoofing attacks,'' \emph{IEEE TIFS}, 2014.
 
 \bibitem{iso2017information}
 I.~J.~S. Biometrics., ``Information technology--biometric presentation attack
@@ -528,10 +485,29 @@ Y.~Liu, J.~Stehouwer, and X.~Liu, ``On disentangling spoof trace for generic
   face anti-spoofing,'' in \emph{ECCV}.\hskip 1em plus 0.5em minus 0.4em\relax
   Springer, 2020.
 
+\bibitem{xu2020improving}
+X.~Xu, Y.~Xiong, and W.~Xia, ``On improving temporal consistency for online
+  face liveness detection,'' in \emph{ICCVW}, 2021.
+
+\bibitem{wang2022patchnet}
+C.-Y. Wang, Y.-D. Lu, S.-T. Yang, and S.-H. Lai, ``Patchnet: A simple face
+  anti-spoofing framework via fine-grained patch recognition,'' in \emph{CVPR},
+  2022.
+
+\bibitem{liu2022feature}
+S.~Liu, S.~Lu, H.~Xu, J.~Yang, S.~Ding, and L.~Ma, ``Feature generation and
+  hypothesis verification for reliable face anti-spoofing,'' in \emph{AAAI},
+  2022.
+
+\bibitem{wang2022domain}
+Z.~Wang, Z.~Wang, Z.~Yu, W.~Deng, J.~Li, S.~Li, and Z.~Wang, ``Domain
+  generalization via shuffled style assembly for face anti-spoofing,'' in
+  \emph{CVPR}, 2022.
+
 \bibitem{jia2021unified}
 Y.~Jia, J.~Zhang, S.~Shan, and X.~Chen, ``Unified unsupervised and
   semi-supervised domain adaptation network for cross-scenario face
-  anti-spoofing,'' \emph{Pattern Recognition}, p. 107888, 2021.
+  anti-spoofing,'' \emph{Pattern Recognition}, 2021.
 
 \bibitem{He2015Deep}
 K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Deep residual learning for image
@@ -562,8 +538,7 @@ N.~Dalal and B.~Triggs, ``Histograms of oriented gradients for human
 
 \bibitem{galbally2014face}
 J.~Galbally and S.~Marcel, ``Face anti-spoofing based on general image quality
-  assessment,'' in \emph{ICPR}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2014.
+  assessment,'' in \emph{ICPR}, 2014.
 
 \bibitem{brox2010large}
 T.~Brox and J.~Malik, ``Large displacement optical flow: descriptor matching in
@@ -575,61 +550,45 @@ X.~Niu, Z.~Yu, H.~Han, X.~Li, S.~Shan, and G.~Zhao, ``Video-based remote
   physiological measurement via cross-verified feature disentangling,'' in
   \emph{ECCV}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2020.
 
-\bibitem{ojala2002multiresolution}
-T.~Ojala, M.~Pietikainen, and T.~Maenpaa, ``Multiresolution gray-scale and
-  rotation invariant texture classification with local binary patterns,''
-  \emph{TPAMI}, vol.~24, no.~7, pp. 971--987, 2002.
-
-\bibitem{feng2016integration}
-L.~Feng, L.-M. Po, Y.~Li, X.~Xu, F.~Yuan, T.~C.-H. Cheung, and K.-W. Cheung,
-  ``Integration of image quality and motion cues for face anti-spoofing: A
-  neural network approach,'' \emph{Journal of Visual Communication and Image
-  Representation}, vol.~38, pp. 451--460, 2016.
-
 \bibitem{cai2019learning}
 R.~Cai and C.~Chen, ``Learning deep forest with multi-scale local binary
   pattern features for face anti-spoofing,'' \emph{arXiv preprint
   arXiv:1910.03850}, 2019.
 
-\bibitem{agarwal2019chif}
-A.~Agarwal, M.~Vatsa, and R.~Singh, ``Chif: Convoluted histogram image features
-  for detecting silicone mask based face presentation attack,'' in
-  \emph{BTAS}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019.
+\bibitem{feng2016integration}
+L.~Feng, L.-M. Po, Y.~Li, X.~Xu, F.~Yuan, T.~C.-H. Cheung, and K.-W. Cheung,
+  ``Integration of image quality and motion cues for face anti-spoofing: A
+  neural network approach,'' \emph{Journal of Visual Communication and Image
+  Representation}, 2016.
 
-\bibitem{li2019face}
-L.~Li and X.~Feng, ``Face anti-spoofing via deep local binary pattern,'' in
-  \emph{Deep Learning in Object Detection and Recognition}.\hskip 1em plus
-  0.5em minus 0.4em\relax Springer, 2019, pp. 91--111.
+\bibitem{yu2021transrppg}
+Z.~Yu, X.~Li, P.~Wang, and G.~Zhao, ``Transrppg: Remote photoplethysmography
+  transformer for 3d mask face presentation attack detection,'' \emph{IEEE
+  SPL}, 2021.
 
 \bibitem{li20203d}
 L.~Li, Z.~Xia, X.~Jiang, Y.~Ma, F.~Roli, and X.~Feng, ``3d face mask
   presentation attack detection based on intrinsic image analysis,'' \emph{IET
-  Biometrics}, vol.~9, no.~3, pp. 100--108, 2020.
+  Biometrics}, 2020.
 
-\bibitem{chen2019cascade}
-H.~Chen, Y.~Chen, X.~Tian, and R.~Jiang, ``A cascade face spoofing detector
-  based on face anti-spoofing r-cnn and improved retinex lbp,'' \emph{IEEE
-  Access}, vol.~7, pp. 170\,116--170\,133, 2019.
-
-\bibitem{li2019replayed}
-L.~Li, Z.~Xia, A.~Hadid, X.~Jiang, H.~Zhang, and X.~Feng, ``Replayed video
-  attack detection based on motion blur analysis,'' \emph{TIFS}, vol.~14,
-  no.~9, pp. 2246--2261, 2019.
+\bibitem{agarwal2019chif}
+A.~Agarwal, M.~Vatsa, and R.~Singh, ``Chif: Convoluted histogram image features
+  for detecting silicone mask based face presentation attack,'' in \emph{BTAS},
+  2019.
 
 \bibitem{shao2018joint}
 R.~Shao, X.~Lan, and P.~C. Yuen, ``Joint discriminative learning of deep
-  dynamic textures for 3d mask face anti-spoofing,'' \emph{TIFS}, vol.~14,
-  no.~4, pp. 923--938, 2018.
+  dynamic textures for 3d mask face anti-spoofing,'' \emph{TIFS}, 2018.
 
-\bibitem{das2019new}
-P.~K. Das, B.~Hu, C.~Liu, K.~Cui, P.~Ranjan, and G.~Xiong, ``A new approach for
-  face anti-spoofing using handcrafted and deep network features,'' in
-  \emph{SOLI}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019.
+\bibitem{zhao2007dynamic}
+G.~Zhao and M.~Pietikainen, ``Dynamic texture recognition using local binary
+  patterns with an application to facial expressions,'' \emph{IEEE TPAMI},
+  vol.~29, no.~6, pp. 915--928, 2007.
 
 \bibitem{sharifi2019score}
 O.~Sharifi, ``Score-level-based face anti-spoofing system using handcrafted and
   deep learned characteristics,'' \emph{International Journal of Image,
-  Graphics and Signal Processing}, vol.~11, no.~2, p.~15, 2019.
+  Graphics and Signal Processing}, 2019.
 
 \bibitem{rehman2019perturbing}
 Y.~A.~U. Rehman, L.-M. Po, M.~Liu, Z.~Zou, and W.~Ou, ``Perturbing
@@ -637,48 +596,457 @@ Y.~A.~U. Rehman, L.-M. Po, M.~Liu, Z.~Zou, and W.~Ou, ``Perturbing
   liveness detection,'' in \emph{CISIS and ICEUTE 2019}.\hskip 1em plus 0.5em
   minus 0.4em\relax Springer, 2019.
 
-\bibitem{yu2021transrppg}
-Z.~Yu, X.~Li, P.~Wang, and G.~Zhao, ``Transrppg: Remote photoplethysmography
-  transformer for 3d mask face presentation attack detection,'' \emph{IEEE
-  SPL}, 2021.
+\bibitem{li2019replayed}
+L.~Li, Z.~Xia, A.~Hadid, X.~Jiang, H.~Zhang, and X.~Feng, ``Replayed video
+  attack detection based on motion blur analysis,'' \emph{TIFS}, 2019.
 
-\bibitem{breiman2001random}
-L.~Breiman, ``Random forests,'' \emph{Machine learning}, vol.~45, no.~1, pp.
-  5--32, 2001.
+\bibitem{ronneberger2015u}
+O.~Ronneberger, P.~Fischer, and T.~Brox, ``U-net: Convolutional networks for
+  biomedical image segmentation,'' in \emph{International Conference on Medical
+  image computing and computer-assisted intervention}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer, 2015.
 
-\bibitem{chen2009wld}
-J.~Chen, S.~Shan, C.~He, G.~Zhao, M.~Pietik{\"a}inen, X.~Chen, and W.~Gao,
-  ``Wld: A robust local image descriptor,'' \emph{IEEE TPAMI}, vol.~32, no.~9,
-  pp. 1705--1720, 2009.
+\bibitem{ioffe2015batch}
+S.~Ioffe and C.~Szegedy, ``Batch normalization: Accelerating deep network
+  training by reducing internal covariate shift,'' in \emph{International
+  conference on machine learning}.\hskip 1em plus 0.5em minus 0.4em\relax PMLR,
+  2015.
 
-\bibitem{wold1987principal}
-S.~Wold, K.~Esbensen, and P.~Geladi, ``Principal component analysis,''
-  \emph{Chemometrics and intelligent laboratory systems}, vol.~2, no. 1-3, pp.
-  37--52, 1987.
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
+  ``Dropout: a simple way to prevent neural networks from overfitting,''
+  \emph{The journal of machine learning research}, 2014.
 
-\bibitem{zhao2007dynamic}
-G.~Zhao and M.~Pietikainen, ``Dynamic texture recognition using local binary
-  patterns with an application to facial expressions,'' \emph{IEEE TPAMI},
-  vol.~29, no.~6, pp. 915--928, 2007.
+\bibitem{hermans2017defense}
+A.~Hermans, L.~Beyer, and B.~Leibe, ``In defense of the triplet loss for person
+  re-identification,'' \emph{arXiv preprint arXiv:1703.07737}, 2017.
 
-\bibitem{guo2010completed}
-Z.~Guo, L.~Zhang, and D.~Zhang, ``A completed modeling of local binary pattern
-  operator for texture classification,'' \emph{IEEE TIP}, vol.~19, no.~6, pp.
-  1657--1663, 2010.
+\bibitem{lucena2017transfer}
+O.~Lucena, A.~Junior, V.~Moia, R.~Souza, E.~Valle, and R.~Lotufo, ``Transfer
+  learning using convolutional neural networks for face anti-spoofing,'' in
+  \emph{ICIAR}, 2017.
 
-\bibitem{liu2016ssd}
-W.~Liu, D.~Anguelov, D.~Erhan, C.~Szegedy, S.~Reed, C.-Y. Fu, and A.~C. Berg,
-  ``Ssd: Single shot multibox detector,'' in \emph{ECCV}.\hskip 1em plus 0.5em
-  minus 0.4em\relax Springer, 2016.
+\bibitem{chen2019attention}
+H.~Chen, G.~Hu, Z.~Lei, Y.~Chen, N.~M. Robertson, and S.~Z. Li,
+  ``Attention-based two-stream convolutional networks for face spoofing
+  detection,'' \emph{TIFS}, 2019.
+
+\bibitem{george2020effectiveness}
+A.~George and S.~Marcel, ``On the effectiveness of vision transformers for
+  zero-shot face anti-spoofing,'' \emph{arXiv preprint arXiv:2011.08019}, 2020.
+
+\bibitem{sandler2018mobilenetv2}
+M.~Sandler, A.~Howard, M.~Zhu, A.~Zhmoginov, and L.-C. Chen, ``Mobilenetv2:
+  Inverted residuals and linear bottlenecks,'' in \emph{CVPR}, 2018, pp.
+  4510--4520.
+
+\bibitem{deb2020look}
+D.~Deb and A.~K. Jain, ``Look locally infer globally: A generalizable face
+  anti-spoofing approach,'' \emph{TIFS}, 2020.
 
 \bibitem{Xu2016Learning}
 Z.~Xu, S.~Li, and W.~Deng, ``Learning temporal features using lstm-cnn
   architecture for face anti-spoofing,'' in \emph{ACPR}, 2015.
 
+\bibitem{muhammad2019face}
+U.~Muhammad, T.~Holmberg, W.~C. de~Melo, and A.~Hadid, ``Face anti-spoofing via
+  sample learning based recurrent neural network (rnn).'' in \emph{BMVC}, 2019.
+
+\bibitem{ge2020face}
+H.~Ge, X.~Tu, W.~Ai, Y.~Luo, Z.~Ma, and M.~Xie, ``Face anti-spoofing by the
+  enhancement of temporal motion,'' in \emph{CTISC}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2020.
+
+\bibitem{hochreiter1997long}
+S.~Hochreiter and J.~Schmidhuber, ``Long short-term memory,'' \emph{Neural
+  computation}, vol.~9, no.~8, pp. 1735--1780, 1997.
+
+\bibitem{hao2019face}
+H.~Hao, M.~Pei, and M.~Zhao, ``Face liveness detection based on client identity
+  using siamese network,'' in \emph{PRCV}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer, 2019.
+
+\bibitem{chen2021camera}
+B.~Chen, W.~Yang, H.~Li, S.~Wang, and S.~Kwong, ``Camera invariant feature
+  learning for generalized face anti-spoofing,'' \emph{TIFS}, 2021.
+
+\bibitem{mohammadi2020improving}
+A.~Mohammadi, S.~Bhattacharjee, and S.~Marcel, ``Improving cross-dataset
+  performance of face presentation attack detection systems using face
+  recognition datasets,'' in \emph{ICASSP}, 2020.
+
+\bibitem{peng2020ts}
+D.~Peng, J.~Xiao, R.~Zhu, and G.~Gao, ``Ts-fen: Probing feature selection
+  strategy for face anti-spoofing,'' in \emph{ICASS}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, 2020.
+
+\bibitem{wu2021dual}
+H.~Wu, D.~Zeng, Y.~Hu, H.~Shi, and T.~Mei, ``Dual spoof disentanglement
+  generation for face anti-spoofing with depth uncertainty learning,''
+  \emph{TCSVT}, 2021.
+
+\bibitem{wang2022learning}
+Z.~Wang, Q.~Wang, W.~Deng, and G.~Guo, ``Learning multi-granularity temporal
+  characteristics for face anti-spoofing,'' \emph{TIFS}, 2022.
+
+\bibitem{hossaindeeppixbis}
+M.~S. Hossain, L.~Rupty, K.~Roy, M.~Hasan, S.~Sengupta, and N.~Mohammed,
+  ``A-deeppixbis: Attentional angular margin for face anti-spoofing,'' 2020.
+
+\bibitem{yu2020auto2}
+Z.~Yu, Y.~Qin, X.~Xu, C.~Zhao, Z.~Wang, Z.~Lei, and G.~Zhao, ``Auto-fas:
+  Searching lightweight networks for face anti-spoofing,'' in \emph{ICASSP},
+  2020.
+
+\bibitem{roy2021bi}
+K.~Roy, M.~Hasan, L.~Rupty, M.~Hossain, S.~Sengupta, S.~N. Taus, N.~Mohammed
+  \emph{et~al.}, ``Bi-fpnfas: Bi-directional feature pyramid network for
+  pixel-wise face anti-spoofing by leveraging fourier spectra,''
+  \emph{Sensors}, vol.~21, no.~8, p. 2799, 2021.
+
+\bibitem{gretton2012kernel}
+A.~Gretton, K.~M. Borgwardt, M.~J. Rasch, B.~Sch{\"o}lkopf, and A.~Smola, ``A
+  kernel two-sample test,'' \emph{The Journal of Machine Learning Research},
+  2012.
+
+\bibitem{wang2019improving}
+G.~Wang, H.~Han, S.~Shan, and X.~Chen, ``Improving cross-database face
+  presentation attack detection via adversarial domain adaptation,'' in
+  \emph{ICB}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019.
+
+\bibitem{wang2020unsupervised}
+{Wang, Guoqing and Han, Hu and Shan, Shiguang and Chen, Xilin}, ``Unsupervised
+  adversarial domain adaptation for cross-domain face presentation attack
+  detection,'' \emph{TIFS}, 2020.
+
+\bibitem{quan2021progressive}
+R.~Quan, Y.~Wu, X.~Yu, and Y.~Yang, ``Progressive transfer learning for face
+  anti-spoofing,'' \emph{TIP}, vol.~30, pp. 3946--3955, 2021.
+
+\bibitem{zhou2019face}
+F.~Zhou, C.~Gao, F.~Chen, C.~Li, X.~Li, F.~Yang, and Y.~Zhao, ``Face
+  anti-spoofing based on multi-layer domain adaptation,'' in
+  \emph{ICMEW}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019.
+
+\bibitem{mohammadi2020domain}
+A.~Mohammadi, S.~Bhattacharjee, and S.~Marcel, ``Domain adaptation for
+  generalization of face presentation attack detection in mobile settengs with
+  minimal information,'' in \emph{ICASSP}, 2020.
+
+\bibitem{li2020face2}
+H.~Li, S.~Wang, P.~He, and A.~Rocha, ``Face anti-spoofing with deep neural
+  network distillation,'' \emph{IEEE Journal of Selected Topics in Signal
+  Processing}, 2020.
+
+\bibitem{chen2021generalized}
+Z.~Chen, T.~Yao, K.~Sheng, S.~Ding, Y.~Tai, J.~Li, F.~Huang, and X.~Jin,
+  ``Generalizable representation learning for mixture domain face
+  anti-spoofing,'' in \emph{AAAI}, 2021.
+
+\bibitem{liu2021adaptive}
+S.~Liu, K.-Y. Zhang, T.~Yao, M.~Bi, S.~Ding, J.~Li, F.~Huang, and L.~Ma,
+  ``Adaptive normalized representation learning for generalizable face
+  anti-spoofing,'' in \emph{ACM MM}, 2021.
+
+\bibitem{wang2021self}
+J.~Wang, J.~Zhang, Y.~Bian, Y.~Cai, C.~Wang, and S.~Pu, ``Self-domain
+  adaptation for face anti-spoofing,'' in \emph{AAAI}, 2021.
+
+\bibitem{perez2020learning}
+D.~P{\'e}rez-Cabo, D.~Jim{\'e}nez-Cabello, A.~Costa-Pazo, and R.~J.
+  L{\'o}pez-Sastre, ``Learning to learn face-pad: a lifelong learning
+  approach,'' in \emph{IJCB}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2020.
+
+\bibitem{nikisins2018effectiveness}
+O.~Nikisins, A.~Mohammadi, A.~Anjos, and S.~Marcel, ``On effectiveness of
+  anomaly detection approaches against unseen presentation attacks in face
+  anti-spoofing,'' in \emph{ICB}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2018.
+
+\bibitem{xiong2018unknown}
+F.~Xiong and W.~AbdAlmageed, ``Unknown presentation attack detection with face
+  rgb images,'' in \emph{BTAS}, 2018.
+
+\bibitem{baweja2020anomaly}
+Y.~Baweja, P.~Oza, P.~Perera, and V.~M. Patel, ``Anomaly detection-based
+  unknown face presentation attack detection,'' \emph{arXiv preprint
+  arXiv:2007.05856}, 2020.
+
+\bibitem{perez2019deep}
+D.~P{\'e}rez-Cabo, D.~Jim{\'e}nez-Cabello, A.~Costa-Pazo, and R.~J.
+  L{\'o}pez-Sastre, ``Deep anomaly detection for generalized face
+  anti-spoofing,'' in \emph{CVPRW}, 2019.
+
+\bibitem{george2020learning}
+A.~George and S.~Marcel, ``Learning one class representations for face
+  presentation attack detection using multi-channel convolutional neural
+  networks,'' \emph{TIFS}, 2020.
+
+\bibitem{li2020unseen}
+Z.~Li, H.~Li, K.-Y. Lam, and A.~C. Kot, ``Unseen face presentation attack
+  detection with hypersphere loss,'' in \emph{ICASSP}, 2020.
+
+\bibitem{rehman2020slnet}
+Y.~A.~U. Rehman, L.-M. Po, and M.~Liu, ``Slnet: Stereo face liveness detection
+  via dynamic disparity-maps and convolutional neural network,'' \emph{Expert
+  Systems with Applications}, 2020.
+
+\bibitem{liu2019AuroraGuard}
+W.~Hu, G.~Te, J.~He, D.~Chen, and Z.~Guo, ``Aurora guard: Real-time face
+  anti-spoofing via light reflection,'' \emph{arXiv preprint arXiv:
+  1902.10311}, 2019.
+
+\bibitem{wu2019review}
+B.~Wu, M.~Pan, and Y.~Zhang, ``A review of face anti-spoofing and its
+  applications in china,'' in \emph{International Conference on Harmony Search
+  Algorithm}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2019, pp.
+  35--43.
+
+\bibitem{connell2013fake}
+J.~Connell, N.~Ratha, J.~Gentile, and R.~Bolle, ``Fake iris detection using
+  structured light,'' in \emph{ICASSP}, 2013.
+
+\bibitem{sun2016context}
+X.~Sun, L.~Huang, and C.~Liu, ``Context based face spoofing detection using
+  active near-infrared images,'' in \emph{ICPR}, 2016.
+
+\bibitem{seo2019face}
+J.~Seo and I.-J. Chung, ``Face liveness detection using thermal face-cnn with
+  external knowledge,'' \emph{Symmetry}, 2019.
+
+\bibitem{kang2021facial}
+M.~Kang, J.~Choe, H.~Ha, H.-G. Jeon, S.~Im, and I.~S. Kweon, ``Facial depth and
+  normal estimation using single dual-pixel camera,'' \emph{arXiv preprint
+  arXiv:2111.12928}, 2021.
+
+\bibitem{wu2020single}
+X.~Wu, J.~Zhou, J.~Liu, F.~Ni, and H.~Fan, ``Single-shot face anti-spoofing for
+  dual pixel camera,'' \emph{TIFS}, 2020.
+
+\bibitem{farrukh2020facerevelio}
+H.~Farrukh, R.~M. Aburas, S.~Cao, and H.~Wang, ``Facerevelio: a face liveness
+  detection system for smartphones with a single front camera,'' in
+  \emph{Proceedings of the 26th Annual International Conference on Mobile
+  Computing and Networking}, 2020.
+
+\bibitem{ebihara2019specular}
+A.~F. Ebihara, K.~Sakurai, and H.~Imaoka, ``Specular-and
+  diffuse-reflection-based face spoofing detection for mobile devices,'' in
+  \emph{IJCB}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2020.
+
+\bibitem{parkin2019recognizing}
+A.~Parkin and O.~Grinchuk, ``Recognizing multi-modal face spoofing with face
+  recognition networks,'' in \emph{CVPRW}, 2019.
+
+\bibitem{kuang2019multi}
+H.~Kuang, R.~Ji, H.~Liu, S.~Zhang, X.~Sun, F.~Huang, and B.~Zhang,
+  ``Multi-modal multi-layer fusion network with average binary center loss for
+  face anti-spoofing,'' in \emph{ACM MM}, 2019.
+
+\bibitem{shen2019facebagnet}
+T.~Shen, Y.~Huang, and Z.~Tong, ``Facebagnet: Bag-of-local-features model for
+  multi-modal face anti-spoofing,'' in \emph{CVPRW}, 2019.
+
+\bibitem{george2021cross}
+A.~George and S.~Marcel, ``Cross modal focal loss for rgbd face
+  anti-spoofing,'' in \emph{CVPR}, 2021.
+
+\bibitem{nikisins2019domain}
+O.~Nikisins, A.~George, and S.~Marcel, ``Domain adaptation in multi-channel
+  autoencoder based features for robust face anti-spoofing,'' in
+  \emph{ICB}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019.
+
+\bibitem{liu2021data}
+W.~Liu, X.~Wei, T.~Lei, X.~Wang, H.~Meng, and A.~K. Nandi, ``Data fusion based
+  two-stage cascade framework for multi-modality face anti-spoofing,''
+  \emph{TCDS}, 2021.
+
+\bibitem{zhang2019feathernets}
+P.~Zhang, F.~Zou, Z.~Wu, N.~Dai, S.~Mark, M.~Fu, J.~Zhao, and K.~Li,
+  ``Feathernets: Convolutional neural networks as light as feather for face
+  anti-spoofing,'' in \emph{CVPRW}, 2019.
+
+\bibitem{jiang2020face}
+F.~Jiang, P.~Liu, X.~Shao, and X.~Zhou, ``Face anti-spoofing with generated
+  near-infrared images,'' \emph{Multimedia Tools and Applications}, vol.~79,
+  no.~29, pp. 21\,299--21\,323, 2020.
+
+\bibitem{liu2021face}
+A.~Liu, Z.~Tan, J.~Wan, Y.~Liang, Z.~Lei, G.~Guo, and S.~Z. Li, ``Face
+  anti-spoofing via adversarial cross-modality translation,'' \emph{TIFS},
+  2021.
+
+\bibitem{mallatindirect2021}
+K.~Mallat and J.-L. Dugelay, ``Indirect synthetic attack on thermal face
+  biometric systems via visible-to-thermal spectrum conversion,'' in
+  \emph{CVPRW}, 2021.
+
+\bibitem{sequeiraexploratory}
+A.~F. Sequeira, T.~Gon{\c{c}}alves, W.~Silva, J.~R. Pinto, and J.~S. Cardoso,
+  ``An exploratory study of interpretability for face presentation attack
+  detection,'' \emph{IET Biometrics}, 2021.
+
+\bibitem{selvaraju2017grad}
+R.~R. Selvaraju, M.~Cogswell, A.~Das, R.~Vedantam, D.~Parikh, and D.~Batra,
+  ``Grad-cam: Visual explanations from deep networks via gradient-based
+  localization,'' in \emph{ICCV}, 2017.
+
+\bibitem{mirzaalian2021explaining}
+H.~Mirzaalian, M.~E. Hussein, L.~Spinoulas, J.~May, and W.~Abd-Almageed,
+  ``Explaining face presentation attack detection using natural language,'' in
+  \emph{FG}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2021.
+
+\bibitem{liu2020cross}
+A.~Liu, X.~Li, J.~Wan, Y.~Liang, S.~Escalera, H.~J. Escalante, M.~Madadi,
+  Y.~Jin, Z.~Wu, X.~Yu \emph{et~al.}, ``Cross-ethnicity face anti-spoofing
+  recognition challenge: A review,'' \emph{IET Biometrics}, vol.~10, no.~1, pp.
+  24--43, 2021.
+
+\bibitem{yu2022flexible}
+Z.~Yu, C.~Zhao, K.~H. Cheng, X.~Cheng, and G.~Zhao, ``Flexible-modal face
+  anti-spoofing: A benchmark,'' \emph{arXiv preprint arXiv:2202.08192}, 2022.
+
+\bibitem{stehouwer2020noise}
+J.~Stehouwer, A.~Jourabloo, Y.~Liu, and X.~Liu, ``Noise modeling, synthesis and
+  classification for generic object anti-spoofing,'' in \emph{CVPR}, 2020.
+
+\bibitem{sharif2019general}
+M.~Sharif, S.~Bhagavatula, L.~Bauer, and M.~K. Reiter, ``A general framework
+  for adversarial examples with objectives,'' \emph{ACM Transactions on Privacy
+  and Security (TOPS)}, 2019.
+
+\bibitem{komkov2021advhat}
+S.~Komkov and A.~Petiushko, ``Advhat: Real-world adversarial attack on arcface
+  face id system,'' in \emph{ICPR}, 2021.
+
+\bibitem{yin2021adv}
+B.~Yin, W.~Wang, T.~Yao, J.~Guo, Z.~Kong, S.~Ding, J.~Li, and C.~Liu,
+  ``Adv-makeup: A new imperceptible and transferable attack on face
+  recognition,'' in \emph{IJCAI}, 2021.
+
+\bibitem{guo2021meaningful}
+Y.~Guo, X.~Wei, G.~Wang, and B.~Zhang, ``Meaningful adversarial stickers for
+  face recognition in physical world,'' \emph{arXiv preprint arXiv:2104.06728},
+  2021.
+
+\bibitem{zhang2019attacking}
+B.~Zhang, B.~Tondi, and M.~Barni, ``Attacking cnn-based anti-spoofing face
+  authentication in the physical domain,'' \emph{arXiv preprint
+  arXiv:1910.00327}, 2019.
+
+\bibitem{ciftci2020fakecatcher}
+U.~A. Ciftci, I.~Demir, and L.~Yin, ``Fakecatcher: Detection of synthetic
+  portrait videos using biological signals,'' \emph{TPAMI}, 2020.
+
+\bibitem{sarkar2022gan}
+E.~Sarkar, P.~Korshunov, L.~Colbois, and S.~Marcel, ``Are gan-based morphs
+  threatening face recognition?'' in \emph{ICASSP}, 2022.
+
+\bibitem{deb2021unified}
+D.~Deb, X.~Liu, and A.~K. Jain, ``Unified detection of digital and physical
+  face attacks,'' \emph{arXiv preprint arXiv:2104.02156}, 2021.
+
+\bibitem{voigt2017eu}
+P.~Voigt and A.~Von~dem Bussche, ``The eu general data protection regulation
+  (gdpr),'' \emph{A Practical Guide, 1st Ed., Cham: Springer International
+  Publishing}, 2017.
+
+\bibitem{mcmahan2017communication}
+B.~McMahan, E.~Moore, D.~Ramage, S.~Hampson, and B.~A. y~Arcas,
+  ``Communication-efficient learning of deep networks from decentralized
+  data,'' in \emph{Artificial Intelligence and Statistics}.\hskip 1em plus
+  0.5em minus 0.4em\relax PMLR, 2017.
+
+\bibitem{shao2021federated}
+R.~Shao, B.~Zhang, P.~C. Yuen, and V.~M. Patel, ``Federated test-time adaptive
+  face presentation attack detection with dual-phase privacy preservation,'' in
+  \emph{FG}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2021.
+
+\bibitem{kundu2020universal}
+J.~N. Kundu, N.~Venkat, R.~V. Babu \emph{et~al.}, ``Universal source-free
+  domain adaptation,'' in \emph{CVPR}, 2020.
+
+\bibitem{lv2021combining}
+L.~Lv, Y.~Xiang, X.~Li, H.~Huang, R.~Ruan, X.~Xu, and Y.~Fu, ``Combining
+  dynamic image and prediction ensemble for cross-domain face anti-spoofing,''
+  in \emph{ICASSP}, 2021.
+
+\bibitem{kahm20122d}
+O.~K{\"a}hm and N.~Damer, ``2d face liveness detection: An overview,'' in
+  \emph{BIOSIG}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2012.
+
+\bibitem{hadid2014face}
+A.~Hadid, ``Face biometrics under spoofing attacks: Vulnerabilities,
+  countermeasures, open issues, and research directions,'' in \emph{CVPRW},
+  2014.
+
+\bibitem{galbally2014biometric}
+J.~Galbally, S.~Marcel, and J.~Fierrez, ``Biometric antispoofing methods: A
+  survey in face recognition,'' \emph{IEEE Access}, 2014.
+
+\bibitem{kumar2017comparative}
+S.~Kumar, S.~Singh, and J.~Kumar, ``A comparative study on face spoofing
+  attacks,'' in \emph{ICCCA}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2017.
+
+\bibitem{kisku2017face}
+D.~R. Kisku and R.~D. Rakshit, ``Face spoofing and counter-spoofing: A survey
+  of state-of-the-art algorithms,'' \emph{Transactions on Machine Learning and
+  Artificial Intelligence}, vol.~5, no.~2, pp. 31--31, 2017.
+
+\bibitem{souza2018far}
+L.~Souza, L.~Oliveira, M.~Pamplona, and J.~Papa, ``How far did we get in face
+  spoofing detection?'' \emph{Engineering Applications of Artificial
+  Intelligence}, vol.~72, pp. 368--381, 2018.
+
+\bibitem{raheem2019insight}
+E.~A. Raheem, S.~M.~S. Ahmad, and W.~A.~W. Adnan, ``Insight on face liveness
+  detection: A systematic literature review,'' \emph{International Journal of
+  Electrical and Computer Engineering}, 2019.
+
+\bibitem{ming2020survey}
+Z.~Ming, M.~Visani, M.~M. Luqman, and J.-C. Burie, ``A survey on anti-spoofing
+  methods for facial recognition with rgb cameras of generic consumer
+  devices,'' \emph{Journal of Imaging}, 2020.
+
+\bibitem{cai2020drl}
+R.~Cai, H.~Li, S.~Wang, C.~Chen, and A.~C. Kot, ``Drl-fas: A novel framework
+  based on deep reinforcement learning for face anti-spoofing,'' \emph{TIFS},
+  vol.~16, pp. 937--951, 2020.
+
+\bibitem{yu2021revisiting}
+Z.~Yu, X.~Li, J.~Shi, Z.~Xia, and G.~Zhao, ``Revisiting pixel-wise supervision
+  for face anti-spoofing,'' \emph{IEEE TBIOM}, 2021.
+
+\bibitem{kim2020suppressing}
+T.~Kim and Y.~Kim, ``Suppressing spoof-irrelevant factors for domain-agnostic
+  face anti-spoofing,'' \emph{arXiv preprint arXiv:2012.01271}, 2020.
+
+\bibitem{ojala2002multiresolution}
+T.~Ojala, M.~Pietikainen, and T.~Maenpaa, ``Multiresolution gray-scale and
+  rotation invariant texture classification with local binary patterns,''
+  \emph{TPAMI}, vol.~24, no.~7, pp. 971--987, 2002.
+
+\bibitem{li2019face}
+L.~Li and X.~Feng, ``Face anti-spoofing via deep local binary pattern,'' in
+  \emph{Deep Learning in Object Detection and Recognition}.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer, 2019, pp. 91--111.
+
+\bibitem{chen2019cascade}
+H.~Chen, Y.~Chen, X.~Tian, and R.~Jiang, ``A cascade face spoofing detector
+  based on face anti-spoofing r-cnn and improved retinex lbp,'' \emph{IEEE
+  Access}, 2019.
+
+\bibitem{das2019new}
+P.~K. Das, B.~Hu, C.~Liu, K.~Cui, P.~Ranjan, and G.~Xiong, ``A new approach for
+  face anti-spoofing using handcrafted and deep network features,'' in
+  \emph{SOLI}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019.
+
 \bibitem{menotti2015deep}
 D.~Menotti, G.~Chiachia, A.~Pinto, W.~R. Schwartz, H.~Pedrini, A.~X. Falcao,
   and A.~Rocha, ``Deep representations for iris, face, and fingerprint spoofing
-  detection,'' \emph{TIFS}, vol.~10, no.~4, pp. 864--879, 2015.
+  detection,'' \emph{TIFS}, 2015.
 
 \bibitem{li2017face}
 L.~Li, Z.~Xia, L.~Li, X.~Jiang, X.~Feng, and F.~Roli, ``Face anti-spoofing via
@@ -694,11 +1062,6 @@ C.~Nagpal and S.~R. Dubey, ``A performance evaluation of convolutional neural
 X.~Tu and Y.~Fang, ``Ultra-deep neural network for face anti-spoofing,'' in
   \emph{International Conference on Neural Information Processing}.\hskip 1em
   plus 0.5em minus 0.4em\relax Springer, 2017.
-
-\bibitem{lucena2017transfer}
-O.~Lucena, A.~Junior, V.~Moia, R.~Souza, E.~Valle, and R.~Lotufo, ``Transfer
-  learning using convolutional neural networks for face anti-spoofing,'' in
-  \emph{ICIAR}, 2017.
 
 \bibitem{rehman2017deep}
 Y.~A.~U. Rehman, L.~M. Po, and M.~Liu, ``Deep learning for face anti-spoofing:
@@ -723,18 +1086,12 @@ Y.~A.~U. Rehman, L.~M. Po, and M.~Liu, ``Livenet: Improving features
 
 \bibitem{luo2018face}
 S.~Luo, M.~Kan, S.~Wu, X.~Chen, and S.~Shan, ``Face anti-spoofing with
-  multi-scale information,'' in \emph{ICPR}.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2018.
+  multi-scale information,'' in \emph{ICPR}, 2018.
 
 \bibitem{larbi2018deepcolorfasd}
 K.~Larbi, W.~Ouarda, H.~Drira, B.~B. Amor, and C.~B. Amar, ``Deepcolorfasd:
   Face anti spoofing solution using a multi channeled color spaces cnn,'' in
   \emph{SMC}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2018.
-
-\bibitem{hao2019face}
-H.~Hao, M.~Pei, and M.~Zhao, ``Face liveness detection based on client identity
-  using siamese network,'' in \emph{PRCV}.\hskip 1em plus 0.5em minus
-  0.4em\relax Springer, 2019.
 
 \bibitem{bresan2019facespoof}
 R.~Bresan, A.~Pinto, A.~Rocha, C.~Beluzo, and T.~Carvalho, ``Facespoof buster:
@@ -745,21 +1102,12 @@ R.~Bresan, A.~Pinto, A.~Rocha, C.~Beluzo, and T.~Carvalho, ``Facespoof buster:
 Y.~A.~U. Rehman, L.-M. Po, M.~Liu, Z.~Zou, W.~Ou, and Y.~Zhao, ``Face liveness
   detection using convolutional-features fusion of real and deep network
   generated face images,'' \emph{Journal of Visual Communication and Image
-  Representation}, vol.~59, pp. 574--582, 2019.
-
-\bibitem{chen2019attention}
-H.~Chen, G.~Hu, Z.~Lei, Y.~Chen, N.~M. Robertson, and S.~Z. Li,
-  ``Attention-based two-stream convolutional networks for face spoofing
-  detection,'' \emph{TIFS}, vol.~15, pp. 578--593, 2019.
+  Representation}, 2019.
 
 \bibitem{laurensi2019style}
 R.~Laurensi, A.~Israel, L.~T. Menon, N.~Penna, O.~Manoel~Camillo, A.~L.
   Koerich, and A.~S. Britto~Jr, ``Style transfer applied to face liveness
   detection with user-centered models,'' \emph{arXiv}, pp. arXiv--1907, 2019.
-
-\bibitem{muhammad2019face}
-U.~Muhammad, T.~Holmberg, W.~C. de~Melo, and A.~Hadid, ``Face anti-spoofing via
-  sample learning based recurrent neural network (rnn).'' in \emph{BMVC}, 2019.
 
 \bibitem{tu2020learning}
 X.~Tu, Z.~Ma, J.~Zhao, G.~Du, M.~Xie, and J.~Feng, ``Learning generalizable and
@@ -770,32 +1118,14 @@ X.~Tu, Z.~Ma, J.~Zhao, G.~Du, M.~Xie, and J.~Feng, ``Learning generalizable and
 J.~{Guo}, X.~{Zhu}, J.~{Xiao}, Z.~{Lei}, G.~{Wan}, and S.~Z. {Li}, ``Improving
   face anti-spoofing by 3d virtual synthesis,'' in \emph{ICB}, 2019, pp. 1--8.
 
-\bibitem{deb2020look}
-D.~Deb and A.~K. Jain, ``Look locally infer globally: A generalizable face
-  anti-spoofing approach,'' \emph{TIFS}, vol.~16, pp. 1143--1157, 2020.
-
-\bibitem{xu2020improving}
-X.~Xu, Y.~Xiong, and W.~Xia, ``On improving temporal consistency for online
-  face liveness detection,'' \emph{arXiv preprint arXiv:2006.06756}, 2020.
-
-\bibitem{cai2020drl}
-R.~Cai, H.~Li, S.~Wang, C.~Chen, and A.~C. Kot, ``Drl-fas: A novel framework
-  based on deep reinforcement learning for face anti-spoofing,'' \emph{TIFS},
-  vol.~16, pp. 937--951, 2020.
-
 \bibitem{pinto2020leveraging}
 A.~Pinto, S.~Goldenstein, A.~Ferreira, T.~Carvalho, H.~Pedrini, and A.~Rocha,
   ``Leveraging shape, reflectance and albedo from shading for face presentation
-  attack detection,'' \emph{TIFS}, vol.~15, pp. 3347--3358, 2020.
+  attack detection,'' \emph{TIFS}, 2020.
 
 \bibitem{zuo2020face}
 Y.~Zuo, W.~Gao, and J.~Wang, ``Face liveness detection algorithm based on
   livenesslight network,'' in \emph{HPBD\&IS}.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2020.
-
-\bibitem{ge2020face}
-H.~Ge, X.~Tu, W.~Ai, Y.~Luo, Z.~Ma, and M.~Xie, ``Face anti-spoofing by the
-  enhancement of temporal motion,'' in \emph{CTISC}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2020.
 
 \bibitem{chen2020face}
@@ -811,66 +1141,6 @@ A.~Parkin and O.~Grinchuk, ``Creating artificial modalities to solve rgb
 Y.~Huang, W.~Zhang, and J.~Wang, ``Deep frequent spatial temporal learning for
   face anti-spoofing,'' \emph{arXiv preprint arXiv:2002.03723}, 2020.
 
-\bibitem{george2020effectiveness}
-A.~George and S.~Marcel, ``On the effectiveness of vision transformers for
-  zero-shot face anti-spoofing,'' \emph{arXiv preprint arXiv:2011.08019}, 2020.
-
-\bibitem{chen2021camera}
-B.~Chen, W.~Yang, H.~Li, S.~Wang, and S.~Kwong, ``Camera invariant feature
-  learning for generalized face anti-spoofing,'' \emph{TIFS}, vol.~16, pp.
-  2477--2492, 2021.
-
-\bibitem{ronneberger2015u}
-O.~Ronneberger, P.~Fischer, and T.~Brox, ``U-net: Convolutional networks for
-  biomedical image segmentation,'' in \emph{International Conference on Medical
-  image computing and computer-assisted intervention}.\hskip 1em plus 0.5em
-  minus 0.4em\relax Springer, 2015.
-
-\bibitem{ioffe2015batch}
-S.~Ioffe and C.~Szegedy, ``Batch normalization: Accelerating deep network
-  training by reducing internal covariate shift,'' in \emph{International
-  conference on machine learning}.\hskip 1em plus 0.5em minus 0.4em\relax PMLR,
-  2015.
-
-\bibitem{srivastava2014dropout}
-N.~Srivastava, G.~Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
-  ``Dropout: a simple way to prevent neural networks from overfitting,''
-  \emph{The journal of machine learning research}, vol.~15, no.~1, pp.
-  1929--1958, 2014.
-
-\bibitem{hermans2017defense}
-A.~Hermans, L.~Beyer, and B.~Leibe, ``In defense of the triplet loss for person
-  re-identification,'' \emph{arXiv preprint arXiv:1703.07737}, 2017.
-
-\bibitem{sandler2018mobilenetv2}
-M.~Sandler, A.~Howard, M.~Zhu, A.~Zhmoginov, and L.-C. Chen, ``Mobilenetv2:
-  Inverted residuals and linear bottlenecks,'' in \emph{CVPR}, 2018, pp.
-  4510--4520.
-
-\bibitem{hochreiter1997long}
-S.~Hochreiter and J.~Schmidhuber, ``Long short-term memory,'' \emph{Neural
-  computation}, vol.~9, no.~8, pp. 1735--1780, 1997.
-
-\bibitem{mohammadi2020improving}
-A.~Mohammadi, S.~Bhattacharjee, and S.~Marcel, ``Improving cross-dataset
-  performance of face presentation attack detection systems using face
-  recognition datasets,'' in \emph{ICASSP}.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2020.
-
-\bibitem{peng2020ts}
-D.~Peng, J.~Xiao, R.~Zhu, and G.~Gao, ``Ts-fen: Probing feature selection
-  strategy for face anti-spoofing,'' in \emph{ICASS}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, 2020.
-
-\bibitem{hossaindeeppixbis}
-M.~S. Hossain, L.~Rupty, K.~Roy, M.~Hasan, S.~Sengupta, and N.~Mohammed,
-  ``A-deeppixbis: Attentional angular margin for face anti-spoofing,'' 2020.
-
-\bibitem{yu2020auto2}
-Z.~Yu, Y.~Qin, X.~Xu, C.~Zhao, Z.~Wang, Z.~Lei, and G.~Zhao, ``Auto-fas:
-  Searching lightweight networks for face anti-spoofing,'' in
-  \emph{ICASSP}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2020.
-
 \bibitem{ma2020novel}
 Y.~Ma, L.~Wu, Z.~Li \emph{et~al.}, ``A novel face presentation attack detection
   scheme based on multi-regional convolutional neural networks,'' \emph{PR
@@ -879,227 +1149,47 @@ Y.~Ma, L.~Wu, Z.~Li \emph{et~al.}, ``A novel face presentation attack detection
 \bibitem{sun2020face2}
 W.~Sun, Y.~Song, H.~Zhao, and Z.~Jin, ``A face spoofing detection method based
   on domain adaptation and lossless size adaptation,'' \emph{IEEE Access},
-  vol.~8, pp. 66\,553--66\,563, 2020.
-
-\bibitem{yu2021revisiting}
-Z.~Yu, X.~Li, J.~Shi, Z.~Xia, and G.~Zhao, ``Revisiting pixel-wise supervision
-  for face anti-spoofing,'' \emph{IEEE TBIOM}, 2021.
+  2020.
 
 \bibitem{zheng2021attention}
 W.~Zheng, M.~Yue, S.~Zhao, and S.~Liu, ``Attention-based spatial-temporal
   multi-scale network for face anti-spoofing,'' \emph{TBIOM}, 2021.
-
-\bibitem{roy2021bi}
-K.~Roy, M.~Hasan, L.~Rupty, M.~Hossain, S.~Sengupta, S.~N. Taus, N.~Mohammed
-  \emph{et~al.}, ``Bi-fpnfas: Bi-directional feature pyramid network for
-  pixel-wise face anti-spoofing by leveraging fourier spectra,''
-  \emph{Sensors}, vol.~21, no.~8, p. 2799, 2021.
 
 \bibitem{chen2019towards}
 Y.~Chen, T.~Wang, J.~Wang, P.~Shi, and H.~Snoussi, ``Towards good practices in
   face anti-spoofing: An image reconstruction based method,'' in
   \emph{CAC}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019.
 
-\bibitem{stehouwer2020noise}
-J.~Stehouwer, A.~Jourabloo, Y.~Liu, and X.~Liu, ``Noise modeling, synthesis and
-  classification for generic object anti-spoofing,'' in \emph{CVPR}, 2020.
-
-\bibitem{gretton2012kernel}
-A.~Gretton, K.~M. Borgwardt, M.~J. Rasch, B.~Sch{\"o}lkopf, and A.~Smola, ``A
-  kernel two-sample test,'' \emph{The Journal of Machine Learning Research},
-  vol.~13, no.~1, pp. 723--773, 2012.
-
 \bibitem{tu2019deep}
 X.~Tu, H.~Zhang, M.~Xie, Y.~Luo, Y.~Zhang, and Z.~Ma, ``Deep transfer across
-  domains for face antispoofing,'' \emph{Journal of Electronic Imaging},
-  vol.~28, no.~4, p. 043001, 2019.
-
-\bibitem{wang2019improving}
-G.~Wang, H.~Han, S.~Shan, and X.~Chen, ``Improving cross-database face
-  presentation attack detection via adversarial domain adaptation,'' in
-  \emph{ICB}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019.
-
-\bibitem{wang2020unsupervised}
-{Wang, Guoqing and Han, Hu and Shan, Shiguang and Chen, Xilin}, ``Unsupervised
-  adversarial domain adaptation for cross-domain face presentation attack
-  detection,'' \emph{TIFS}, vol.~16, pp. 56--69, 2020.
-
-\bibitem{zhou2019face}
-F.~Zhou, C.~Gao, F.~Chen, C.~Li, X.~Li, F.~Yang, and Y.~Zhao, ``Face
-  anti-spoofing based on multi-layer domain adaptation,'' in
-  \emph{ICMEW}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019.
-
-\bibitem{mohammadi2020domain}
-A.~Mohammadi, S.~Bhattacharjee, and S.~Marcel, ``Domain adaptation for
-  generalization of face presentation attack detection in mobile settengs with
-  minimal information,'' in \emph{ICASSP}.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2020.
-
-\bibitem{li2020face2}
-H.~Li, S.~Wang, P.~He, and A.~Rocha, ``Face anti-spoofing with deep neural
-  network distillation,'' \emph{IEEE Journal of Selected Topics in Signal
-  Processing}, vol.~14, no.~5, pp. 933--946, 2020.
-
-\bibitem{quan2021progressive}
-R.~Quan, Y.~Wu, X.~Yu, and Y.~Yang, ``Progressive transfer learning for face
-  anti-spoofing,'' \emph{TIP}, vol.~30, pp. 3946--3955, 2021.
-
-\bibitem{kim2020suppressing}
-T.~Kim and Y.~Kim, ``Suppressing spoof-irrelevant factors for domain-agnostic
-  face anti-spoofing,'' \emph{arXiv preprint arXiv:2012.01271}, 2020.
+  domains for face antispoofing,'' \emph{Journal of Electronic Imaging}, 2019.
 
 \bibitem{saha2020domain}
 S.~Saha, W.~Xu, M.~Kanakis, S.~Georgoulis, Y.~Chen, D.~Pani~Paudel, and
   L.~Van~Gool, ``Domain agnostic feature learning for image and video based
   face anti-spoofing,'' in \emph{CVPRW}, 2020.
 
-\bibitem{wang2021self}
-J.~Wang, J.~Zhang, Y.~Bian, Y.~Cai, C.~Wang, and S.~Pu, ``Self-domain
-  adaptation for face anti-spoofing,'' in \emph{AAAI}, 2021.
-
-\bibitem{chen2021generalized}
-Z.~Chen, T.~Yao, K.~Sheng, S.~Ding, Y.~Tai, J.~Li, F.~Huang, and X.~Jin,
-  ``Generalizable representation learning for mixture domain face
-  anti-spoofing,'' in \emph{AAAI}, 2021.
-
-\bibitem{shao2020federated}
-R.~Shao, P.~Perera, P.~C. Yuen, and V.~M. Patel, ``Federated generalized face
-  presentation attack detection,'' \emph{arXiv preprint arXiv:2104.06595},
-  2021.
-
-\bibitem{mcmahan2017communication}
-B.~McMahan, E.~Moore, D.~Ramage, S.~Hampson, and B.~A. y~Arcas,
-  ``Communication-efficient learning of deep networks from decentralized
-  data,'' in \emph{Artificial Intelligence and Statistics}.\hskip 1em plus
-  0.5em minus 0.4em\relax PMLR, 2017.
-
-\bibitem{perez2020learning}
-D.~P{\'e}rez-Cabo, D.~Jim{\'e}nez-Cabello, A.~Costa-Pazo, and R.~J.
-  L{\'o}pez-Sastre, ``Learning to learn face-pad: a lifelong learning
-  approach,'' in \emph{IJCB}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2020.
-
-\bibitem{xiong2018unknown}
-F.~Xiong and W.~AbdAlmageed, ``Unknown presentation attack detection with face
-  rgb images,'' in \emph{BTAS}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2018.
-
-\bibitem{perez2019deep}
-D.~P{\'e}rez-Cabo, D.~Jim{\'e}nez-Cabello, A.~Costa-Pazo, and R.~J.
-  L{\'o}pez-Sastre, ``Deep anomaly detection for generalized face
-  anti-spoofing,'' in \emph{CVPRW}, 2019.
-
 \bibitem{fatemifar2019spoofing}
 S.~Fatemifar, S.~R. Arashloo, M.~Awais, and J.~Kittler, ``Spoofing attack
-  detection by anomaly detection,'' in \emph{ICASSP}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, 2019.
-
-\bibitem{li2020unseen}
-Z.~Li, H.~Li, K.-Y. Lam, and A.~C. Kot, ``Unseen face presentation attack
-  detection with hypersphere loss,'' in \emph{ICASSP}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, 2020.
+  detection by anomaly detection,'' in \emph{ICASSP}, 2019.
 
 \bibitem{fatemifar2020stacking}
 S.~Fatemifar, M.~Awais, A.~Akbari, and J.~Kittler, ``A stacking ensemble for
   anomaly based client-specific face spoofing detection,'' in
   \emph{ICIP}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2020.
 
-\bibitem{george2020learning}
-A.~George and S.~Marcel, ``Learning one class representations for face
-  presentation attack detection using multi-channel convolutional neural
-  networks,'' \emph{TIFS}, vol.~16, pp. 361--375, 2020.
-
-\bibitem{baweja2020anomaly}
-Y.~Baweja, P.~Oza, P.~Perera, and V.~M. Patel, ``Anomaly detection-based
-  unknown face presentation attack detection,'' \emph{arXiv preprint
-  arXiv:2007.05856}, 2020.
-
 \bibitem{fatemifar2020client}
 S.~Fatemifar, S.~R. Arashloo, M.~Awais, and J.~Kittler, ``Client-specific
   anomaly detection for face presentation attack detection,'' \emph{Pattern
-  Recognition}, p. 107696, 2020.
-
-\bibitem{nikisins2018effectiveness}
-O.~Nikisins, A.~Mohammadi, A.~Anjos, and S.~Marcel, ``On effectiveness of
-  anomaly detection approaches against unseen presentation attacks in face
-  anti-spoofing,'' in \emph{ICB}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2018.
-
-\bibitem{rehman2020slnet}
-Y.~A.~U. Rehman, L.-M. Po, and M.~Liu, ``Slnet: Stereo face liveness detection
-  via dynamic disparity-maps and convolutional neural network,'' \emph{Expert
-  Systems with Applications}, vol. 142, p. 113002, 2020.
-
-\bibitem{liu2019AuroraGuard}
-W.~Hu, G.~Te, J.~He, D.~Chen, and Z.~Guo, ``Aurora guard: Real-time face
-  anti-spoofing via light reflection,'' \emph{arXiv preprint arXiv:
-  1902.10311}, 2019.
-
-\bibitem{wu2019review}
-B.~Wu, M.~Pan, and Y.~Zhang, ``A review of face anti-spoofing and its
-  applications in china,'' in \emph{International Conference on Harmony Search
-  Algorithm}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2019, pp.
-  35--43.
-
-\bibitem{connell2013fake}
-J.~Connell, N.~Ratha, J.~Gentile, and R.~Bolle, ``Fake iris detection using
-  structured light,'' in \emph{ICASSP}.\hskip 1em plus 0.5em minus 0.4em\relax
-  IEEE, 2013.
-
-\bibitem{sun2016context}
-X.~Sun, L.~Huang, and C.~Liu, ``Context based face spoofing detection using
-  active near-infrared images,'' in \emph{ICPR}.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2016.
-
-\bibitem{seo2019face}
-J.~Seo and I.-J. Chung, ``Face liveness detection using thermal face-cnn with
-  external knowledge,'' \emph{Symmetry}, vol.~11, no.~3, p. 360, 2019.
-
-\bibitem{farrukh2020facerevelio}
-H.~Farrukh, R.~M. Aburas, S.~Cao, and H.~Wang, ``Facerevelio: a face liveness
-  detection system for smartphones with a single front camera,'' in
-  \emph{Proceedings of the 26th Annual International Conference on Mobile
-  Computing and Networking}, 2020.
-
-\bibitem{ebihara2019specular}
-A.~F. Ebihara, K.~Sakurai, and H.~Imaoka, ``Specular-and
-  diffuse-reflection-based face spoofing detection for mobile devices,'' in
-  \emph{IJCB}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2020.
+  Recognition}, 2020.
 
 \bibitem{kowalski2020study}
 M.~Kowalski, ``A study on presentation attack detection in thermal infrared,''
   \emph{Sensors}, vol.~20, no.~14, p. 3988, 2020.
 
-\bibitem{wu2020single}
-X.~Wu, J.~Zhou, J.~Liu, F.~Ni, and H.~Fan, ``Single-shot face anti-spoofing for
-  dual pixel camera,'' \emph{TIFS}, vol.~16, pp. 1440--1451, 2020.
-
-\bibitem{shen2019facebagnet}
-T.~Shen, Y.~Huang, and Z.~Tong, ``Facebagnet: Bag-of-local-features model for
-  multi-modal face anti-spoofing,'' in \emph{CVPRW}, 2019.
-
-\bibitem{zhang2019feathernets}
-P.~Zhang, F.~Zou, Z.~Wu, N.~Dai, S.~Mark, M.~Fu, J.~Zhao, and K.~Li,
-  ``Feathernets: Convolutional neural networks as light as feather for face
-  anti-spoofing,'' in \emph{CVPRW}, 2019.
-
 \bibitem{wang2019multi}
 G.~Wang, C.~Lan, H.~Han, S.~Shan, and X.~Chen, ``Multi-modal face presentation
   attack detection via spatial and channel attentions,'' in \emph{CVPRW}, 2019.
-
-\bibitem{kuang2019multi}
-H.~Kuang, R.~Ji, H.~Liu, S.~Zhang, X.~Sun, F.~Huang, and B.~Zhang,
-  ``Multi-modal multi-layer fusion network with average binary center loss for
-  face anti-spoofing,'' in \emph{ACM MM}, 2019.
-
-\bibitem{parkin2019recognizing}
-A.~Parkin and O.~Grinchuk, ``Recognizing multi-modal face spoofing with face
-  recognition networks,'' in \emph{CVPRW}, 2019.
-
-\bibitem{nikisins2019domain}
-O.~Nikisins, A.~George, and S.~Marcel, ``Domain adaptation in multi-channel
-  autoencoder based features for robust face anti-spoofing,'' in
-  \emph{ICB}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019.
 
 \bibitem{li2019dual}
 L.~Li, Z.~Gao, L.~Huang, H.~Zhang, and M.~Lin, ``A dual-modal face
@@ -1108,9 +1198,8 @@ L.~Li, Z.~Gao, L.~Huang, H.~Zhang, and M.~Lin, ``A dual-modal face
 
 \bibitem{li2020face}
 X.~Li, W.~Wu, T.~Li, Y.~Su, and L.~Yang, ``Face liveness detection based on
-  parallel cnn,'' in \emph{Journal of Physics: Conference Series}, vol. 1549,
-  no.~4.\hskip 1em plus 0.5em minus 0.4em\relax IOP Publishing, 2020, p.
-  042069.
+  parallel cnn,'' in \emph{Journal of Physics: Conference Series}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IOP Publishing, 2020.
 
 \bibitem{george2020can}
 A.~George and S.~Marcel, ``Can your face detector do anti-spoofing? face
@@ -1126,78 +1215,5 @@ Q.~Yang, X.~Zhu, J.-K. Fwu, Y.~Ye, G.~You, and Y.~Zhu, ``Pipenet: Selective
 G.~Te, W.~Hu, and Z.~Guo, ``Exploring hypergraph representation on face
   anti-spoofing beyond 2d attacks,'' in \emph{ICME}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2020.
-
-\bibitem{jiang2020face}
-F.~Jiang, P.~Liu, X.~Shao, and X.~Zhou, ``Face anti-spoofing with generated
-  near-infrared images,'' \emph{Multimedia Tools and Applications}, vol.~79,
-  no.~29, pp. 21\,299--21\,323, 2020.
-
-\bibitem{liu2021data}
-W.~Liu, X.~Wei, T.~Lei, X.~Wang, H.~Meng, and A.~K. Nandi, ``Data fusion based
-  two-stage cascade framework for multi-modality face anti-spoofing,''
-  \emph{TCDS}, 2021.
-
-\bibitem{george2021cross}
-A.~George and S.~Marcel, ``Cross modal focal loss for rgbd face
-  anti-spoofing,'' in \emph{CVPR}, 2021.
-
-\bibitem{liu2021face}
-A.~Liu, Z.~Tan, J.~Wan, Y.~Liang, Z.~Lei, G.~Guo, and S.~Z. Li, ``Face
-  anti-spoofing via adversarial cross-modality translation,'' \emph{TIFS},
-  vol.~16, pp. 2759--2772, 2021.
-
-\bibitem{mallatindirect2021}
-K.~Mallat and J.-L. Dugelay, ``Indirect synthetic attack on thermal face
-  biometric systems via visible-to-thermal spectrum conversion,'' in
-  \emph{CVPRW}, 2021.
-
-\bibitem{sequeiraexploratory}
-A.~F. Sequeira, T.~Gon{\c{c}}alves, W.~Silva, J.~R. Pinto, and J.~S. Cardoso,
-  ``An exploratory study of interpretability for face presentation attack
-  detection,'' \emph{IET Biometrics}.
-
-\bibitem{selvaraju2017grad}
-R.~R. Selvaraju, M.~Cogswell, A.~Das, R.~Vedantam, D.~Parikh, and D.~Batra,
-  ``Grad-cam: Visual explanations from deep networks via gradient-based
-  localization,'' in \emph{ICCV}, 2017, pp. 618--626.
-
-\bibitem{liu2020cross}
-A.~Liu, X.~Li, J.~Wan, Y.~Liang, S.~Escalera, H.~J. Escalante, M.~Madadi,
-  Y.~Jin, Z.~Wu, X.~Yu \emph{et~al.}, ``Cross-ethnicity face anti-spoofing
-  recognition challenge: A review,'' \emph{IET Biometrics}, vol.~10, no.~1, pp.
-  24--43, 2021.
-
-\bibitem{sharif2019general}
-M.~Sharif, S.~Bhagavatula, L.~Bauer, and M.~K. Reiter, ``A general framework
-  for adversarial examples with objectives,'' \emph{ACM Transactions on Privacy
-  and Security (TOPS)}, vol.~22, no.~3, pp. 1--30, 2019.
-
-\bibitem{komkov2021advhat}
-S.~Komkov and A.~Petiushko, ``Advhat: Real-world adversarial attack on arcface
-  face id system,'' in \emph{ICPR}.\hskip 1em plus 0.5em minus 0.4em\relax
-  IEEE, 2021, pp. 819--826.
-
-\bibitem{yin2021adv}
-B.~Yin, W.~Wang, T.~Yao, J.~Guo, Z.~Kong, S.~Ding, J.~Li, and C.~Liu,
-  ``Adv-makeup: A new imperceptible and transferable attack on face
-  recognition,'' in \emph{IJCAI}, 2021.
-
-\bibitem{guo2021meaningful}
-Y.~Guo, X.~Wei, G.~Wang, and B.~Zhang, ``Meaningful adversarial stickers for
-  face recognition in physical world,'' \emph{arXiv preprint arXiv:2104.06728},
-  2021.
-
-\bibitem{zhang2019attacking}
-B.~Zhang, B.~Tondi, and M.~Barni, ``Attacking cnn-based anti-spoofing face
-  authentication in the physical domain,'' \emph{arXiv preprint
-  arXiv:1910.00327}, 2019.
-
-\bibitem{ciftci2020fakecatcher}
-U.~A. Ciftci, I.~Demir, and L.~Yin, ``Fakecatcher: Detection of synthetic
-  portrait videos using biological signals,'' \emph{TPAMI}, 2020.
-
-\bibitem{deb2021unified}
-D.~Deb, X.~Liu, and A.~K. Jain, ``Unified detection of digital and physical
-  face attacks,'' \emph{arXiv preprint arXiv:2104.02156}, 2021.
 
 \end{thebibliography}
